@@ -1,28 +1,42 @@
 <ion-view title="Check What You Like">
     <ion-content padding="true" class="has-header grey-bg">
         <div class="white-bg rounded">
-            <div class="row">
-                <div class="col">
-                    <div class="card rounded">
-                        <div class="item item-image">
-                            <img src="http://miguanzi001.com/wp-content/uploads/2015/08/a.jpg">
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="card rounded">
-                        <div class="item item-image">
-                            <img src="http://miguanzi001.com/wp-content/uploads/2015/08/b.jpg">
-                        </div>
-                    </div>
-                </div>
+            <div class="item item-avatar-left">
+                <img class="" width="50px" height="50px" src="http://miguanzi001.com/wp-content/uploads/2015/08/icon50.png">
+                <div class="padding-left padding-top serif">Yan Xia</div>
             </div>
-            <div class="contents-bg">
-                        Show some Text
+
+            <div class="row" ng-controller="gestureController" on-drag-left="checkOnLeftOne()" on-drag-right="checkOnRightOne()">
+
+                <div class="col">
+                    <!--<div class="card rounded " ng-controller="gestureController" on-drag-left="onDragUp()">-->
+                    <a href="#/imageDetail">
+                        <div class="item item-image rounded border"  >
+                            <img class="" src="http://miguanzi001.com/wp-content/uploads/2015/08/a.jpg">
+                            <div class="tabs-background-calm">
+                                <i ng-if="leftOneChecked" class="icon ion-checkmark-circled balanced"></i>
+                                <i ng-if="rightOneChecked" class="icon ion-close-circled assertive"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col">
+                    <!--<div class="card rounded " ng-controller="gestureController" on-drag-left="onDragUp()">-->
+                    <a href="#/imageDetail">
+                        <div class="item item-image rounded border">
+                            <img class="" src="http://miguanzi001.com/wp-content/uploads/2015/08/b.jpg">
+                            <div class="tabs-background-calm">
+                                <i ng-if="rightOneChecked" class="icon ion-checkmark-circled balanced"></i>
+                                <i ng-if="leftOneChecked" class="icon ion-close-circled assertive"></i>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
             </div>
 
         </div>
-
-
     </ion-content>
 </ion-view>
