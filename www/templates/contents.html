@@ -1,30 +1,29 @@
 <ion-view title="Check What You Like">
-    <ion-content padding="true" class="has-header grey-bg">
-        <div class="rounded">
+    <ion-content padding="true" class="has-header">
+        <div>
+
             <!--<div class="item item-avatar-left">-->
             <!--<img class="" width="10px" height="10px" src="http://miguanzi001.com/wp-content/uploads/2015/08/icon50.png">-->
             <!--<div class="padding-left padding-top serif">Yan Xia</div>-->
             <!--</div>-->
 
             <div class="list card">
-                <div class="item item-avatar item-borderless">
+                <div class="item item-avatar">
                     <img class="" src="http://miguanzi001.com/wp-content/uploads/2015/08/icon50.png">
                     <!--<img src="../img/icon50.png">-->
                     <h2>Arya Stark</h2>
-
                     <p>"Joffrey. Cersei. Ilyn Payne. Hound. Polliver. The Mountain."</p>
                 </div>
 
-                <div class="item row-no-padding">
-                    <div class="row white-bg " ng-controller="gestureController" on-drag-left="checkOnLeftOne()" on-drag-right="checkOnRightOne()">
-
+                <div class="item row-no-padding item-borderless">
+                    <div class="row" ng-controller="gestureController" on-drag-left="checkOnLeftOne()" on-drag-right="checkOnRightOne()">
                         <div class="col">
                             <!--<div class="card rounded " ng-controller="gestureController" on-drag-left="onDragUp()">-->
                             <a href="#/imageDetail">
                                 <div class="item item-image rounded border">
                                     <img class="" src="http://miguanzi001.com/wp-content/uploads/2015/08/a.jpg">
                                     <!--<img class="" src="../img/a.jpg">-->
-                                    <div class="tabs-background-calm">
+                                    <div class="">
                                         <i ng-if="leftOneChecked" class="icon ion-thumbsup balanced"></i>
                                         <i ng-if="rightOneChecked" class="icon ion-thumbsdown assertive"></i>
                                     </div>
@@ -37,7 +36,7 @@
                             <a href="#/imageDetail">
                                 <div class="item item-image rounded border">
                                     <img class="" src="http://miguanzi001.com/wp-content/uploads/2015/08/b.jpg">
-                                    <div class="tabs-background-calm">
+                                    <div>
                                         <i ng-if="rightOneChecked" class="icon ion-thumbsup balanced"></i>
                                         <i ng-if="leftOneChecked" class="icon ion-thumbsdown assertive"></i>
                                     </div>
@@ -47,21 +46,28 @@
                     </div>
                 </div>
 
-                <div class="item item-body item-borderless"> The quickest way to a man's heart is through Arya's needle. She has two
-                    speeds: Walk and Kill, and is the reason why Waldo is still hiding.
+                <div class="item item-body item-borderless"> The quickest way to a man's heart is through Arya's needle.
                     <p>
-                        <a class="subdued">1 Like</a>
-                        <a class="subdued">5 Comments</a>
+                        <a class="subdued" href="http://www.google.com">100 Left</a>
+                        <a class="subdued" href="http://www.google.com">500 Right</a>
+                        <a class="subdued" href="http://www.google.com">10000 EGGS...</a>
                     </p>
                 </div>
-                <div class="item tabs tabs-secondary tabs-icon-left calm-bg energized-border">
-                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
-                        <i class="icon ion-thumbsup"></i> Yes!! </a>
-                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
-                        <i class="icon ion-thumbsdown"></i> No~~ </a>
-                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
-                        <i class="icon ion-arrow-right-a"></i> Next </a>
+
+                <div class="item text-center item-borderless">
+                    <button class="button button-full button-block button-positive">Let's continue!</button>
                 </div>
+
+                <!--<div class="item tabs tabs-secondary tabs-icon-left assertive-bg energized-border">-->
+                    <!--<div></div><a class="tab-item">-->
+                        <!--<i class="icon ion-thumbsup"></i> Yes!! </a>-->
+                    <!--<a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">-->
+                        <!--<i class="icon ion-thumbsdown"></i> No~~ </a>-->
+                    <!--&lt;!&ndash;<a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">&ndash;&gt;-->
+
+                    <!--<i class="icon ion-arrow-right-a"></i> Next </a>-->
+                    <!--</div>-->
+                <!--</div>-->
             </div>
 
 
