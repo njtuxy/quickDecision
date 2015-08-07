@@ -1,41 +1,68 @@
 <ion-view title="Check What You Like">
-    <ion-content padding="true" class="has-header grey-bg">
+    <ion-content padding="true" class="has-header">
         <div class="rounded">
-            <div class="item item-avatar-left">
-                <img class="" width="50px" height="50px" src="http://miguanzi001.com/wp-content/uploads/2015/08/icon50.png">
-                <div class="padding-left padding-top serif">Yan Xia</div>
-            </div>
+            <!--<div class="item item-avatar-left">-->
+            <!--<img class="" width="10px" height="10px" src="http://miguanzi001.com/wp-content/uploads/2015/08/icon50.png">-->
+            <!--<div class="padding-left padding-top serif">Yan Xia</div>-->
+            <!--</div>-->
 
-            <div class="row" ng-controller="gestureController" on-drag-left="checkOnLeftOne()" on-drag-right="checkOnRightOne()">
+            <div class="list card stable-bg">
+                <div class="item item-avatar"><img src="http://miguanzi001.com/wp-content/uploads/2015/08/icon50.png">
 
-                <div class="col">
-                    <!--<div class="card rounded " ng-controller="gestureController" on-drag-left="onDragUp()">-->
-                    <a href="#/imageDetail">
-                        <div class="item item-image rounded border"  >
-                            <img class="" src="http://miguanzi001.com/wp-content/uploads/2015/08/a.jpg">
-                            <div class="tabs-background-calm">
-                                <i ng-if="leftOneChecked" class="icon ion-checkmark-circled balanced"></i>
-                                <i ng-if="rightOneChecked" class="icon ion-close-circled assertive"></i>
-                            </div>
-                        </div>
-                    </a>
+                    <h2>Arya Stark</h2>
+
+                    <p>"Joffrey. Cersei. Ilyn Payne. Hound. Polliver. The Mountain."</p>
                 </div>
 
-                <div class="col">
-                    <!--<div class="card rounded " ng-controller="gestureController" on-drag-left="onDragUp()">-->
-                    <a href="#/imageDetail">
-                        <div class="item item-image rounded border">
-                            <img class="" src="http://miguanzi001.com/wp-content/uploads/2015/08/b.jpg">
-                            <div class="tabs-background-calm">
-                                <i ng-if="rightOneChecked" class="icon ion-checkmark-circled balanced"></i>
-                                <i ng-if="leftOneChecked" class="icon ion-close-circled assertive"></i>
+                <div class="row " ng-controller="gestureController" on-drag-left="checkOnLeftOne()" on-drag-right="checkOnRightOne()">
+
+                    <div class="col">
+                        <!--<div class="card rounded " ng-controller="gestureController" on-drag-left="onDragUp()">-->
+                        <a href="#/imageDetail">
+                            <div class="item item-image rounded border">
+                                <img class="" src="http://miguanzi001.com/wp-content/uploads/2015/08/a.jpg">
+
+                                <div class="tabs-background-calm">
+                                    <i ng-if="leftOneChecked" class="icon ion-checkmark-circled balanced"></i>
+                                    <i ng-if="rightOneChecked" class="icon ion-close-circled assertive"></i>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
+
+                    <div class="col">
+                        <!--<div class="card rounded " ng-controller="gestureController" on-drag-left="onDragUp()">-->
+                        <a href="#/imageDetail">
+                            <div class="item item-image rounded border">
+                                <img class="" src="http://miguanzi001.com/wp-content/uploads/2015/08/b.jpg">
+
+                                <div class="tabs-background-calm">
+                                    <i ng-if="rightOneChecked" class="icon ion-checkmark-circled balanced"></i>
+                                    <i ng-if="leftOneChecked" class="icon ion-close-circled assertive"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
                 </div>
 
-
+                <div class="item item-body"> The quickest way to a man's heart is through Arya's needle. She has two
+                    speeds: Walk and Kill, and is the reason why Waldo is still hiding.
+                    <p>
+                        <a class="subdued">1 Like</a>
+                        <a class="subdued">5 Comments</a>
+                    </p>
+                </div>
+                <div class="item tabs tabs-secondary tabs-icon-left">
+                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
+                        <i class="icon ion-thumbsup"></i> Yes!! </a>
+                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
+                        <i class="icon ion-thumbsdown"></i> No~~ </a>
+                    <a class="tab-item" data-ink-color="#336699" data-ink-opacity="0.5">
+                        <i class="icon ion-share"></i> What???? </a>
+                </div>
             </div>
+
+
 
         </div>
     </ion-content>
