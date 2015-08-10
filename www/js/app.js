@@ -2,8 +2,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('app', ['ionic'])
-
+angular.module('app', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
     .run(function($ionicPlatform) {
         $ionicPlatform.ready(function() {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -35,45 +34,71 @@ angular.module('app', ['ionic'])
                 templateUrl: 'templates/contents.html'
             })
 
-            .state('myDevices', {
-                url: '/my-devices',
-                templateUrl: 'templates/myDinners.html'
-            })
-
             .state('imageDetail', {
                 url: '/imageDetail',
                 templateUrl: 'templates/imageDetail.html'
             })
 
+            // setup an abstract state for the tabs directive
+            .state('tab', {
+                url: '/tab',
+                abstract: true,
+                templateUrl: 'templates/tabs.html'
+            })
+
+            // Each tab has its own nav history stack:
+
+            .state('tab.dash', {
+                url: '/dash',
+                views: {
+                    'tab-dash': {
+                        templateUrl: 'templates/tab-dash.html',
+                        controller: 'DashCtrl'
+                    }
+                }
+            })
+
+            .state('tab.camera', {
+                url: '/camera',
+                views: {
+                    'tab-camera': {
+                        templateUrl: 'templates/tab-camera.html',
+                        controller: 'CameraController'
+                    }
+                }
+            })
+
+            .state('tab.chats', {
+                url: '/chats',
+                views: {
+                    'tab-chats': {
+                        templateUrl: 'templates/tab-chats.html',
+                        controller: 'ChatsCtrl'
+                    }
+                }
+            })
+            .state('tab.chat-detail', {
+                url: '/chats/:chatId',
+                views: {
+                    'tab-chats': {
+                        templateUrl: 'templates/chat-detail.html',
+                        controller: 'ChatDetailCtrl'
+                    }
+                }
+            })
+
+            .state('tab.account', {
+                url: '/account',
+                views: {
+                    'tab-account': {
+                        templateUrl: 'templates/contents.html',
+                        controller: 'AccountCtrl'
+                    }
+                }
+            });
         ;
 
         // if none of the above states are matched, use this as the fallback
 
-        $urlRouterProvider.otherwise('/contents');
-    })
-    .controller('gestureController', function($scope){
-        //$scope.onDragLeft = function(){
-        //    $scope.toggleChecked = false
-        //}
-        $scope.checked = false;
-        $scope.leftOneChecked=false;
-        $scope.rightOneChecked=false;
-        $scope.checkOnLeftOne=function(){
-            $scope.leftOneChecked = true;
-            $scope.rightOneChecked = false;
-        }
-
-        $scope.checkOnRightOne=function(){
-            $scope.rightOneChecked = true;
-            $scope.leftOneChecked = false;
-        }
-
-        $scope.toggleChecked = function() {
-            $scope.checked = $scope.checked === false ? true: false;
-        };
-
-        //$scope.onDragRight = function(){
-        //    $scope.debugText = "";
-        //}
-
+        $urlRouterProvider.otherwise('/tab/dash');
     });

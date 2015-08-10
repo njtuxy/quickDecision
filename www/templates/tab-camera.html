@@ -1,0 +1,40 @@
+<ion-view title="Upload Your Choices!">
+    <ion-content padding="true" class="has-header">
+        <div class="list card text-center">
+            <div class="item row-no-padding item-borderless">
+                <div class="row">
+                    <div class="col" >
+                        <a href="#" >
+                            <div class="item item-image rounded" ng-if="imgSrc !== undefined">
+                                <img ng-src="{{imgSrc}}">
+                            </div>
+                            <button class="button button-icon icon ion-camera" ng-click="takePicture()"></button>
+                            <button class="button button-icon icon ion-image"></button>
+
+                        </a>
+                    </div>
+
+                    <div class="col" >
+                        <a href="#">
+                            <div class="item item-image rounded" ng-if="imgSrc2 !== undefined">
+                                <img ng-src="{{imgSrc2}}">
+                            </div>
+                            <button class="button button-icon icon ion-camera" ng-click="takePicture2()"></button>
+                            <button class="button button-icon icon ion-image"></button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="item item-image" ng-if="imgSrc !== undefined">-->
+                <!--<img ng-src="{{imgSrc}}">-->
+            <!--</div>-->
+
+            <!--<div class="text-center">-->
+                <!--<button class="button button-block button-calm" ng-click="takePicture()"> Take A Picture</button>-->
+            <!--</div>-->
+        </div>
+
+
+    </ion-content>
+</ion-view>
