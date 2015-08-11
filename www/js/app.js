@@ -2,22 +2,27 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('app', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
-    .run(function($ionicPlatform) {
-        $ionicPlatform.ready(function() {
+
+//var fb = null;
+
+angular.module('app', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova', 'firebase'])
+    .run(function ($ionicPlatform, $rootScope) {
+        $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
-            if(window.cordova && window.cordova.plugins.Keyboard) {
+            if (window.cordova && window.cordova.plugins.Keyboard) {
                 cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);
             }
-            if(window.StatusBar) {
+            if (window.StatusBar) {
                 // org.apache.cordova.statusbar required
                 StatusBar.styleDefault();
             }
+
+            $rootScope.fb = new Firebase('https://qd.firebaseio.com');
         });
     })
 
-    .config(function($stateProvider, $urlRouterProvider) {
+    .config(function ($stateProvider, $urlRouterProvider) {
 
         // Ionic uses AngularUI Router which uses the concept of states
         // Learn more here: https://github.com/angular-ui/ui-router
@@ -26,8 +31,15 @@ angular.module('app', ['ionic', 'starter.controllers', 'starter.services', 'ngCo
         $stateProvider
             .state('loginPage', {
                 url: '/login',
-                templateUrl: 'templates/login.html'
+                templateUrl: 'templates/login.html',
+                controller: 'loginController'
             })
+
+            .state('landingPage', {
+                url: '/landing',
+                templateUrl: 'templates/landing.html'
+            })
+
 
             .state('contents', {
                 url: '/contents',
@@ -45,6 +57,17 @@ angular.module('app', ['ionic', 'starter.controllers', 'starter.services', 'ngCo
                 abstract: true,
                 templateUrl: 'templates/tabs.html'
             })
+
+            //.state('loginPage', {
+            //    url: '/login',
+            //    views: {
+            //        'login': {
+            //            templateUrl: 'templates/login.html',
+            //            controller: 'LoginController'
+            //        }
+            //    }
+            //})
+
 
             // Each tab has its own nav history stack:
 
@@ -100,5 +123,5 @@ angular.module('app', ['ionic', 'starter.controllers', 'starter.services', 'ngCo
 
         // if none of the above states are matched, use this as the fallback
 
-        $urlRouterProvider.otherwise('/tab/dash');
+        $urlRouterProvider.otherwise('/landing');
     });

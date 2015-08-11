@@ -26,6 +26,10 @@
     <!-- cordova script (this will be a 404 during development) -->
     <script src="cordova.js"></script>
 
+    <!--fire base javascripts reference-->
+    <script src="lib/angularfire/dist/angularfire.js"></script>
+    <script src="lib/firebase/firebase.js"></script>
+
     <!--Reference of my own javascripts-->
     <script src="js/app.js"> </script>
     <script src="js/controllers.js"></script>
@@ -36,12 +40,14 @@
 <body ng-app="app" animation="slide-left-right-ios7">
 <div>
     <div>
-        <ion-nav-bar class="bar-stable bar-calm">
-            <ion-nav-back-button >
-            </ion-nav-back-button>
-        </ion-nav-bar>
+        <!--<ion-nav-bar class="white-bg">-->
+            <!--<ion-nav-back-button >-->
+            <!--</ion-nav-back-button>-->
+        <!--</ion-nav-bar>-->
 
-        <ion-nav-view></ion-nav-view>
+        <ion-nav-view>
+
+        </ion-nav-view>
     </div>
 </div>
 
