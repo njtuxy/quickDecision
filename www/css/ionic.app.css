@@ -7783,3 +7783,6 @@ input:-ms-input-placeholder {
 
 .smallerFont {
   font-size: 11px; }
+
+.item {
+  background-color: #FFFFFF; }

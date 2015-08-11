@@ -1,6 +1,12 @@
 <ion-view>
-    <ion-content class="center">
+    <ion-nav-bar class="white-bg">
+        <ion-nav-buttons side="right">
+            <a href="#/" class="button button-icon icon ion-ios-close-empty"></a>
+        </ion-nav-buttons>
+    </ion-nav-bar>
 
+
+    <ion-content class="center">
         <div>
             <div class="list list-inset ">
                 <div class="item item-input login">
@@ -13,10 +19,12 @@
             </div>
 
             <div class="text-center">
-                <button ng-click="login(username, password)" class="button button-clear smallerFont">Log In</button>
+                <!--<button ng-click="login(username, password)" class="button button-clear smallerFont">Log In</button>-->
+                <a href="#/contents" class="button button-clear smallerFont">Log In</a>
+
             </div>
         </div>
-        
+
         <!--<form>-->
         <!--<ion-list>-->
         <!--<label class="item item-input">-->
