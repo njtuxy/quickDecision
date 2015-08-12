@@ -35,6 +35,13 @@ angular.module('app', ['ionic', 'starter.controllers', 'starter.services', 'ngCo
                 controller: 'loginController'
             })
 
+            .state('sign-up', {
+                url: '/sign-up',
+                templateUrl: 'templates/sign-up.html',
+                controller: 'singUpController'
+            })
+
+
             .state('landingPage', {
                 url: '/landing',
                 templateUrl: 'templates/landing.html'
@@ -44,6 +51,13 @@ angular.module('app', ['ionic', 'starter.controllers', 'starter.services', 'ngCo
             .state('contents', {
                 url: '/contents',
                 templateUrl: 'templates/contents.html'
+            })
+
+            //Cannot debug when using Controller.
+            .state('camera', {
+                url: '/camera',
+                templateUrl: 'templates/camera.html',
+                //controller: 'CameraController'
             })
 
             .state('imageDetail', {
@@ -81,15 +95,6 @@ angular.module('app', ['ionic', 'starter.controllers', 'starter.services', 'ngCo
                 }
             })
 
-            .state('tab.camera', {
-                url: '/camera',
-                views: {
-                    'tab-camera': {
-                        templateUrl: 'templates/tab-camera.html',
-                        controller: 'CameraController'
-                    }
-                }
-            })
 
             .state('tab.chats', {
                 url: '/chats',
@@ -123,5 +128,5 @@ angular.module('app', ['ionic', 'starter.controllers', 'starter.services', 'ngCo
 
         // if none of the above states are matched, use this as the fallback
 
-        $urlRouterProvider.otherwise('/contents');
+        $urlRouterProvider.otherwise('/landing');
     });

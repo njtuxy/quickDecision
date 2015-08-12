@@ -100,19 +100,22 @@ angular.module('starter.controllers', [])
     })
 
     .controller('loginController', function ($scope, $firebaseAuth, $location, $rootScope) {
-        $scope.login = function(username, password) {
+        $scope.loginQD = function(username, password) {
             var fbAuth = $firebaseAuth($rootScope.fb);
             fbAuth.$authWithPassword({
                 email: username,
                 password: password
             }).then(function(authData) {
-                $location.path("/dash");
+                $location.path("/contents");
             }).catch(function(error) {
                 console.error("ERROR: " + error);
+                $scope.debugMsg = error;
             });
-        }
+        };
+    })
 
-        $scope.register = function(username, password) {
+    .controller('singUpController', function($scope, $firebaseAuth, $location, $rootScope){
+        $scope.registerQD = function(username, password) {
             var fbAuth = $firebaseAuth($rootScope.fb);
             fbAuth.$createUser({email: username, password: password}).then(function() {
                 return fbAuth.$authWithPassword({
@@ -120,12 +123,12 @@ angular.module('starter.controllers', [])
                     password: password
                 });
             }).then(function(authData) {
-                $location.path("/dash");
+                $location.path("/contents");
             }).catch(function(error) {
                 console.error("ERROR " + error);
+                $scope.debugMsg1 = error;
             });
         }
-
     });
 
 
