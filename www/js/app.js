@@ -41,6 +41,12 @@ angular.module('app', ['ionic', 'starter.controllers', 'starter.services', 'ngCo
                 controller: 'singUpController'
             })
 
+            .state('imageUpload', {
+                url: '/imageUpload',
+                templateUrl: 'templates/imageUpload.html',
+                controller: 'imageUploadController'
+            })
+
 
             .state('landingPage', {
                 url: '/landing',
@@ -128,5 +134,5 @@ angular.module('app', ['ionic', 'starter.controllers', 'starter.services', 'ngCo
 
         // if none of the above states are matched, use this as the fallback
 
-        $urlRouterProvider.otherwise('/landing');
+        $urlRouterProvider.otherwise('/login');
     });

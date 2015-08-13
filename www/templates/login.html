@@ -21,29 +21,13 @@
             <div class="text-center">
                 <!--<button ng-click="login(username, password)" class="button button-clear smallerFont">Log In</button>-->
                 <a class="button button-clear smallerFont" ng-click="loginQD(username,password)">Log In</a>
+
                 <div>
-                    {{debugMsg}}
+                    <p ng-if="loginSuccessfull"> login successful!</p>
+
+                    <p ng-if="loginError"> login Error!</p>
                 </div>
-
-
-
             </div>
         </div>
-
-        <!--<form>-->
-        <!--<ion-list>-->
-        <!--<label class="item item-input">-->
-        <!--<span class="input-label">Username</span>-->
-        <!--<input type="text" placeholder="">-->
-        <!--</label>-->
-        <!--<label class="item item-input">-->
-        <!--<span class="input-label">Password</span>-->
-        <!--<input type="password" placeholder="">-->
-        <!--</label>-->
-        <!--</ion-list>-->
-        <!--<div class="spacer" style="height: 40px;"></div>-->
-        <!--<a href="#/tab/dash" class="button button-stable button-block button-calm ">Log in</a>-->
-        <!--<a href="#/signup" class="button button-positive button-clear button-block ">Or create an account</a>-->
-        <!--</form>-->
     </ion-content>
 </ion-view>

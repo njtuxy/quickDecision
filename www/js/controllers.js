@@ -100,35 +100,78 @@ angular.module('starter.controllers', [])
     })
 
     .controller('loginController', function ($scope, $firebaseAuth, $location, $rootScope) {
-        $scope.loginQD = function(username, password) {
+        $scope.loginQD = function (username, password) {
             var fbAuth = $firebaseAuth($rootScope.fb);
             fbAuth.$authWithPassword({
                 email: username,
                 password: password
-            }).then(function(authData) {
+            }).then(function (authData) {
+                $scope.loginSuccessfull = true;
                 $location.path("/contents");
-            }).catch(function(error) {
+            }).catch(function (error) {
                 console.error("ERROR: " + error);
-                $scope.debugMsg = error;
+                $scope.loginError = true;
             });
         };
     })
 
-    .controller('singUpController', function($scope, $firebaseAuth, $location, $rootScope){
-        $scope.registerQD = function(username, password) {
+    .controller('singUpController', function ($scope, $firebaseAuth, $location, $rootScope) {
+        $scope.registerQD = function (username, password) {
             var fbAuth = $firebaseAuth($rootScope.fb);
-            fbAuth.$createUser({email: username, password: password}).then(function() {
+            fbAuth.$createUser({email: username, password: password}).then(function () {
                 return fbAuth.$authWithPassword({
                     email: username,
                     password: password
                 });
-            }).then(function(authData) {
-                $location.path("/contents");
-            }).catch(function(error) {
+            }).then(function (authData) {
+                $scope.singUpAuthData = authData;
+                //$location.path("/contents");
+            }).catch(function (error) {
                 console.error("ERROR " + error);
                 $scope.debugMsg1 = error;
             });
         }
+    })
+
+    .controller('imageUploadController', function($scope, $state, $rootScope, $ionicHistory, $firebaseArray, $cordovaCamera) {
+
+        $ionicHistory.clearHistory();
+
+        $scope.images = [];
+
+        var fbAuth = $rootScope.fb.getAuth();
+
+        if (fbAuth) {
+            var userReference = $rootScope.fb.child("users/" + fbAuth.uid);
+            var syncArray = $firebaseArray(userReference.child("images"));
+            $scope.images = syncArray;
+        } else {
+
+            //$state.go("firebase");
+        }
+
+        $scope.uploadMyImg = function () {
+            var options = {
+                quality: 75,
+                destinationType: Camera.DestinationType.DATA_URL,
+                sourceType: Camera.PictureSourceType.CAMERA,
+                allowEdit: true,
+                encodingType: Camera.EncodingType.JPEG,
+                popoverOptions: CameraPopoverOptions,
+                targetWidth: 500,
+                targetHeight: 500,
+                saveToPhotoAlbum: false
+            };
+
+            $cordovaCamera.getPicture(options).then(function (imageData) {
+                syncArray.$add({image: imageData}).then(function () {
+                    alert("Image has been uploaded");
+                });
+            }, function (error) {
+                console.error(error);
+            });
+        }
+
     });
 
 
