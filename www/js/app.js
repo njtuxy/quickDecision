@@ -33,17 +33,17 @@ angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'ngCordova', 'fi
                 controller: "WelcomeCtrl"
             })
 
-            .state('loginPage', {
-                url: '/login',
-                templateUrl: 'templates/login.html',
-                controller: 'loginController'
-            })
-
-            .state('sign-up', {
-                url: '/sign-up',
-                templateUrl: 'templates/sign-up.html',
-                controller: 'singUpController'
-            })
+            //.state('loginPage', {
+            //    url: '/login',
+            //    templateUrl: 'templates/login.html',
+            //    controller: 'loginController'
+            //})
+            //
+            //.state('sign-up', {
+            //    url: '/sign-up',
+            //    templateUrl: 'templates/sign-up.html',
+            //    controller: 'singUpController'
+            //})
 
             .state('imageUpload', {
                 url: '/imageUpload',
@@ -51,11 +51,10 @@ angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'ngCordova', 'fi
                 controller: 'imageUploadController'
             })
 
-
-            .state('landingPage', {
-                url: '/landing',
-                templateUrl: 'templates/landing.html'
-            })
+            //.state('landingPage', {
+            //    url: '/landing',
+            //    templateUrl: 'templates/landing.html'
+            //})
 
 
             .state('contents', {
