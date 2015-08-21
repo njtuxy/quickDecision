@@ -3,14 +3,14 @@
  */
 angular.module('qd.services', [])
 
-    .factory('Camera', ['$q', function($q) {
+    .factory('Camera', ['$q', function ($q) {
         return {
-            getPicture: function(options) {
+            getPicture: function (options) {
                 var q = $q.defer();
-                navigator.camera.getPicture(function(result) {
+                navigator.camera.getPicture(function (result) {
                     // Do any magic you need
                     q.resolve(result);
-                }, function(err) {
+                }, function (err) {
                     q.reject(err);
                 }, options);
 
@@ -19,7 +19,7 @@ angular.module('qd.services', [])
         }
     }])
 
-    .factory('Chats', function() {
+    .factory('Chats', function () {
         // Might use a resource here that returns a JSON array
 
         // Some fake testing data
@@ -51,13 +51,13 @@ angular.module('qd.services', [])
         }];
 
         return {
-            all: function() {
+            all: function () {
                 return chats;
             },
-            remove: function(chat) {
+            remove: function (chat) {
                 chats.splice(chats.indexOf(chat), 1);
             },
-            get: function(chatId) {
+            get: function (chatId) {
                 for (var i = 0; i < chats.length; i++) {
                     if (chats[i].id === parseInt(chatId)) {
                         return chats[i];
@@ -66,5 +66,43 @@ angular.module('qd.services', [])
                 return null;
             }
         };
+    })
+
+    .service("ShopService", function ($http) {
+        this.getProducts = function () {
+            var testdata = {};
+            $http.get("testdata.json").success(function (data) {
+                testdata = data;
+            });
+            return testdata;
+        };
+
+        this.getProduct = function (product_name) {
+            return $http.get("testdata.json").success(function (data) {
+                var n = _.find(data.products, function (e) {
+                    return e._id == product_name
+                });
+            });
+
+        };
+
+        //this.addProductToCart = function (e) {
+        //    var n = _.isUndefined(window.localStorage.ionTheme1_cart) ? [] : JSON.parse(window.localStorage.ionTheme1_cart), o = _.find(n, function (n) {
+        //        return n._id == e._id
+        //    });
+        //    o || n.push(e), window.localStorage.ionTheme1_cart = JSON.stringify(n)
+        //};
+        //this.getCartProducts = function () {
+        //    return JSON.parse(window.localStorage.ionTheme1_cart || "[]")
+        //};
+        //this.removeProductFromCart = function (e) {
+        //    var n = JSON.parse(window.localStorage.ionTheme1_cart), o = _.reject(n, function (n) {
+        //        return n._id == e._id
+        //    });
+        //    window.localStorage.ionTheme1_cart = JSON.stringify(o)
+        //}
+
     });
+    //
+
 

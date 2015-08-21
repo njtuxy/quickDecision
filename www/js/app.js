@@ -1,4 +1,8 @@
-angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'ngCordova', 'firebase'])
+angular.module("underscore", []).factory("_", function () {
+    return window._
+});
+
+angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'ngCordova', 'firebase', 'underscore'])
     .run(function ($ionicPlatform, $rootScope) {
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -21,17 +25,47 @@ angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'ngCordova', 'fi
         // Learn more here: https://github.com/angular-ui/ui-router
         // Set up the various states which the app can be in.
         // Each state's controller can be found in controllers.js
+
+
         $stateProvider
             .state("auth", {
                 url: "/auth",
                 templateUrl: "templates/login/auth.html",
-                "abstract": !0
+                abstract: true
 
-            }).state("auth.welcome", {
+            })
+
+            .state("auth.welcome", {
                 url: "/welcome",
                 templateUrl: "templates/login/welcome.html",
                 controller: "WelcomeCtrl"
             })
+
+            .state("shop", {
+                url: "/shop",
+                abstract: true,
+                views: {
+                    "menuContent": {templateUrl: "templates/shop/shop.html"}
+                }
+            })
+
+            .state("shophome", {
+                url: "/shophome",
+                templateUrl: "templates/shop/shop-home.html",
+                //templateUrl: 'templates/contents.html'
+                controller: "ShopController"
+            })
+
+
+            //.state("app.shop.home", {
+            //    url: "/home",
+            //    views: {
+            //        "shop-home": {
+            //            templateUrl: "templates/shop/shop-home.html",
+            //            controller: "ShopController"
+            //        }
+            //    }
+            //})
 
             //.state('loginPage', {
             //    url: '/login',
@@ -122,9 +156,8 @@ angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'ngCordova', 'fi
                     }
                 }
             });
-        ;
 
         // if none of the above states are matched, use this as the fallback
 
-        $urlRouterProvider.otherwise('/auth/welcome');
+        $urlRouterProvider.otherwise('/shophome');
     });

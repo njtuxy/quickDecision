@@ -175,107 +175,113 @@ angular.module('qd.controllers', ['firebase'])
     })
 
     //Login Window Controller
-    .controller("WelcomeCtrl", function($scope, $ionicPopup, $ionicLoading, $timeout, $firebaseAuth, $location, $rootScope) {
+    .controller("WelcomeCtrl", function ($scope, $ionicPopup, $ionicLoading, $timeout, $firebaseAuth, $location, $rootScope) {
 
         var loginPopup = {}, singupPopup = {}, forgetPasswordPopup = {};
 
-        $scope.user = {},
-            $scope.showLogIn = function () {
-                loginPopup = $ionicPopup.show({
+        $scope.user = {};
+        $scope.showLogIn = function () {
+            loginPopup = $ionicPopup.show({
+                cssClass: "popup-outer auth-view",
+                templateUrl: 'templates/login/login.html',
+                scope: $scope,
+                title: "Sign In",
+                buttons: [{text: "", type: "close-popup ion-ios-close-outline"}]
+            })
+        };
+
+        $scope.showSignUp = function () {
+            singupPopup = $ionicPopup.show({
+                cssClass: "popup-outer auth-view",
+                templateUrl: "templates/login/signup.html",
+                scope: $scope,
+                title: "Create Account",
+                buttons: [{text: "", type: "close-popup ion-ios-close-outline"}]
+            })
+        };
+        $scope.showForgotPassword = function () {
+            loginPopup.close();
+            $timeout(function () {
+                forgetPasswordPopup = $ionicPopup.show({
                     cssClass: "popup-outer auth-view",
-                    templateUrl: 'templates/login/login.html',
+                    templateUrl: "templates/login/forgot-password.html",
                     scope: $scope,
-                    title: "Sign In",
+                    title: "Reset your password",
                     buttons: [{text: "", type: "close-popup ion-ios-close-outline"}]
                 })
-            },
+            }, 0)
+        };
 
-            $scope.showSignUp = function () {
-                singupPopup = $ionicPopup.show({
-                    cssClass: "popup-outer auth-view",
-                    templateUrl: "templates/login/signup.html",
-                    scope: $scope,
-                    title: "Create Account",
-                    buttons: [{text: "", type: "close-popup ion-ios-close-outline"}]
-                })
-            },
-            $scope.showForgotPassword = function () {
-                loginPopup.close(),
-                    $timeout(function () {
-                        forgetPasswordPopup = $ionicPopup.show({
-                            cssClass: "popup-outer auth-view",
-                            templateUrl: "templates/login/forgot-password.html",
-                            scope: $scope,
-                            title: "Reset your password",
-                            buttons: [{text: "", type: "close-popup ion-ios-close-outline"}]
-                        })
-                    }, 0)
-            },
+        $scope.doLogIn = function (email, password) {
+            loginPopup.close();
+            $ionicLoading.show({
+                template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Logging in...</p>',
+                duration: 1e3
+            });
 
-            $scope.doLogIn = function (email, password) {
-                loginPopup.close(),
+            var fbAuth = $firebaseAuth($rootScope.fb);
 
-                    $ionicLoading.show({
-                        template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Logging in...</p>',
-                        duration: 1e3
-                    });
+            console.log('debug---->');
+            console.log(fbAuth);
 
-                var fbAuth = $firebaseAuth($rootScope.fb);
+            fbAuth.$authWithPassword({
+                email: email,
+                password: password
+            }).then(function (authData) {
+                $scope.loginSuccessfull = true;
+                console.log("logged in!!");
+                $location.path("/contents");
+            }).catch(function (error) {
+                console.error("ERROR: " + error);
+                $scope.loginError = true;
+            });
+        };
 
-                console.log('debug---->');
-                console.log(fbAuth);
+        $scope.doSignUp = function (email, password) {
+            singupPopup.close();
+            $ionicLoading.show({
+                template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Creating account...</p>',
+                duration: 1e3
+            });
 
-                fbAuth.$authWithPassword({
+            var fbAuth = $firebaseAuth($rootScope.fb);
+            fbAuth.$createUser({email: email, password: password}).then(function () {
+                return fbAuth.$authWithPassword({
                     email: email,
                     password: password
-                }).then(function (authData) {
-                    $scope.loginSuccessfull = true;
-                    console.log("logged in!!");
-                    $location.path("/contents");
-                }).catch(function (error) {
-                    console.error("ERROR: " + error);
-                    $scope.loginError = true;
                 });
-            },
+            }).then(function (authData) {
+                $scope.singUpAuthData = authData;
+                console.log("signed up!!")
+                $location.path("/contents");
+            }).catch(function (error) {
+                console.error("ERROR " + error);
+                $scope.debugMsg1 = error;
+            });
 
-            $scope.doSignUp = function (email, password) {
-                singupPopup.close(), $ionicLoading.show({
-                    template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Creating account...</p>',
-                    duration: 1e3
-                });
+        };
 
-                var fbAuth = $firebaseAuth($rootScope.fb);
-                fbAuth.$createUser({email: email, password: password}).then(function () {
-                    return fbAuth.$authWithPassword({
-                        email: email,
-                        password: password
-                    });
-                }).then(function (authData) {
-                    $scope.singUpAuthData = authData;
-                    console.log("signed up!!")
-                    $location.path("/contents");
-                }).catch(function (error) {
-                    console.error("ERROR " + error);
-                    $scope.debugMsg1 = error;
-                });
+        $scope.requestNewPassword = function () {
+            forgetPasswordPopup.close();
+            console.log("requesting new password")
+        };
 
-            },
-
-
-            $scope.requestNewPassword = function () {
-                forgetPasswordPopup.close(),
-                    console.log("requesting new password")
-            },
-            $scope.facebookSignIn = function () {
-                console.log("doing facebbok sign in")
-            },
-            $scope.googleSignIn = function () {
-                console.log("doing google sign in")
-            },
-            $scope.twitterSignIn = function () {
-                console.log("doing twitter sign in")
-            }
+        $scope.facebookSignIn = function () {
+            console.log("doing facebbok sign in")
+        };
+        $scope.googleSignIn = function () {
+            console.log("doing google sign in")
+        };
+        $scope.twitterSignIn = function () {
+            console.log("doing twitter sign in")
+        }
     })
+
+    .controller("ShopController", function ($scope, $http) {
+        $http.get("testdata.json").success(function (data) {
+            $scope.products = data.products;
+        });
+    });
 
 
 
