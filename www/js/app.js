@@ -1,11 +1,4 @@
-// Ionic Starter App
-// angular.module is a global place for creating, registering and retrieving Angular modules
-// 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
-// the 2nd parameter is an array of 'requires'
-
-//var fb = null;
-
-angular.module('app', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova', 'firebase'])
+angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'ngCordova', 'firebase'])
     .run(function ($ionicPlatform, $rootScope) {
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -29,6 +22,17 @@ angular.module('app', ['ionic', 'starter.controllers', 'starter.services', 'ngCo
         // Set up the various states which the app can be in.
         // Each state's controller can be found in controllers.js
         $stateProvider
+            .state("auth", {
+                url: "/auth",
+                templateUrl: "templates/login/auth.html",
+                "abstract": !0
+
+            }).state("auth.welcome", {
+                url: "/welcome",
+                templateUrl: "templates/login/welcome.html",
+                controller: "WelcomeCtrl"
+            })
+
             .state('loginPage', {
                 url: '/login',
                 templateUrl: 'templates/login.html',
@@ -78,17 +82,6 @@ angular.module('app', ['ionic', 'starter.controllers', 'starter.services', 'ngCo
                 templateUrl: 'templates/tabs.html'
             })
 
-            //.state('loginPage', {
-            //    url: '/login',
-            //    views: {
-            //        'login': {
-            //            templateUrl: 'templates/login.html',
-            //            controller: 'LoginController'
-            //        }
-            //    }
-            //})
-
-
             // Each tab has its own nav history stack:
 
             .state('tab.dash', {
@@ -134,5 +127,5 @@ angular.module('app', ['ionic', 'starter.controllers', 'starter.services', 'ngCo
 
         // if none of the above states are matched, use this as the fallback
 
-        $urlRouterProvider.otherwise('/login');
+        $urlRouterProvider.otherwise('/auth/welcome');
     });

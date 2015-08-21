@@ -2,7 +2,7 @@
  * Created by yxia on 8/6/15.
  */
 
-angular.module('starter.controllers', [])
+angular.module('qd.controllers', [])
 
     .controller('DashCtrl', function ($scope) {
     })
@@ -84,7 +84,6 @@ angular.module('starter.controllers', [])
                 $cordovaCamera.getPicture(options).then(function (imageData) {
                     $scope.imgSrc = "data:image/jpeg;base64," + imageData;
                 }, function (err) {
-                    console.log(err);
                 });
             };
 
@@ -172,6 +171,69 @@ angular.module('starter.controllers', [])
             });
         }
 
-    });
+    })
+
+    //Login Window Controller
+    .controller("WelcomeCtrl", ["$scope", "$ionicPopup", "$ionicLoading", "$timeout", function ($scope, $ionicPopup, $ionicLoading, $timeout) {
+        var s = {}, i = {}, l = {};
+        $scope.user = {},
+            $scope.showLogIn = function () {
+                s = $ionicPopup.show({
+                    cssClass: "popup-outer auth-view",
+                    templateUrl: 'templates/login/login.html',
+                    scope: $scope,
+                    title: "Sign In",
+                    buttons: [{text: "", type: "close-popup ion-ios-close-outline"}]
+                })
+            },
+
+            $scope.showSignUp = function () {
+                i = $ionicPopup.show({
+                    cssClass: "popup-outer auth-view",
+                    templateUrl: "templates/login/signup.html",
+                    scope: $scope,
+                    title: "Create Account",
+                    buttons: [{text: "", type: "close-popup ion-ios-close-outline"}]
+                })
+            },
+            $scope.showForgotPassword = function () {
+                s.close(),
+                    $timeout(function () {
+                        l = $ionicPopup.show({
+                            cssClass: "popup-outer auth-view",
+                            templateUrl: "templates/login/forgot-password.html",
+                            scope: $scope,
+                            title: "Reset your password",
+                            buttons: [{text: "", type: "close-popup ion-ios-close-outline"}]
+                        })
+                    }, 0)
+            },
+            $scope.doLogIn = function () {
+                s.close(), $ionicLoading.show({
+                    template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Logging in...</p>',
+                    duration: 1e3
+                }), console.log("doing log in")
+            },
+            $scope.doSignUp = function () {
+                i.close(), $ionicLoading.show({
+                    template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Creating account...</p>',
+                    duration: 1e3
+                }), console.log("doing sign up")
+            },
+            $scope.requestNewPassword = function () {
+                l.close(),
+                    console.log("requesting new password")
+            },
+            $scope.facebookSignIn = function () {
+                console.log("doing facebbok sign in")
+            },
+            $scope.googleSignIn = function () {
+                console.log("doing google sign in")
+            },
+            $scope.twitterSignIn = function () {
+                console.log("doing twitter sign in")
+            }
+    }])
+
 
 

@@ -1,0 +1,30 @@
+<div class="row auth-content-outer">
+    <div class="col col-center">
+        <div class="row related-copy">
+            <div class="col">
+                <h5 class="auth-copy">Sign in with your email to see the amazing new things you\'ve missed.</h5>
+            </div>
+        </div>
+        <div class="row form-wrapper">
+            <div class="col">
+                <form name="login_form" class="" novalidate>
+                    <div class="form-fields-outer list list-inset">
+                        <label class="item item-input">
+                            <input type="email" placeholder="Email" name="email" ng-model="user.email" required>
+                        </label>
+                        <label class="item item-input" show-hide-container>
+                            <input type="password" placeholder="Password" name="password" ng-model="user.password" required show-hide-input>
+                        </label>
+                    </div>
+                    <a class="button button-small button-clear icon-left ion-help-circled" ng-click="showForgotPassword()">
+                        Forgot password
+                    </a>
+                    <button type="submit" class="log-in button button-block" ng-click="doLogIn()" ng-disabled="login_form.$invalid">
+                        Sign In
+                    </button>
+                    <p ng-show="error" class="message error">{{error}}</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

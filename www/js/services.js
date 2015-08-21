@@ -1,7 +1,7 @@
 /**
  * Created by yxia on 8/6/15.
  */
-angular.module('starter.services', [])
+angular.module('qd.services', [])
 
     .factory('Camera', ['$q', function($q) {
         return {

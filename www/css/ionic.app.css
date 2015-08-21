@@ -7786,3 +7786,236 @@ input:-ms-input-placeholder {
 
 .item {
   background-color: #FFFFFF; }
+
+.spinner-on-load {
+  -webkit-animation: spin 2s infinite linear;
+  animation: spin 2s infinite linear;
+  position: absolute;
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
+  font-size: 50px;
+  color: #FFF; }
+
+ion-spinner.spinner-on-load {
+  -webkit-animation: none;
+  animation: none;
+  stroke: #FFF; }
+
+.multi-bg-outer {
+  position: relative;
+  background-color: rgba(150, 150, 150, 0.7);
+  height: 100%;
+  -webkit-transition: all ease-in-out .3s;
+  transition: all ease-in-out .3s;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -2; }
+
+.multi-bg-outer.finish-loading {
+  background-color: transparent; }
+
+.multi-bg-outer .bg-overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #303030;
+  z-index: -1;
+  opacity: .6; }
+
+.multi-bg-outer .multi-bg {
+  display: none; }
+
+.popup-outer .popup {
+  border-radius: 4px;
+  background-color: #fcfcfc;
+  width: 90vw;
+  max-width: 300px; }
+
+.popup-outer .popup-head {
+  padding: 10px; }
+
+.popup-outer .popup-title {
+  color: #333; }
+
+.popup-outer .popup-buttons {
+  height: 0;
+  min-height: 0;
+  padding: 0; }
+
+.popup-outer .popup-buttons .close-popup {
+  top: 0;
+  position: absolute;
+  right: 0;
+  background-color: #fcfcfc;
+  color: #333;
+  border: none;
+  padding: 0;
+  min-width: 0;
+  min-height: 0;
+  margin: 6px;
+  display: inline-block;
+  font-family: Ionicons;
+  font-size: 26px; }
+
+.auth-outer {
+  background-color: transparent !important; }
+
+.auth-outer ion-view {
+  background-color: transparent;
+  box-shadow: none !important; }
+
+.auth-outer ion-header-bar {
+  background-color: transparent; }
+
+.auth-outer ion-header-bar * {
+  color: #333; }
+
+.auth-view ion-content .scroll {
+  height: 100%; }
+
+.auth-view .auth-content-outer {
+  padding: 0;
+  min-height: 100%; }
+
+.auth-view .auth-content-outer .col {
+  padding: 0; }
+
+.auth-view .related-copy {
+  padding-top: 0;
+  padding-right: 0;
+  padding-left: 0; }
+
+.auth-view .related-copy .col {
+  padding: 0; }
+
+.auth-view .related-copy .auth-copy {
+  color: #404040;
+  font-weight: 400;
+  margin: 5px 0 10px 0; }
+
+.auth-view .form-wrapper {
+  padding: 0; }
+
+.auth-view .form-wrapper .col {
+  padding-bottom: 0;
+  padding-right: 0;
+  padding-left: 0; }
+
+.auth-view .form-wrapper .form-fields-outer {
+  margin: 0; }
+
+.auth-view .form-wrapper .form-fields-outer .item-input {
+  margin-bottom: 15px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  border-radius: 4px;
+  background-color: #e3e4e6;
+  border-color: #dedfe1; }
+
+.auth-view .form-wrapper .form-fields-outer .item-input:last-child {
+  margin-bottom: 5px; }
+
+.auth-view .form-wrapper .log-in.button, .auth-view .form-wrapper .reset-password.button, .auth-view .form-wrapper .sign-up.button {
+  background-color: #4587c3;
+  color: #FFF;
+  border-color: #3e82c0;
+  font-weight: 500; }
+
+.auth-view .message {
+  text-align: center;
+  color: gray; }
+
+.auth-view .message.error:before {
+  content: '*';
+  color: #ff5a60;
+  text-shadow: 1px 1px 0 rgba(243, 0, 9, 0.3);
+  margin-right: 5px;
+  font-size: 20px; }
+
+.auth-view .show-hide-input {
+  display: inherit;
+  width: 100%; }
+
+.auth-view .toggle-view-anchor {
+  position: absolute;
+  top: 6px;
+  right: 0;
+  height: 34px;
+  line-height: 34px; }
+
+.auth-view .toggle-view-anchor * {
+  color: #92969e !important;
+  display: block;
+  font-size: 24px;
+  width: 45px;
+  text-align: center;
+  font-weight: 500; }
+
+.welcome-view .top-content {
+  height: 66%; }
+
+.welcome-view .top-content .app-copy {
+  text-align: center;
+  padding-top: 13vh; }
+
+.welcome-view .top-content .app-logo {
+  font-size: 60px;
+  font-family: sans-serif;
+  font-weight: 600;
+  color: #FFF;
+  letter-spacing: 8px;
+  text-transform: uppercase; }
+
+.welcome-view .top-content .app-tagline {
+  font-size: 16px;
+  margin-top: 0;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.95); }
+
+.welcome-view .bottom-content {
+  height: 34%; }
+
+.welcome-view .bottom-content .facebook-sign-in, .welcome-view .bottom-content .google-sign-in, .welcome-view .bottom-content .twitter-sign-in {
+  border-radius: 4px;
+  font-weight: 500; }
+
+.welcome-view .bottom-content .google-sign-in {
+  color: #dd4c39;
+  background-color: #FFF;
+  border-color: #fafafa; }
+
+.welcome-view .bottom-content .facebook-sign-in {
+  color: #FFF;
+  background-color: #294886;
+  border-color: #27447e; }
+
+.welcome-view .bottom-content .twitter-sign-in {
+  color: #FFF;
+  background-color: #00a3dc;
+  border-color: #009bd2; }
+
+.welcome-view .bottom-content .split-actions {
+  padding: 0; }
+
+.welcome-view .bottom-content .split-actions .button {
+  margin: 0; }
+
+.welcome-view .bottom-content .split-actions .col {
+  padding-top: 0;
+  padding-bottom: 0; }
+
+.welcome-view .bottom-content .split-actions .col:first-child {
+  padding-left: 0; }
+
+.welcome-view .bottom-content .split-actions .col:last-child {
+  padding-right: 0; }
+
+.welcome-view .bottom-content .other-actions {
+  margin-top: 20px; }
+
+.welcome-view .bottom-content .other-actions .button-clear {
+  font-weight: 500;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85); }
