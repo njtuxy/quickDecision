@@ -47,8 +47,8 @@ angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'ngCordova', 'fi
                 url: '/',
                 views: {
                     'shop-home': {
-                        templateUrl: 'templates/shop/shop-home.html'
-                        //controller: "ShopController"
+                        templateUrl: 'templates/shop/shop-home.html',
+                        controller: "ShopController"
                     }
                 }
             })
@@ -57,7 +57,8 @@ angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'ngCordova', 'fi
                 url: '/shop-popular',
                 views: {
                     'shop-popular': {
-                        templateUrl: 'templates/test/view2.html'
+                        templateUrl: 'templates/shop/shop-popular.html',
+                        controller: "ShopController"
                     }
                 }
             })
@@ -66,7 +67,8 @@ angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'ngCordova', 'fi
                 url: '/shop-sale',
                 views: {
                     'shop-sale': {
-                        templateUrl: 'templates/test/view3.html'
+                        templateUrl: 'templates/shop/shop-sale.html',
+                        controller: "ShopController"
                     }
                 }
             });
