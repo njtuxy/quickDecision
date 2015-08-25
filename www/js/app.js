@@ -1,8 +1,8 @@
-angular.module("underscore", []).factory("_", function () {
-    return window._
-});
+//angular.module("underscore", []).factory("_", function () {
+//    return window._
+//});
 
-angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'ngCordova', 'firebase', 'underscore'])
+angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'qd.directives', 'ngCordova', 'firebase', 'underscore'])
     .run(function ($ionicPlatform, $rootScope) {
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
