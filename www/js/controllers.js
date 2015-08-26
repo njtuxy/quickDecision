@@ -294,5 +294,47 @@ angular.module('qd.controllers', ['firebase'])
         ];
     })
 
+    .controller('sideMenuController', function($scope, $http){
+        $http.get("testdata.json").success(function (data) {
+            $scope.loggedUser = data.users[3];
+        });
+    })
+
+    .controller("ProfileCtrl", function ($scope, $stateParams, PostService, $ionicHistory, $state, $ionicScrollDelegate, $http) {
+
+        $http.get("testdata.json").success(function (data) {
+            $scope.user = data.users[3];
+        });
+
+
+        $scope.$on("$ionicView.afterEnter", function () {
+            $ionicScrollDelegate.$getByHandle("profile-scroll").resize()
+        });
+        //var a = $stateParams.userId;
+        var a = 3;
+        $scope.myProfile = $scope.loggedUser._id == a;
+        $scope.posts = [];
+        $scope.likes = [];
+        $scope.user = {};
+
+        $scope.posts = PostService.getUserPosts(a);
+
+        //PostService.getUserDetails(a).then(function (n) {
+        //    $scope.user = n
+        //});
+        //PostService.getUserLikes(a).then(function (n) {
+        //    $scope.likes = n
+        //});
+        //$scope.getUserLikes = function (e) {
+        //    $ionicHistory.currentView($ionicHistory.backView());
+        //    $ionicHistory.nextViewOptions({disableAnimate: !0}); $state.go("app.profile.likes", {userId: e})
+        //};
+        //
+        //$scope.getUserPosts = function (e) {
+        //    $ionicHistory.currentView($ionicHistory.backView()); $ionicHistory.nextViewOptions({disableAnimate: !0}); $state.go("app.profile.posts", {userId: e})
+        //}
+    });
+
+
 
 

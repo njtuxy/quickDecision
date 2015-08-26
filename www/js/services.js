@@ -68,7 +68,7 @@ angular.module('qd.services', [])
         };
     })
 
-    .service("ShopService", function ($http) {
+    .service("ShopService", function ($http, _) {
         this.getProducts = function () {
             var testdata = {};
             $http.get("testdata.json").success(function (data) {
@@ -83,26 +83,69 @@ angular.module('qd.services', [])
                     return e._id == product_name
                 });
             });
-
         };
 
-        //this.addProductToCart = function (e) {
-        //    var n = _.isUndefined(window.localStorage.ionTheme1_cart) ? [] : JSON.parse(window.localStorage.ionTheme1_cart), o = _.find(n, function (n) {
-        //        return n._id == e._id
-        //    });
-        //    o || n.push(e), window.localStorage.ionTheme1_cart = JSON.stringify(n)
-        //};
-        //this.getCartProducts = function () {
-        //    return JSON.parse(window.localStorage.ionTheme1_cart || "[]")
-        //};
-        //this.removeProductFromCart = function (e) {
-        //    var n = JSON.parse(window.localStorage.ionTheme1_cart), o = _.reject(n, function (n) {
-        //        return n._id == e._id
-        //    });
-        //    window.localStorage.ionTheme1_cart = JSON.stringify(o)
-        //}
+    })
 
+    .service("PostService", function ($http) {
+        this.getUserPosts = function (user_id) {
+            return $http.get("testdata.json").success(function (data) {
+                var n = _.filter(data.posts, function (post) {
+                    return post.userId == user_id
+                });
+            });
+        };
     });
-    //
+
+//.service("PostService", ["$http", "$q", function (e, n) {
+//    this.getUserDetails = function (t) {
+//        var o = n.defer();
+//        return e.get("database.json").success(function (e) {
+//            var n = _.find(e.users, function (e) {
+//                return e._id == t
+//            });
+//            o.resolve(n)
+//        }), o.promise
+//    }, this.getUserPosts = function (t) {
+//        var o = n.defer();
+//        return e.get("database.json").success(function (e) {
+//            var n = _.filter(e.posts, function (e) {
+//                return e.userId == t
+//            }), i = _.sortBy(n, function (e) {
+//                return new Date(e.date)
+//            }), s = _.find(e.users, function (e) {
+//                return e._id == t
+//            }), a = _.each(i.reverse(), function (e) {
+//                return e.user = s, e
+//            });
+//            o.resolve(a)
+//        }), o.promise
+//    }, this.getUserLikes = function (t) {
+//        var o = n.defer();
+//        return e.get("database.json").success(function (e) {
+//            var n = e.posts.slice(0, 4), t = _.sortBy(n, function (e) {
+//                return new Date(e.date)
+//            }), i = _.each(t.reverse(), function (n) {
+//                return n.user = _.find(e.users, function (e) {
+//                    return e._id == n.userId
+//                }), n
+//            });
+//            o.resolve(i)
+//        }), o.promise
+//    }, this.getFeed = function (t) {
+//        var o = 5, i = o * (t - 1), s = 1, a = 1, l = n.defer();
+//        return e.get("database.json").success(function (e) {
+//            s = e.posts.length, a = s / o;
+//            var n = _.sortBy(e.posts, function (e) {
+//                return new Date(e.date)
+//            }), t = n.slice(i, i + o), r = _.each(t.reverse(), function (n) {
+//                return n.user = _.find(e.users, function (e) {
+//                    return e._id == n.userId
+//                }), n
+//            });
+//            l.resolve({posts: r, totalPages: a})
+//        }), l.promise
+//    }
+//}])
 
 

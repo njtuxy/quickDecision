@@ -1,5 +1,5 @@
-<ion-view ng-class="{\'own-profile\': myProfile}" class="profile-view" cache-view="false" view-title="Profile">
-    <ion-content has-bouncing=\'false\' class="profile-content" delegate-handle="profile-scroll">
+<ion-view ng-class="{'own-profile': myProfile}" class="profile-view" cache-view="false" view-title="Profile">
+    <ion-content has-bouncing='false' class="profile-content" delegate-handle="profile-scroll">
         <div class="row profile-data">
             <div class="col">
                 <ion-slide-box class="profile-slides" on-slide-changed="slideHasChanged($index)">
@@ -55,12 +55,12 @@
                 <div class="row split-actions">
                     <div class="col user-interaction">
                         <p>
-                            <a class="user-interaction-tab" ng-class="{active: (\'app.profile.posts\' | includedByState)}" nav-transition="none" ng-click="getUserPosts(user._id)" role="tab"><b>{{user.followers}}</b> Posts</a>
+                            <a class="user-interaction-tab" ng-class="{active: ('app.profile.posts' | includedByState)}" nav-transition="none" ng-click="getUserPosts(user._id)" role="tab"><b>{{user.followers}}</b> Posts</a>
                         </p>
                     </div>
                     <div class="col user-interaction">
                         <p>
-                            <a class="user-interaction-tab" ng-class="{active: (\'app.profile.likes\' | includedByState)}" nav-transition="none" ng-click="getUserLikes( user._id)" role="tab"><b>{{user.following}}</b> Likes</a>
+                            <a class="user-interaction-tab" ng-class="{active: ('app.profile.likes' | includedByState)}" nav-transition="none" ng-click="getUserLikes( user._id)" role="tab"><b>{{user.following}}</b> Likes</a>
                         </p>
                     </div>
                 </div>
