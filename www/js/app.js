@@ -34,6 +34,17 @@ angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'qd.directives',
                 controller: "sideMenuController"
             })
 
+            .state("app.feed", {
+                url: "/feed",
+                views: {
+                    menuContent: {
+                        templateUrl: "templates/theme1/feed.html",
+                        controller: "FeedCtrl"
+                    }
+                }
+            })
+
+
             .state("app.shop", {
                 url: "/shop",
                 abstract: true,
@@ -86,11 +97,10 @@ angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'qd.directives',
             })
 
             .state('app.profile.posts', {
-                url: '/shop-sale',
+                url: "/posts",
                 views: {
-                    'shop-sale': {
-                        templateUrl: 'templates/profile/profile.posts.html',
-                        controller: "ShopController"
+                    "profileContent": {
+                        templateUrl: "templates/profile/profile.posts.html"
                     }
                 }
             })

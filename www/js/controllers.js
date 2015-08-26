@@ -294,47 +294,93 @@ angular.module('qd.controllers', ['firebase'])
         ];
     })
 
-    .controller('sideMenuController', function($scope, $http){
+    .controller('sideMenuController', function ($scope, $http) {
         $http.get("testdata.json").success(function (data) {
             $scope.loggedUser = data.users[3];
         });
     })
 
-    .controller("ProfileCtrl", function ($scope, $stateParams, PostService, $ionicHistory, $state, $ionicScrollDelegate, $http) {
+    .controller("ProfileCtrl", function ($scope, $stateParams, PostService, $ionicHistory, $state, $ionicScrollDelegate, $http, _) {
 
         $http.get("testdata.json").success(function (data) {
             $scope.user = data.users[3];
+
+            $scope.posts = _.filter(data.posts, function (post) {
+                return post.userId == 8
+            });
+
+            $scope.myProfile = true;
         });
 
 
         $scope.$on("$ionicView.afterEnter", function () {
             $ionicScrollDelegate.$getByHandle("profile-scroll").resize()
         });
+
         //var a = $stateParams.userId;
-        var a = 3;
-        $scope.myProfile = $scope.loggedUser._id == a;
-        $scope.posts = [];
-        $scope.likes = [];
-        $scope.user = {};
-
-        $scope.posts = PostService.getUserPosts(a);
-
-        //PostService.getUserDetails(a).then(function (n) {
-        //    $scope.user = n
-        //});
-        //PostService.getUserLikes(a).then(function (n) {
-        //    $scope.likes = n
-        //});
-        //$scope.getUserLikes = function (e) {
-        //    $ionicHistory.currentView($ionicHistory.backView());
-        //    $ionicHistory.nextViewOptions({disableAnimate: !0}); $state.go("app.profile.likes", {userId: e})
-        //};
+        //var a = 3;
+        //$scope.myProfile = $scope.loggedUser._id == a;
+        //$scope.posts = [];
+        //$scope.likes = [];
+        //$scope.user = {};
         //
-        //$scope.getUserPosts = function (e) {
-        //    $ionicHistory.currentView($ionicHistory.backView()); $ionicHistory.nextViewOptions({disableAnimate: !0}); $state.go("app.profile.posts", {userId: e})
-        //}
-    });
+        //$http.get("testdata.json").success(function (data) {
+        //});
 
+    })
+
+
+//PostService.getUserDetails(a).then(function (n) {
+    //    $scope.user = n
+    //});
+    //PostService.getUserLikes(a).then(function (n) {
+    //    $scope.likes = n
+    //});
+    //$scope.getUserLikes = function (e) {
+    //    $ionicHistory.currentView($ionicHistory.backView());
+    //    $ionicHistory.nextViewOptions({disableAnimate: !0}); $state.go("app.profile.likes", {userId: e})
+    //};
+    //
+    //$scope.getUserPosts = function (e) {
+    //    $ionicHistory.currentView($ionicHistory.backView()); $ionicHistory.nextViewOptions({disableAnimate: !0}); $state.go("app.profile.posts", {userId: e})
+    //}
+    //});
+
+
+    .controller("FeedCtrl", function ($scope, $http) {
+        $http.get("testdata.json").success(function (data) {
+            $scope.posts = _.filter(data.posts, function (post) {
+                return post.userId == 8
+            });
+        });
+//$scope.posts = [];
+        //$scope.page = 1;
+        //$scope.totalPages = 1;
+        //$scope.doRefresh = function () {
+        //    //PostService.getFeed(1).then(function (n) {
+        //    $scope.totalPages = 1
+        //    $scope.posts = n.posts;
+        //    $scope.$broadcast("scroll.refreshComplete")
+        //    //})
+        //    //};
+        //    $scope.getNewData = function () {
+        //        $scope.$broadcast("scroll.refreshComplete")
+        //    };
+        //    $scope.loadMoreData = function () {
+        //        $scope.page += 1;
+        //        PostService.getFeed($scope.page).then(function (n) {
+        //            $scope.totalPages = n.totalPages;
+        //            $scope.posts = $scope.posts.concat(n.posts);
+        //            $scope.$broadcast("scroll.infiniteScrollComplete")
+        //        })
+        //    };
+        //    $scope.moreDataCanBeLoaded = function () {
+        //        return false;
+        //        //return $scope.totalPages > $scope.page
+        //    };
+        //    $scope.doRefresh()
+        //}
+    })
 
 
 
