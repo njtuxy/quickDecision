@@ -27,6 +27,21 @@ angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'qd.directives',
         // Each state's controller can be found in controllers.js
 
         $stateProvider
+
+            .state("auth", {
+                url: "/auth",
+                templateUrl: "templates/login/auth.html",
+                abstract: true
+
+            })
+
+            .state("auth.welcome", {
+                url: "/welcome",
+                templateUrl: "templates/login/welcome.html",
+                controller: "WelcomeCtrl"
+            })
+
+
             .state("app", {
                 url: "/app",
                 abstract: true,
@@ -105,6 +120,25 @@ angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'qd.directives',
                 }
             })
 
+            .state('app.profile.addnewpost', {
+                url: "/new-post",
+                views: {
+                    "profileContent": {
+                        templateUrl: "templates/posts/add-post.html",
+                        controller: "postUploadController"
+                    }
+                }
+            });
+
+            //.state('contents', {
+            //    url: "/contents",
+            //    views: {
+            //        'mainContent' :{
+            //            templateUrl: "templates/test/view1.html"
+            //        }
+            //    }
+            //})
+
         //.state('app.contents', {
         //    url: '/contents',
         //    views: {
@@ -114,18 +148,6 @@ angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'qd.directives',
         //    }
         //})
 
-        //.state("auth", {
-        //    url: "/auth",
-        //    templateUrl: "templates/login/auth.html",
-        //    abstract: true
-        //
-        //})
-        //
-        //.state("auth.welcome", {
-        //    url: "/welcome",
-        //    templateUrl: "templates/login/welcome.html",
-        //    controller: "WelcomeCtrl"
-        //})
         //
         //
         //.state("shophome", {
@@ -245,7 +267,7 @@ angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'qd.directives',
 
 // if none of the above states are matched, use this as the fallback
 
-        $urlRouterProvider.otherwise('/app/shop/');
+        $urlRouterProvider.otherwise('/app/feed');
         //$urlRouterProvider.otherwise('/shop-home');
     })
 ;

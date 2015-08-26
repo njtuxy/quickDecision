@@ -8954,3 +8954,28 @@ ion-nav-bar.checkout-color * .buttons button::before {
 
 .checkout-view .submit-order-btn {
   font-weight: 500; }
+
+.action-sheet-group {
+  margin-bottom: 2px;
+  border-radius: 4px;
+  background-color: #48babb;
+  overflow: hidden; }
+
+.action-sheet .button {
+  display: block;
+  height: 10px;
+  width: 100%;
+  border-radius: 0;
+  border-color: #48babb;
+  background-color: transparent;
+  color: rgba(250, 250, 250, 0.7);
+  font-size: 14px; }
+
+.action-sheet .button:hover {
+  color: #ffb22a; }
+
+.action-sheet .button.active, .action-sheet .button.activated {
+  box-shadow: none;
+  border-color: #1ebabb;
+  color: #ffb22a;
+  background: #1ebabb; }

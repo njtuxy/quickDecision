@@ -133,6 +133,29 @@ angular.module('qd.controllers', ['firebase'])
     //})
 
 
+    .controller('postUploadController', function ($scope, $state, $rootScope, $ionicHistory, $firebaseArray) {
+        $ionicHistory.clearHistory();
+        $scope.posts = [];
+        var fbAuth = $rootScope.fb.getAuth();
+
+        if (fbAuth) {
+            var userReference = $rootScope.fb.child("users/" + fbAuth.uid);
+            var syncArray = $firebaseArray(userReference.child("posts"));
+            $scope.posts = syncArray;
+        } else {
+            console.log("Error found!");
+        }
+
+
+        $scope.uploadPost = function () {
+            console.log(fbAuth);
+            syncArray.$add({"xxx": "text1111"}).then(function () {
+                alert("post uploaded!");
+            });
+        }
+
+    })
+
     .controller('imageUploadController', function ($scope, $state, $rootScope, $ionicHistory, $firebaseArray, $cordovaCamera) {
 
         $ionicHistory.clearHistory();
@@ -174,8 +197,8 @@ angular.module('qd.controllers', ['firebase'])
 
     })
 
-    //Login Window Controller
-    .controller("WelcomeCtrl", function ($scope, $ionicPopup, $ionicLoading, $timeout, $firebaseAuth, $location, $rootScope) {
+    //Controllers for welcome page, login page and sign up page.
+    .controller("WelcomeCtrl", function ($scope, $ionicPopup, $ionicLoading, $timeout, $firebaseAuth, $location, $rootScope, $state) {
 
         var loginPopup = {}, singupPopup = {}, forgetPasswordPopup = {};
 
@@ -199,6 +222,7 @@ angular.module('qd.controllers', ['firebase'])
                 buttons: [{text: "", type: "close-popup ion-ios-close-outline"}]
             })
         };
+
         $scope.showForgotPassword = function () {
             loginPopup.close();
             $timeout(function () {
@@ -221,16 +245,14 @@ angular.module('qd.controllers', ['firebase'])
 
             var fbAuth = $firebaseAuth($rootScope.fb);
 
-            console.log('debug---->');
-            console.log(fbAuth);
-
             fbAuth.$authWithPassword({
                 email: email,
                 password: password
             }).then(function (authData) {
-                $scope.loginSuccessfull = true;
+                //$scope.loginSuccessfull = true;
                 console.log("logged in!!");
-                $location.path("/contents");
+                //$location.path("/contents");
+                $state.go("app.feed");
             }).catch(function (error) {
                 console.error("ERROR: " + error);
                 $scope.loginError = true;
@@ -347,40 +369,43 @@ angular.module('qd.controllers', ['firebase'])
     //});
 
 
-    .controller("FeedCtrl", function ($scope, $http) {
+    .controller("FeedCtrl", function ($scope, $http, $ionicActionSheet) {
+        $scope.debugText = "some text xxx";
+
         $http.get("testdata.json").success(function (data) {
             $scope.posts = _.filter(data.posts, function (post) {
                 return post.userId == 8
             });
+
+
         });
-//$scope.posts = [];
-        //$scope.page = 1;
-        //$scope.totalPages = 1;
-        //$scope.doRefresh = function () {
-        //    //PostService.getFeed(1).then(function (n) {
-        //    $scope.totalPages = 1
-        //    $scope.posts = n.posts;
-        //    $scope.$broadcast("scroll.refreshComplete")
-        //    //})
-        //    //};
-        //    $scope.getNewData = function () {
-        //        $scope.$broadcast("scroll.refreshComplete")
-        //    };
-        //    $scope.loadMoreData = function () {
-        //        $scope.page += 1;
-        //        PostService.getFeed($scope.page).then(function (n) {
-        //            $scope.totalPages = n.totalPages;
-        //            $scope.posts = $scope.posts.concat(n.posts);
-        //            $scope.$broadcast("scroll.infiniteScrollComplete")
-        //        })
-        //    };
-        //    $scope.moreDataCanBeLoaded = function () {
-        //        return false;
-        //        //return $scope.totalPages > $scope.page
-        //    };
-        //    $scope.doRefresh()
-        //}
-    })
+
+        $scope.showActionsheet = function () {
+            $ionicActionSheet.show({
+                //titleText: 'Upload A Picture',
+                buttons: [
+                    {text: '<i class="icon ion-ios-camera-outline"></i> Camera'},
+                    {text: '<i class="icon ion-images"></i> Gallery'},
+                ],
+                //destructiveText: 'Delete',
+                //cancelText: 'Cancel',
+
+                cancel: function () {
+                    console.log('CANCELLED');
+                },
+                buttonClicked: function (index) {
+                    console.log('BUTTON CLICKED', index);
+                    
+                    return true;
+                },
+                //destructiveButtonClicked: function () {
+                //    console.log('DESTRUCT');
+                //    return true;
+                //}
+            });
+        };
+
+    });
 
 
 

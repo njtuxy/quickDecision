@@ -13,12 +13,15 @@
                             <input type="email" placeholder="Email" name="email" ng-model="user.email" required>
                         </label>
                         <label class="item item-input" show-hide-container>
-                            <input type="password" placeholder="Password" name="password" ng-model="user.password" required show-hide-input>
+                            <input type="password" placeholder="Password" name="password" ng-model="user.password"
+                                   required show-hide-input>
                         </label>
                     </div>
+
                     <a class="button button-small button-clear icon-left ion-help-circled" ng-click="showForgotPassword()">
                         Forgot password
                     </a>
+
                     <button type="submit" class="log-in button button-block" ng-click="doLogIn(user.email, user.password)" ng-disabled="login_form.$invalid">
                         Sign In
                     </button>
