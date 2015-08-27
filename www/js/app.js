@@ -192,12 +192,13 @@ angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'qd.directives',
         ////})
         //
         //
-        ////Cannot debug when using Controller.
-        //.state('camera', {
-        //    url: '/camera',
-        //    templateUrl: 'templates/camera.html',
-        //    //controller: 'CameraController'
-        //})
+        //Cannot debug when using Controller.
+        .state('camera', {
+            url: '/camera',
+            templateUrl: 'templates/camera.html',
+            //controller: 'CameraController'
+        })
+
         //
         //.state('imageDetail', {
         //    url: '/imageDetail',
@@ -267,7 +268,7 @@ angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'qd.directives',
 
 // if none of the above states are matched, use this as the fallback
 
-        $urlRouterProvider.otherwise('/app/feed');
+        $urlRouterProvider.otherwise('/camera');
         //$urlRouterProvider.otherwise('/shop-home');
     })
 ;

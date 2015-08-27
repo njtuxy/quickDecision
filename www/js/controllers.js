@@ -66,7 +66,6 @@ angular.module('qd.controllers', ['firebase'])
     })
 
     .controller('CameraController', function ($ionicPlatform, $scope, $cordovaCamera) {
-        //$scope.debugText = "debug text11";
         $ionicPlatform.ready(function () {
             var options = {
                 quality: 100,
@@ -369,14 +368,45 @@ angular.module('qd.controllers', ['firebase'])
     //});
 
 
-    .controller("FeedCtrl", function ($scope, $http, $ionicActionSheet) {
-        $scope.debugText = "some text xxx";
+    .controller("FeedCtrl", function ($scope, $http, $ionicActionSheet, $state, $ionicPlatform, $cordovaCamera) {
 
         $http.get("testdata.json").success(function (data) {
             $scope.posts = _.filter(data.posts, function (post) {
                 return post.userId == 8
             });
 
+
+        });
+
+        var options = {};
+
+        $ionicPlatform.ready(function () {
+            var options = {
+                quality: 100,
+                destinationType: Camera.DestinationType.DATA_URL,
+                sourceType: Camera.PictureSourceType.CAMERA,
+                allowEdit: true,
+                encodingType: Camera.EncodingType.JPEG,
+                targetWidth: 100,
+                targetHeight: 100,
+                popoverOptions: CameraPopoverOptions,
+                saveToPhotoAlbum: false
+            };
+
+            //$scope.takePicture = function () {
+            //    $cordovaCamera.getPicture(options).then(function (imageData) {
+            //        $scope.imgSrc = "data:image/jpeg;base64," + imageData;
+            //    }, function (err) {
+            //    });
+            //};
+            //
+            //$scope.takePicture2 = function () {
+            //    $cordovaCamera.getPicture(options).then(function (imageData) {
+            //        $scope.imgSrc2 = "data:image/jpeg;base64," + imageData;
+            //    }, function (err) {
+            //        console.log(err);
+            //    });
+            //}
 
         });
 
@@ -392,12 +422,20 @@ angular.module('qd.controllers', ['firebase'])
 
                 cancel: function () {
                     console.log('CANCELLED');
+
                 },
+
                 buttonClicked: function (index) {
-                    console.log('BUTTON CLICKED', index);
-                    
+                    if (index === 0) {
+                        $cordovaCamera.getPicture(options).then(function (imageData) {
+                            $scope.imgSrc = "data:image/jpeg;base64," + imageData;
+                        }, function (err) {
+                            console.log("error when taking picture!");
+                        });
+                    }
                     return true;
-                },
+                }
+
                 //destructiveButtonClicked: function () {
                 //    console.log('DESTRUCT');
                 //    return true;
