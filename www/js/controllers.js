@@ -236,26 +236,28 @@ angular.module('qd.controllers', ['firebase'])
         };
 
         $scope.doLogIn = function (email, password) {
-            loginPopup.close();
             $ionicLoading.show({
                 template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Logging in...</p>',
                 duration: 1e3
             });
-
             var fbAuth = $firebaseAuth($rootScope.fb);
-
             fbAuth.$authWithPassword({
                 email: email,
                 password: password
             }).then(function (authData) {
-                //$scope.loginSuccessfull = true;
-                console.log("logged in!!");
-                //$location.path("/contents");
-                $state.go("app.feed");
+                loginPopup.close();
+                $state.go("app.shop.home");
             }).catch(function (error) {
-                console.error("ERROR: " + error);
+                switch(error.code) {
+                    case "INVALID_EMAIL":
+                        $scope.error = 'invalid email!';
+                        break;
+                    default:
+                        $scope.error = 'unable to log in this time';
+                }
                 $scope.loginError = true;
             });
+
         };
 
         $scope.doSignUp = function (email, password) {
