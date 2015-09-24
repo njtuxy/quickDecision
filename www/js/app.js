@@ -59,7 +59,6 @@ angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'qd.directives',
                 }
             })
 
-
             .state("app.shop", {
                 url: "/shop",
                 abstract: true,
@@ -128,7 +127,7 @@ angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'qd.directives',
                         controller: "postUploadController"
                     }
                 }
-            });
+            })
 
             //.state('contents', {
             //    url: "/contents",
@@ -268,7 +267,7 @@ angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'qd.directives',
 
 // if none of the above states are matched, use this as the fallback
 
-        $urlRouterProvider.otherwise('/camera');
+        $urlRouterProvider.otherwise('/auth/welcome');
         //$urlRouterProvider.otherwise('/shop-home');
     })
 ;

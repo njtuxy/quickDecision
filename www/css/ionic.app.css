@@ -8136,8 +8136,8 @@ ion-spinner.spinner-on-load {
 
 .menu-outer .full-width-item .button {
   margin: 0;
-  background-color: #638f00;
-  border-color: #557b00;
+  background-color: #30cc19;
+  border-color: #30cc19;
   color: #FFF;
   padding: 0 16px; }
 
@@ -8495,8 +8495,8 @@ ion-nav-bar.feed-color * .buttons button::before {
   padding: 0 5px; }
 
 ion-nav-bar.shop-color ion-header-bar {
-  background-color: #79D279 !important;
-  background: #79D279 !important;
+  background-color: #30cc19 !important;
+  background: #30cc19 !important;
   border: none !important;
   background-size: 0 !important; }
 
@@ -8510,7 +8510,7 @@ ion-nav-bar.shop-color * .buttons button::before {
   background-color: #EEE; }
 
 .shop-view .shop-tabs .tab-item.activated, .shop-view .shop-tabs .tab-item.active, .shop-view .shop-tabs .tab-item.tab-item-active {
-  border-color: #3fbb3f; }
+  border-color: #30cc19; }
 
 .shop-section-title {
   background-color: transparent;

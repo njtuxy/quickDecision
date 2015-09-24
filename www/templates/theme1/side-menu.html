@@ -15,19 +15,22 @@
 
     <ion-side-menu side="left">
         <ion-content has-bouncing="false" scroll="false" class="menu-outer left-menu calm-bg">
-            <div multi-bg="['img/menu-bg.jpeg']">
+            <div multi-bg="['img/wm-bg.jpg']">
                 <div class="row menu-top-options">
                     <div class="col col-top">
                         <ion-list>
+
+                            <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.shop.home">
+                                <i class="menu-icon icon ion-ios-world-outline"></i>
+
+                                <h2 class="menu-text">Global</h2>
+                            </ion-item>
+
+
                             <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.feed">
                                 <i class="menu-icon icon ion-ios-world"></i>
 
-                                <h2 class="menu-text">Feed</h2>
-                            </ion-item>
-                            <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.shop.home">
-                                <i class="menu-icon icon ion-bag"></i>
-
-                                <h2 class="menu-text">Shop</h2>
+                                <h2 class="menu-text">Chat</h2>
                             </ion-item>
                             <ion-item ui-sref-active="active" class="item-icon-left" menu-close ui-sref="app.shop.sale">
                                 <i class="menu-icon icon ion-ios-cart"></i>
@@ -51,7 +54,7 @@
                                 <h2 class="menu-text">{{loggedUser.name}}</h2>
 
                                 <div class="user-inbox">
-                                    <i class="menu-icon icon ion-ios-filing"></i>
+                                    <i class="menu-icon icon ion-ios-chatboxes-outline"></i>
                                     <span class="inbox-unread">13</span>
                                 </div>
                             </ion-item>

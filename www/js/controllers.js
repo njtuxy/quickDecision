@@ -240,7 +240,9 @@ angular.module('qd.controllers', ['firebase'])
                 template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Logging in...</p>',
                 duration: 1e3
             });
+
             var fbAuth = $firebaseAuth($rootScope.fb);
+
             fbAuth.$authWithPassword({
                 email: email,
                 password: password
