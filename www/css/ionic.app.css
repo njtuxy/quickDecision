@@ -7977,9 +7977,19 @@ ion-spinner.spinner-on-load {
 .welcome-view .bottom-content {
   height: 34%; }
 
-.welcome-view .bottom-content .facebook-sign-in, .welcome-view .bottom-content .google-sign-in, .welcome-view .bottom-content .twitter-sign-in {
+.welcome-view .bottom-content .facebook-sign-in, .app-sign-up, .app-sing-in, .welcome-view .bottom-content .google-sign-in, .welcome-view .bottom-content .twitter-sign-in {
   border-radius: 4px;
   font-weight: 500; }
+
+.welcome-view .bottom-content .app-sign-up {
+  color: #ff992f;
+  background-color: #2c3e50;
+  border-color: #2c3e50; }
+
+.welcome-view .bottom-content .app-sing-in {
+  color: #1b4f9e;
+  background-color: #1ebabb;
+  border-color: #1ebabb; }
 
 .welcome-view .bottom-content .google-sign-in {
   color: #dd4c39;

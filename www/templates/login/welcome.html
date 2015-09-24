@@ -2,41 +2,49 @@
     <ion-content scroll="false">
         <div class="top-content row">
             <div class="app-copy col col-top">
-                <h1 class="app-logo">logo</h1>
+                <h1 class="app-logo">MC</h1>
+
                 <p class="app-tagline">
-                    This app helps you discover and buy amazing things all in one place.
+                    This app helps you discover another side of the earth
                 </p>
             </div>
         </div>
         <div class="bottom-content row">
             <div class="col col-bottom">
-                <!--<a class="google-sign-in button button-block" ng-click="googleSignIn()">-->
-                    <!--<span class="btn-copy">Sign in with Google</span>-->
-                <!--</a>-->
-                <!--<div class="row split-actions">-->
-                    <!--<div class="col">-->
-                        <!--<a class="facebook-sign-in button button-block" ng-click="facebookSignIn()">-->
-                            <!--Facebook-->
-                        <!--</a>-->
-                    <!--</div>-->
-                    <!--<div class="col">-->
-                        <!--<a class="twitter-sign-in button button-block" ng-click="twitterSignIn()">-->
-                            <!--Twitter-->
-                        <!--</a>-->
-                    <!--</div>-->
-                <!--</div>-->
-                <div class="row split-actions other-actions">
+                <a class="app-sing-in button button-block" ng-click="showLogIn()">
+                    <span class="btn-copy">Log in</span>
+                </a>
+
+
+                <div class="row split-actions">
                     <div class="col">
-                        <a class="button button-block button-clear" ng-click="showLogIn()">
-                            Sign In with Email
+
+                        <a class="app-sign-up button button-block" ng-click="showSignUp()">
+                            <span class="btn-copy">Sign Up</span>
                         </a>
+
                     </div>
+
                     <div class="col">
-                        <a class="button button-block button-clear" ng-click="showSignUp()">
-                            Create Account
+                        <a class="facebook-sign-in button button-block" ng-click="facebookSignIn()">
+                            <span class="btn-copy">Facebook</span>
                         </a>
+
                     </div>
                 </div>
+
+                <!--<div class="row split-actions other-actions">-->
+                <!--<div class="col">-->
+                <!--<a class="button button-block button-clear" ng-click="showLogIn()">-->
+                <!--Sign In with Email-->
+                <!--</a>-->
+                <!--</div>-->
+                <!--<div class="col">-->
+                <!--<a class="button button-block button-clear" ng-click="showSignUp()">-->
+                <!--Create Account-->
+                <!--</a>-->
+                <!--</div>-->
+                <!--</div>-->
             </div>
         </div>
     </ion-content>
