@@ -1,4 +1,4 @@
-angular.module('mapChat.controller', ['firebase.helper', 'firebase.utils'])
+angular.module('mapChat')
 
     .controller('MapController',
     function ($scope,

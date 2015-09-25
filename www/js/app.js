@@ -3,18 +3,18 @@
 //});
 
 angular.module('mapChat', ['ionic',
-    'qd.controllers',
     'qd.services',
     'qd.directives',
     'ngCordova',
     'firebase',
     'underscore',
-    'mapChat.controller',
     'leaflet-directive',
     'ngCordova',
     'igTruncate',
     'ngAnimate',
-    'oitozero.ngSweetAlert'])
+    'oitozero.ngSweetAlert',
+    'firebase.helper',
+    'firebase.utils'])
     .run(function ($ionicPlatform, $rootScope) {
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard

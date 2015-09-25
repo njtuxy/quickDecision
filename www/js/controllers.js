@@ -2,9 +2,10 @@
  * Created by yxia on 8/6/15.
  */
 
-angular.module('qd.controllers', ['firebase'])
+angular.module('mapChat')
 
     .controller('DashCtrl', function ($scope) {
+
     })
 
     .controller('ChatsCtrl', function ($scope, Chats) {
