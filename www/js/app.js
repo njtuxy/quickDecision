@@ -2,7 +2,19 @@
 //    return window._
 //});
 
-angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'qd.directives', 'ngCordova', 'firebase', 'underscore'])
+angular.module('mapChat', ['ionic',
+    'qd.controllers',
+    'qd.services',
+    'qd.directives',
+    'ngCordova',
+    'firebase',
+    'underscore',
+    'mapChat.controller',
+    'leaflet-directive',
+    'ngCordova',
+    'igTruncate',
+    'ngAnimate',
+    'oitozero.ngSweetAlert'])
     .run(function ($ionicPlatform, $rootScope) {
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -16,6 +28,7 @@ angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'qd.directives',
             }
 
             $rootScope.fb = new Firebase('https://qd.firebaseio.com');
+            $rootScope.otherUsersLocations = new Array();
         });
     })
 
@@ -64,7 +77,18 @@ angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'qd.directives',
                 abstract: true,
                 views: {
                     "menuContent": {
-                        templateUrl: "templates/shop/shop.html"
+                        templateUrl: "templates/shop/shop.html",
+                        controller: "MapController"
+                    }
+                }
+            })
+
+            .state("test", {
+                url: '/test',
+                views: {
+                    'test': {
+                        templateUrl: 'templates/map.html',
+                        controller: "MapController"
                     }
                 }
             })
@@ -74,7 +98,7 @@ angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'qd.directives',
                 views: {
                     'shop-home': {
                         templateUrl: 'templates/shop/shop-home.html',
-                        controller: "ShopController"
+                        //controller: "MapController"
                     }
                 }
             })
@@ -138,65 +162,65 @@ angular.module('qd', ['ionic', 'qd.controllers', 'qd.services', 'qd.directives',
             //    }
             //})
 
-        //.state('app.contents', {
-        //    url: '/contents',
-        //    views: {
-        //        'menuContent': {
-        //            templateUrl: 'templates/contents.html'
-        //        }
-        //    }
-        //})
+            //.state('app.contents', {
+            //    url: '/contents',
+            //    views: {
+            //        'menuContent': {
+            //            templateUrl: 'templates/contents.html'
+            //        }
+            //    }
+            //})
 
-        //
-        //
-        //.state("shophome", {
-        //    url: "/shop-home",
-        //    templateUrl: "templates/shop/shop-home.html",
-        //    //templateUrl: 'templates/contents.html'
-        //    controller: "ShopController"
-        //})
-        //
-        //
-        ////.state("app.shop.home", {
-        ////    url: "/home",
-        ////    views: {
-        ////        "shop-home": {
-        ////            templateUrl: "templates/shop/shop-home.html",
-        ////            controller: "ShopController"
-        ////        }
-        ////    }
-        ////})
-        //
-        ////.state('loginPage', {
-        ////    url: '/login',
-        ////    templateUrl: 'templates/login.html',
-        ////    controller: 'loginController'
-        ////})
-        ////
-        ////.state('sign-up', {
-        ////    url: '/sign-up',
-        ////    templateUrl: 'templates/sign-up.html',
-        ////    controller: 'singUpController'
-        ////})
-        //
-        //.state('imageUpload', {
-        //    url: '/imageUpload',
-        //    templateUrl: 'templates/imageUpload.html',
-        //    controller: 'imageUploadController'
-        //})
-        //
-        ////.state('landingPage', {
-        ////    url: '/landing',
-        ////    templateUrl: 'templates/landing.html'
-        ////})
-        //
-        //
-        //Cannot debug when using Controller.
-        .state('camera', {
-            url: '/camera',
-            templateUrl: 'templates/camera.html',
-            //controller: 'CameraController'
-        })
+            //
+            //
+            //.state("shophome", {
+            //    url: "/shop-home",
+            //    templateUrl: "templates/shop/shop-home.html",
+            //    //templateUrl: 'templates/contents.html'
+            //    controller: "ShopController"
+            //})
+            //
+            //
+            ////.state("app.shop.home", {
+            ////    url: "/home",
+            ////    views: {
+            ////        "shop-home": {
+            ////            templateUrl: "templates/shop/shop-home.html",
+            ////            controller: "ShopController"
+            ////        }
+            ////    }
+            ////})
+            //
+            ////.state('loginPage', {
+            ////    url: '/login',
+            ////    templateUrl: 'templates/login.html',
+            ////    controller: 'loginController'
+            ////})
+            ////
+            ////.state('sign-up', {
+            ////    url: '/sign-up',
+            ////    templateUrl: 'templates/sign-up.html',
+            ////    controller: 'singUpController'
+            ////})
+            //
+            //.state('imageUpload', {
+            //    url: '/imageUpload',
+            //    templateUrl: 'templates/imageUpload.html',
+            //    controller: 'imageUploadController'
+            //})
+            //
+            ////.state('landingPage', {
+            ////    url: '/landing',
+            ////    templateUrl: 'templates/landing.html'
+            ////})
+            //
+            //
+            //Cannot debug when using Controller.
+            .state('camera', {
+                url: '/camera',
+                templateUrl: 'templates/camera.html',
+                //controller: 'CameraController'
+            })
 
         //
         //.state('imageDetail', {

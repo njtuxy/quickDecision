@@ -11,6 +11,12 @@
     <!-- compiled css output -->
     <link href="css/ionic.app.css" rel="stylesheet">
 
+    <!--leaflet lib-->
+    <script src="lib/angular-leaflet-directive/dist/angular-leaflet-directive.js"></script>
+    <script src="lib/leaflet/dist/leaflet.js"></script>
+    <script src="lib/angular-simple-logger/dist/index.js"></script>
+    <link rel="stylesheet" href="lib/leaflet/dist/leaflet.css"/>
+
 
     <!-- ngCordova -->
     <!-- IMPORTANT : SHOULD be after ionic bundle and before cordova.js -->
@@ -22,24 +28,54 @@
     <!--fire base javascripts reference-->
     <script src="lib/angularfire/dist/angularfire.js"></script>
     <script src="lib/firebase/firebase.js"></script>
+
+    <!--underscore lib-->
     <script src="lib/underscore/underscore-min.js"></script>
     <script src="lib/angular-underscore-module/angular-underscore-module.js"></script>
-    <!--Reference of my own javascripts-->
 
-    <script src="js/app.js"> </script>
+    <!--geofire libs-->
+    <script src="lib/rsvp/rsvp.js"></script>
+    <script src="lib/geofire/dist/geofire.js"></script>
+    <script src="lib/AngularGeoFire/dist/angularGeoFire.js"></script>
+
+
+    <!--Reference of my own javascripts-->
+    <!--local js-->
+    <script src="js/firebase/firebase.helper.js"></script>
+    <script src="js/firebase/firebase.utils.js"></script>
+
+
+    <script src="js/app.js"></script>
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
     <script src="js/directs.js"></script>
 
+    <!--//Moved from map app-->
+    <script src="js/controllers/mapController.js"></script>
+    <script src="js/services/locationsService.js"></script>
+    <script src="js/services/instructionsService.js"></script>
+    <script src="js/directives/igTruncate.js"></script>
+    <script src="config.js"></script>
+
+    <!--awesome-markers-->
+    <link href="lib/Leaflet.awesome-markers/dist/leaflet.awesome-markers.css" rel="stylesheet">
+    <script src="lib/Leaflet.awesome-markers/dist/leaflet.awesome-markers.js"></script>
+
+    <!--sweetAlert-->
+    <link href="lib/sweetalert/dist/sweetalert.css" rel="stylesheet">
+    <script src="lib/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="lib/ngSweetAlert/SweetAlert.js"></script>
+
+
 </head>
 
-<body ng-app="qd" animation="slide-left-right-ios7">
+<body ng-app="mapChat" animation="slide-left-right-ios7">
 
 <div>
     <div>
         <!--<ion-nav-bar class="white-bg">-->
-            <!--<ion-nav-back-button >-->
-            <!--</ion-nav-back-button>-->
+        <!--<ion-nav-back-button >-->
+        <!--</ion-nav-back-button>-->
         <!--</ion-nav-bar>-->
 
         <ion-nav-view class="dark-bg">
