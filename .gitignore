@@ -6,13 +6,9 @@ platforms/
 plugins/
 .bowerrc
 .idea/
-bower.json
 config.xml
 gulpfile.js
 hooks/
 ionic/project
-package.json
-scss/
 ionic.project
-www/lib/
 .DS_Store
