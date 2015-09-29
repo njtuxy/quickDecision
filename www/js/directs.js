@@ -16,7 +16,7 @@ angular.module("qd.directives", [])
                 };
                 _.isUndefined(e.multiBg) || s.setBackground(_.isArray(e.multiBg) && e.multiBg.length > 1 && !_.isUndefined(e.interval) && _.isNumber(e.interval) ? e.multiBg[0] : e.multiBg[0])
             }],
-            templateUrl: "templates/login/multi-bg.html",
+            templateUrl: "templates/auth/multi-bg.html",
             restrict: "A",
             replace: !0,
             transclude: !0
@@ -44,7 +44,7 @@ angular.module("qd.directives", [])
                     n.$broadcast("toggle-type", n.show)
                 }
             }],
-            templateUrl: "templates/login/show-hide-password.html",
+            templateUrl: "templates/auth/show-hide-password.html",
             restrict: "A",
             replace: !1,
             transclude: !0

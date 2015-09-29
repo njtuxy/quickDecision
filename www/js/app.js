@@ -46,14 +46,14 @@ angular.module('mapChat',
 
             .state("auth", {
                 url: "/auth",
-                templateUrl: "templates/login/auth.html",
+                templateUrl: "templates/auth/auth.html",
                 abstract: true
 
             })
 
             .state("auth.welcome", {
                 url: "/welcome",
-                templateUrl: "templates/login/welcome.html",
+                templateUrl: "templates/auth/welcome.html",
                 controller: "AuthController"
             })
 

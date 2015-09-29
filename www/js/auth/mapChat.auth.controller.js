@@ -19,7 +19,7 @@ angular.module('mapChat.auth')
         $scope.showLogIn = function () {
             loginPopup = $ionicPopup.show({
                 cssClass: "popup-outer auth-view",
-                templateUrl: 'templates/login/login.html',
+                templateUrl: 'templates/auth/login.html',
                 scope: $scope,
                 title: "Sign In",
                 buttons: [{text: "", type: "close-popup ion-ios-close-outline"}]
@@ -29,7 +29,7 @@ angular.module('mapChat.auth')
         $scope.showSignUp = function () {
             singupPopup = $ionicPopup.show({
                 cssClass: "popup-outer auth-view",
-                templateUrl: "templates/login/signup.html",
+                templateUrl: "templates/auth/signup.html",
                 scope: $scope,
                 title: "Create Account",
                 buttons: [{text: "", type: "close-popup ion-ios-close-outline"}]
@@ -41,7 +41,7 @@ angular.module('mapChat.auth')
             $timeout(function () {
                 forgetPasswordPopup = $ionicPopup.show({
                     cssClass: "popup-outer auth-view",
-                    templateUrl: "templates/login/forgot-password.html",
+                    templateUrl: "templates/auth/forgot-password.html",
                     scope: $scope,
                     title: "Reset your password",
                     buttons: [{text: "", type: "close-popup ion-ios-close-outline"}]
