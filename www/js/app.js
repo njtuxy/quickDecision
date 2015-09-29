@@ -106,11 +106,11 @@ angular.module('mapChat',
                 }
             })
 
-            .state('app.global.favorite', {
-                url: '/global-favorite',
+            .state('app.global.favorites', {
+                url: '/global-favorites',
                 views: {
                     'global-favorite': {
-                        templateUrl: 'templates/global/global-favorite.html',
+                        templateUrl: 'templates/global/global-favorites.html',
                         controller: "ShopController"
                     }
                 }
