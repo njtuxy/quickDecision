@@ -62,7 +62,7 @@ angular.module('mapChat.auth')
                 password: password
             }).then(function (authData) {
                 loginPopup.close();
-                $state.go("app.global.local");
+                $state.go("app.map.local");
             }).catch(function (error) {
                 switch (error.code) {
                     case "INVALID_EMAIL":

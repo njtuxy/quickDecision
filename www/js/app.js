@@ -76,41 +76,41 @@ angular.module('mapChat',
             //    }
             //})
 
-            .state("app.global", {
-                url: "/global",
+            .state("app.map", {
+                url: "/map",
                 abstract: true,
                 views: {
                     "menuContent": {
-                        templateUrl: "templates/global/global.html",
+                        templateUrl: "templates/map/map.html",
                         controller: "MapController"
                     }
                 }
             })
 
-            .state('app.global.local', {
+            .state('app.map.local', {
                 url: '/',
                 views: {
-                    'global-local': {
-                        templateUrl: 'templates/global/global-local.html'
+                    'map-local': {
+                        templateUrl: 'templates/map/map-local.html'
                     }
                 }
             })
 
-            .state('app.global.world', {
-                url: '/global-world',
+            .state('app.map.world', {
+                url: '/map-world',
                 views: {
-                    'global-world': {
-                        templateUrl: 'templates/global/global-world.html',
+                    'map-world': {
+                        templateUrl: 'templates/map/map-world.html',
                         controller: "ShopController"
                     }
                 }
             })
 
-            .state('app.global.favorites', {
-                url: '/global-favorites',
+            .state('app.map.favorites', {
+                url: '/map-favorites',
                 views: {
-                    'global-favorite': {
-                        templateUrl: 'templates/global/global-favorites.html',
+                    'map-favorite': {
+                        templateUrl: 'templates/map/map-favorites.html',
                         controller: "ShopController"
                     }
                 }
@@ -174,7 +174,7 @@ angular.module('mapChat',
             //})
             //
             //
-            ////.state("app.global.local", {
+            ////.state("app.map.local", {
             ////    url: "/home",
             ////    views: {
             ////        "shop-home": {
