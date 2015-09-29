@@ -214,12 +214,6 @@ angular.module('mapChat')
         ];
     })
 
-    .controller('sideMenuController', function ($scope, $http) {
-        $http.get("testdata.json").success(function (data) {
-            $scope.loggedUser = data.users[3];
-        });
-    })
-
     .controller("ProfileCtrl", function ($scope, $stateParams, PostService, $ionicHistory, $state, $ionicScrollDelegate, $http, _) {
 
         $http.get("testdata.json").success(function (data) {

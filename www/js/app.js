@@ -5,6 +5,7 @@
 angular.module('mapChat',
     ['ionic',
         'mapChat.auth',
+        'mapChat.sideMenu',
         'qd.services',
         'qd.directives',
         'ngCordova',
@@ -61,8 +62,8 @@ angular.module('mapChat',
             .state("app", {
                 url: "/app",
                 abstract: true,
-                templateUrl: "templates/theme1/side-menu.html",
-                controller: "sideMenuController"
+                templateUrl: "templates/sideMenu/side-menu.html",
+                controller: "SideMenuController"
             })
 
             //.state("app.feed", {
