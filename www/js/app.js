@@ -2,19 +2,22 @@
 //    return window._
 //});
 
-angular.module('mapChat', ['ionic',
-    'qd.services',
-    'qd.directives',
-    'ngCordova',
-    'firebase',
-    'underscore',
-    'leaflet-directive',
-    'ngCordova',
-    'igTruncate',
-    'ngAnimate',
-    'oitozero.ngSweetAlert',
-    'firebase.helper',
-    'firebase.utils'])
+angular.module('mapChat',
+    ['ionic',
+        'mapChat.auth',
+        'qd.services',
+        'qd.directives',
+        'ngCordova',
+        'firebase',
+        'underscore',
+        'leaflet-directive',
+        'ngCordova',
+        'igTruncate',
+        'ngAnimate',
+        'oitozero.ngSweetAlert',
+        'firebase.helper',
+        'firebase.utils'
+    ])
     .run(function ($ionicPlatform, $rootScope) {
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
@@ -51,7 +54,7 @@ angular.module('mapChat', ['ionic',
             .state("auth.welcome", {
                 url: "/welcome",
                 templateUrl: "templates/login/welcome.html",
-                controller: "WelcomeCtrl"
+                controller: "AuthController"
             })
 
 
@@ -62,15 +65,15 @@ angular.module('mapChat', ['ionic',
                 controller: "sideMenuController"
             })
 
-            .state("app.feed", {
-                url: "/feed",
-                views: {
-                    menuContent: {
-                        templateUrl: "templates/theme1/feed.html",
-                        controller: "FeedCtrl"
-                    }
-                }
-            })
+            //.state("app.feed", {
+            //    url: "/feed",
+            //    views: {
+            //        menuContent: {
+            //            templateUrl: "templates/theme1/feed.html",
+            //            controller: "FeedCtrl"
+            //        }
+            //    }
+            //})
 
             .state("app.shop", {
                 url: "/shop",
