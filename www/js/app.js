@@ -76,52 +76,41 @@ angular.module('mapChat',
             //    }
             //})
 
-            .state("app.shop", {
-                url: "/shop",
+            .state("app.global", {
+                url: "/global",
                 abstract: true,
                 views: {
                     "menuContent": {
-                        templateUrl: "templates/shop/shop.html",
+                        templateUrl: "templates/global/global.html",
                         controller: "MapController"
                     }
                 }
             })
 
-            .state("test", {
-                url: '/test',
-                views: {
-                    'test': {
-                        templateUrl: 'templates/map.html',
-                        controller: "MapController"
-                    }
-                }
-            })
-
-            .state('app.shop.home', {
+            .state('app.global.local', {
                 url: '/',
                 views: {
-                    'shop-home': {
-                        templateUrl: 'templates/shop/shop-home.html',
-                        //controller: "MapController"
+                    'global-local': {
+                        templateUrl: 'templates/global/global-local.html'
                     }
                 }
             })
 
-            .state('app.shop.popular', {
-                url: '/shop-popular',
+            .state('app.global.world', {
+                url: '/global-world',
                 views: {
-                    'shop-popular': {
-                        templateUrl: 'templates/shop/shop-popular.html',
+                    'global-world': {
+                        templateUrl: 'templates/global/global-world.html',
                         controller: "ShopController"
                     }
                 }
             })
 
-            .state('app.shop.sale', {
-                url: '/shop-sale',
+            .state('app.global.favorite', {
+                url: '/global-favorite',
                 views: {
-                    'shop-sale': {
-                        templateUrl: 'templates/shop/shop-sale.html',
+                    'global-favorite': {
+                        templateUrl: 'templates/global/global-favorite.html',
                         controller: "ShopController"
                     }
                 }
@@ -185,7 +174,7 @@ angular.module('mapChat',
             //})
             //
             //
-            ////.state("app.shop.home", {
+            ////.state("app.global.local", {
             ////    url: "/home",
             ////    views: {
             ////        "shop-home": {

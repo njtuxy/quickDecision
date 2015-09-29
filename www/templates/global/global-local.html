@@ -1,0 +1,26 @@
+<ion-view cache-view="false" view-title="Local" class="global-local-view">
+
+    <ion-content data-tap-disabled="true">
+
+        <!--<div style="height: 240px; width: 400px">-->
+
+        <!--map defaults: {{map.defaults}}-->
+        <!--map center: {{map.center}}-->
+        <!--&lt;!&ndash;<div class="chat-item animated fadeInDown" ng-if="incomingMessageFound">&ndash;&gt;-->
+        <!--&lt;!&ndash;<Strong>Yan:</Strong> {{incomingMessage}}&ndash;&gt;-->
+        <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--</div>-->
+        
+        <div>
+            <leaflet width="100%" height="600px" defaults="map.defaults" center="map.center" markers="map.markers"
+                     ng-if="map">
+                <!--<leaflet width="100%" height="480px"></leaflet>-->
+        </div>
+
+
+        <!--<leaflet defaults="map.defaults" center="map.center" markers="map.markers" ng-if="map">-->
+        <!--<leaflet defaults="map.defaults" center="map.center" markers="map.markers"></leaflet>-->
+
+
+    </ion-content>
+</ion-view>

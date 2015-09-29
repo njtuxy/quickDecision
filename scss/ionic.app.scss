@@ -1026,11 +1026,11 @@ ion-nav-bar.shop-color * .buttons button::before {
   color: #FFF
 }
 
-.shop-view {
+.global-view {
   background-color: #EEE
 }
 
-.shop-view .shop-tabs .tab-item.activated, .shop-view .shop-tabs .tab-item.active, .shop-view .shop-tabs .tab-item.tab-item-active {
+.global-view .shop-tabs .tab-item.activated, .global-view .shop-tabs .tab-item.active, .global-view .shop-tabs .tab-item.tab-item-active {
   border-color: #30cc19
 }
 
@@ -1058,31 +1058,31 @@ ion-nav-bar.shop-color * .buttons button::before {
   padding-bottom: 0
 }
 
-.shop-home-view {
+.global-local-view {
   background-color: #EEE
 }
 
-.shop-home-view .shop-home-options-list {
+.global-local-view .shop-home-options-list {
   margin-bottom: 0
 }
 
-.shop-home-view .shop-home-options-list .shop-home-option-item {
+.global-local-view .shop-home-options-list .shop-home-option-item {
   padding: 0;
   margin: 10px;
   border-radius: 2px
 }
 
-.shop-home-view .shop-home-options-list .shop-home-option-item .col, .shop-home-view .shop-home-options-list .shop-home-option-item .row {
+.global-local-view .shop-home-options-list .shop-home-option-item .col, .global-local-view .shop-home-options-list .shop-home-option-item .row {
   padding: 0;
   margin: 0
 }
 
-.shop-home-view .shop-home-options-list .shop-home-option-item .shop-home-option-image-outer img {
+.global-local-view .shop-home-options-list .shop-home-option-item .shop-home-option-image-outer img {
   width: 100%;
   border-radius: 2px 2px 0 0
 }
 
-.shop-home-view .shop-home-options-list .shop-home-option-item .option-copy {
+.global-local-view .shop-home-options-list .shop-home-option-item .option-copy {
   padding: 10px;
   font-size: 12px;
   font-weight: 500;
@@ -1090,16 +1090,16 @@ ion-nav-bar.shop-color * .buttons button::before {
   border-top: 1px solid rgba(196, 196, 196, .8)
 }
 
-.shop-home-view .shop-home-options-list .shop-home-option-item .option-icon {
+.global-local-view .shop-home-options-list .shop-home-option-item .option-icon {
   text-align: right;
   color: rgba(119, 119, 119, .6)
 }
 
-.shop-popular-view {
+.global-world-view {
   background-color: #EEE
 }
 
-.shop-sale-view {
+.global-favorite-view {
   background-color: #EEE
 }
 
