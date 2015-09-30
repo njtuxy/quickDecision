@@ -1,8 +1,11 @@
 /**
+ * Created by yxia on 9/30/15.
+ */
+/**
  * Created by yxia on 8/6/15.
  */
 
-angular.module('mapChat')
+angular.module('general.helper')
 
     .controller('DashCtrl', function ($scope) {
 
@@ -212,35 +215,6 @@ angular.module('mapChat')
             {title: 'Rap', id: 5},
             {title: 'Cowbell', id: 6}
         ];
-    })
-
-    .controller("ProfileCtrl", function ($scope, $stateParams, PostService, $ionicHistory, $state, $ionicScrollDelegate, $http, _) {
-
-        $http.get("testdata.json").success(function (data) {
-            $scope.user = data.users[3];
-
-            $scope.posts = _.filter(data.posts, function (post) {
-                return post.userId == 8
-            });
-
-            $scope.myProfile = true;
-        });
-
-
-        $scope.$on("$ionicView.afterEnter", function () {
-            $ionicScrollDelegate.$getByHandle("profile-scroll").resize()
-        });
-
-        //var a = $stateParams.userId;
-        //var a = 3;
-        //$scope.myProfile = $scope.loggedUser._id == a;
-        //$scope.posts = [];
-        //$scope.likes = [];
-        //$scope.user = {};
-        //
-        //$http.get("testdata.json").success(function (data) {
-        //});
-
     })
 
 

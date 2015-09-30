@@ -8,18 +8,11 @@ angular.module('mapChat',
         'mapChat.sideMenu',
         'mapChat.map',
         'mapChat.mapMarkers',
-        'qd.services',
-        'qd.directives',
-        'ngCordova',
-        'firebase',
-        'underscore',
-        'leaflet-directive',
-        'ngCordova',
-        'igTruncate',
-        'ngAnimate',
-        'oitozero.ngSweetAlert',
+        'mapChat.profile',
+        'cordova.helper',
         'firebase.helper',
-        'firebase.utils'
+        'general.helper',
+        'oitozero.ngSweetAlert'
     ])
     .run(function ($ionicPlatform, $rootScope) {
         $ionicPlatform.ready(function () {
@@ -138,15 +131,15 @@ angular.module('mapChat',
                 }
             })
 
-            .state('app.profile.addnewpost', {
-                url: "/new-post",
-                views: {
-                    "profileContent": {
-                        templateUrl: "templates/posts/add-post.html",
-                        controller: "postUploadController"
-                    }
-                }
-            })
+            //.state('app.profile.addnewpost', {
+            //    url: "/new-post",
+            //    views: {
+            //        "profileContent": {
+            //            templateUrl: "templates/posts/add-post.html",
+            //            controller: "postUploadController"
+            //        }
+            //    }
+            //})
 
             //.state('contents', {
             //    url: "/contents",

@@ -3,21 +3,21 @@
  */
 angular.module('qd.services', [])
 
-    .factory('Camera', ['$q', function ($q) {
-        return {
-            getPicture: function (options) {
-                var q = $q.defer();
-                navigator.camera.getPicture(function (result) {
-                    // Do any magic you need
-                    q.resolve(result);
-                }, function (err) {
-                    q.reject(err);
-                }, options);
-
-                return q.promise;
-            }
-        }
-    }])
+    //.factory('Camera', ['$q', function ($q) {
+    //    return {
+    //        getPicture: function (options) {
+    //            var q = $q.defer();
+    //            navigator.camera.getPicture(function (result) {
+    //                // Do any magic you need
+    //                q.resolve(result);
+    //            }, function (err) {
+    //                q.reject(err);
+    //            }, options);
+    //
+    //            return q.promise;
+    //        }
+    //    }
+    //}])
 
     .factory('Chats', function () {
         // Might use a resource here that returns a JSON array
@@ -68,34 +68,25 @@ angular.module('qd.services', [])
         };
     })
 
-    .service("ShopService", function ($http, _) {
-        this.getProducts = function () {
-            var testdata = {};
-            $http.get("testdata.json").success(function (data) {
-                testdata = data;
-            });
-            return testdata;
-        };
+    //.service("ShopService", function ($http, _) {
+    //    this.getProducts = function () {
+    //        var testdata = {};
+    //        $http.get("testdata.json").success(function (data) {
+    //            testdata = data;
+    //        });
+    //        return testdata;
+    //    };
+    //
+    //    this.getProduct = function (product_name) {
+    //        return $http.get("testdata.json").success(function (data) {
+    //            var n = _.find(data.products, function (e) {
+    //                return e._id == product_name
+    //            });
+    //        });
+    //    };
+    //
+    //})
 
-        this.getProduct = function (product_name) {
-            return $http.get("testdata.json").success(function (data) {
-                var n = _.find(data.products, function (e) {
-                    return e._id == product_name
-                });
-            });
-        };
-
-    })
-
-    .service("PostService", function ($http) {
-        this.getUserPosts = function (user_id) {
-            return $http.get("testdata.json").success(function (data) {
-                var n = _.filter(data.posts, function (post) {
-                    return post.userId == user_id
-                });
-            });
-        };
-    });
 
 //.service("PostService", ["$http", "$q", function (e, n) {
 //    this.getUserDetails = function (t) {

@@ -33,7 +33,7 @@ angular.module('mapChat.map')
                     $scope.lat = location.latitude;
                     $scope.lng = location.longitude;
                     $scope.addMarkers(location);
-                    console.log('debug 1');
+                    console.log('getting current location');
                     $scope.setMap();
                     console.log('debug 2');
                 });
