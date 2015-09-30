@@ -204,11 +204,11 @@ angular.module('mapChat',
             //
             //
             //Cannot debug when using Controller.
-            .state('camera', {
-                url: '/camera',
-                templateUrl: 'templates/camera.html',
-                //controller: 'CameraController'
-            })
+            //.state('camera', {
+            //    url: '/camera',
+            //    templateUrl: 'templates/camera.html',
+            //    //controller: 'CameraController'
+            //})
 
         //
         //.state('imageDetail', {

@@ -82,7 +82,7 @@ angular.module('general.helper')
                     })
                 }
             }],
-            templateUrl: "templates/common/pre-img.html"
+            templateUrl: "templates/general/pre-img.html"
         }
     }).
     directive("spinnerOnLoad", function () {
