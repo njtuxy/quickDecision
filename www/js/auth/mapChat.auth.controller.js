@@ -7,10 +7,8 @@ angular.module('mapChat.auth')
                                             $ionicPopup,
                                             $ionicLoading,
                                             $timeout,
-                                            $firebaseAuth,
-                                            $location,
-                                            $rootScope,
-                                            $state) {
+                                            $state,
+                                            Auth) {
 
         console.log('Auth Controller loadded!');
         var loginPopup = {}, singupPopup = {}, forgetPasswordPopup = {};
@@ -55,47 +53,38 @@ angular.module('mapChat.auth')
                 duration: 1e3
             });
 
-            var fbAuth = $firebaseAuth($rootScope.fb);
-
-            fbAuth.$authWithPassword({
-                email: email,
-                password: password
-            }).then(function (authData) {
-                loginPopup.close();
-                $state.go("app.map.local");
-            }).catch(function (error) {
-                switch (error.code) {
-                    case "INVALID_EMAIL":
-                        $scope.error = 'invalid email!';
-                        break;
-                    default:
-                        $scope.error = 'unable to log in this time';
-                }
-                $scope.loginError = true;
-            });
-
+            Auth.$authWithPassword({email: email, password: password}, {rememberMe: true})
+                .then(function (/* user */) {
+                    loginPopup.close();
+                    $state.go("app.map.local");
+                }, function (error) {
+                    switch (error.code) {
+                        case "INVALID_EMAIL":
+                            $scope.loginError = 'invalid email!';
+                            break;
+                        default:
+                            $scope.loginError = 'unable to log in this time';
+                    }
+                });
         };
 
         $scope.doSignUp = function (email, password) {
-            singupPopup.close();
             $ionicLoading.show({
                 template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Creating account...</p>',
                 duration: 1e3
             });
 
-            var fbAuth = $firebaseAuth($rootScope.fb);
-            fbAuth.$createUser({email: email, password: password}).then(function () {
-                return fbAuth.$authWithPassword({
+            Auth.$createUser({email: email, password: password}).then(function () {
+                return Auth.$authWithPassword({
                     email: email,
                     password: password
                 });
             }).then(function (authData) {
-                $scope.singUpAuthData = authData;
-                console.log("signed up!!")
-                $location.path("/contents");
+                singupPopup.close();
+                //$scope.singUpAuthData = authData;
+                $state.go("app.map.local");
             }).catch(function (error) {
-                console.error("ERROR " + error);
-                $scope.debugMsg1 = error;
+                $scope.signUpError= error;
             });
 
         };
@@ -114,4 +103,4 @@ angular.module('mapChat.auth')
         $scope.twitterSignIn = function () {
             console.log("doing twitter sign in")
         }
-    })
+    });
