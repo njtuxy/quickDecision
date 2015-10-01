@@ -8,7 +8,8 @@ angular.module('mapChat.auth')
                                             $ionicLoading,
                                             $timeout,
                                             $state,
-                                            Auth) {
+                                            Auth,
+                                            fbUsernameService) {
 
         console.log('Auth Controller loadded!');
         var loginPopup = {}, singupPopup = {}, forgetPasswordPopup = {};
@@ -68,7 +69,7 @@ angular.module('mapChat.auth')
                 });
         };
 
-        $scope.doSignUp = function (email, password) {
+        $scope.doSignUp = function (email, password, username) {
             $ionicLoading.show({
                 template: '<ion-spinner icon="ios"></ion-spinner><p style="margin: 5px 0 0 0;">Creating account...</p>',
                 duration: 1e3
@@ -79,12 +80,14 @@ angular.module('mapChat.auth')
                     email: email,
                     password: password
                 });
-            }).then(function (authData) {
+            }).then(function (user) {
+                fbUsernameService.saveUserName(Auth, username);
                 singupPopup.close();
+                console.log(user);
                 //$scope.singUpAuthData = authData;
                 $state.go("app.map.local");
             }).catch(function (error) {
-                $scope.signUpError= error;
+                $scope.signUpError = error;
             });
 
         };
