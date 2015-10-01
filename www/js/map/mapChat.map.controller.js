@@ -144,7 +144,7 @@ angular.module('mapChat.map')
                 defaults: {
                     tileLayer: 'http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png',
                     maxZoom: 18,
-                    zoomControlPosition: 'bottomleft'
+                    //zoomControlPosition: 'bottomleft'
                 },
 
                 markers: $scope.markers,
@@ -157,7 +157,7 @@ angular.module('mapChat.map')
                 center: {
                     lat: $scope.lat,
                     lng: $scope.lng,
-                    zoom: 8
+                    zoom: 15
                 }
             };
             console.log('map settings done, going to show the div')

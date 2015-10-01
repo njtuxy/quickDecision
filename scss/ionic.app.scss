@@ -25,13 +25,13 @@ $big-bg:      'http://ioniconf.com/img/bg.jpg';
   background-size: cover;
 }
 
-$light: rgba(16, 31, 48, 0.34) !default;
+$light: rgba(255, 255, 255, 0) !default;
 $stable: rgba(238, 255, 232, 0.33) !default;
 $balanced: rgba(51, 205, 95, 0.11) !default;
-$energized: rgba(255, 201, 0, 0.43) !default;
-$assertive:                       #ef473a !default;
-$royal:                           #886aea !default;
-$dark: rgba(54, 66, 68, 0.6) !default;
+$energized: #ff992f !default;
+$assertive: #000000 !default;
+$royal: #886aea !default;
+$dark: #2c3e50 !default;
 
 
 // Include all of Ionic
@@ -196,8 +196,8 @@ ion-spinner.spinner-on-load {
 
 .popup-outer .popup {
   border-radius: 4px;
-  background-color: #fcfcfc;
-  width: 90vw;
+  background-color: #ffffff;
+  width: 90%;
   max-width: 300px
 }
 
@@ -296,7 +296,7 @@ ion-spinner.spinner-on-load {
   padding-top: 4px;
   padding-bottom: 4px;
   border-radius: 4px;
-  background-color: #e3e4e6;
+  background-color: #ff992f;
   border-color: #dedfe1
 }
 
@@ -359,7 +359,7 @@ ion-spinner.spinner-on-load {
   font-size: 60px;
   font-family: sans-serif;
   font-weight: 600;
-  color: #FFF;
+  color: #ff992f;
   letter-spacing: 8px;
   text-transform: uppercase
 }
@@ -368,7 +368,7 @@ ion-spinner.spinner-on-load {
   font-size: 16px;
   margin-top: 0;
   font-weight: 500;
-  color: rgba(255, 255, 255, .95)
+  color: rgba(255, 153, 47, 0.95)
 }
 
 .welcome-view .bottom-content {
@@ -1012,8 +1012,8 @@ ion-nav-bar.feed-color * .buttons button::before {
 }
 
 ion-nav-bar.shop-color ion-header-bar {
-  background-color: #30cc19 !important;
-  background: #30cc19 !important;
+  background-color: #2c3e50 !important;
+  background: #2c3e50 !important;
   border: none !important;
   background-size: 0 !important
 }
