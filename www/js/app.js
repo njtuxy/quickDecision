@@ -9,6 +9,7 @@ angular.module('mapChat',
         'mapChat.map',
         'mapChat.mapMarkers',
         'mapChat.profile',
+        'mapChat.settings',
         'cordova.helper',
         'firebase.helper',
         'general.helper',
@@ -117,7 +118,7 @@ angular.module('mapChat',
                 views: {
                     "menuContent": {
                         templateUrl: "templates/profile/profile.html",
-                        controller: "ProfileCtrl"
+                        controller: "ProfileController"
                     }
                 }
             })
@@ -137,7 +138,7 @@ angular.module('mapChat',
                 views: {
                     "menuContent": {
                         templateUrl: "templates/settings/settings.html",
-                        controller: 'SettingsCtrl'
+                        controller: 'SettingsController'
                     }
                 }
             })
