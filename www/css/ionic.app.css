@@ -8228,10 +8228,11 @@ ion-spinner.spinner-on-load {
   color: #6f6f6f; }
 
 ion-nav-bar.profile-color * {
-  color: #FFF; }
+  background-color: #2c3e50;
+  color: #ff992f; }
 
 ion-nav-bar.profile-color * .buttons button::before {
-  color: #FFF; }
+  color: #ff992f; }
 
 .profile-view {
   background-color: #FF4C4C;

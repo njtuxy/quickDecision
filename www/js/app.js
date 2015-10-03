@@ -37,9 +37,9 @@ angular.module('mapChat',
         // Learn more here: https://github.com/angular-ui/ui-router
         // Set up the various states which the app can be in.
         // Each state's controller can be found in controllers.js
+        $urlRouterProvider.otherwise('/auth/welcome');
 
         $stateProvider
-
             .state("auth", {
                 url: "/auth",
                 templateUrl: "templates/auth/auth.html",
@@ -131,84 +131,104 @@ angular.module('mapChat',
                 }
             })
 
-            //.state('app.profile.addnewpost', {
-            //    url: "/new-post",
-            //    views: {
-            //        "profileContent": {
-            //            templateUrl: "templates/posts/add-post.html",
-            //            controller: "postUploadController"
-            //        }
-            //    }
-            //})
+            .state('app.settings', {
+                url: "/settings",
+                abstract: true,
+                views: {
+                    "menuContent": {
+                        templateUrl: "templates/settings/settings.html",
+                        controller: 'SettingsCtrl'
+                    }
+                }
+            })
 
-            //.state('contents', {
-            //    url: "/contents",
-            //    views: {
-            //        'mainContent' :{
-            //            templateUrl: "templates/test/view1.html"
-            //        }
-            //    }
-            //})
+            .state('app.settings.detail', {
+                url: "/settings-detail",
+                views: {
+                    "settingsDetail": {
+                        templateUrl: "templates/settings/settingsDetail.html"
+                    }
+                }
+            });
 
-            //.state('app.contents', {
-            //    url: '/contents',
-            //    views: {
-            //        'menuContent': {
-            //            templateUrl: 'templates/contents.html'
-            //        }
-            //    }
-            //})
+        //.state('app.profile.addnewpost', {
+        //    url: "/new-post",
+        //    views: {
+        //        "profileContent": {
+        //            templateUrl: "templates/posts/add-post.html",
+        //            controller: "postUploadController"
+        //        }
+        //    }
+        //})
 
-            //
-            //
-            //.state("shophome", {
-            //    url: "/shop-home",
-            //    templateUrl: "templates/shop/shop-home.html",
-            //    //templateUrl: 'templates/contents.html'
-            //    controller: "ShopController"
-            //})
-            //
-            //
-            ////.state("app.map.local", {
-            ////    url: "/home",
-            ////    views: {
-            ////        "shop-home": {
-            ////            templateUrl: "templates/shop/shop-home.html",
-            ////            controller: "ShopController"
-            ////        }
-            ////    }
-            ////})
-            //
-            ////.state('loginPage', {
-            ////    url: '/login',
-            ////    templateUrl: 'templates/login.html',
-            ////    controller: 'loginController'
-            ////})
-            ////
-            ////.state('sign-up', {
-            ////    url: '/sign-up',
-            ////    templateUrl: 'templates/sign-up.html',
-            ////    controller: 'singUpController'
-            ////})
-            //
-            //.state('imageUpload', {
-            //    url: '/imageUpload',
-            //    templateUrl: 'templates/imageUpload.html',
-            //    controller: 'imageUploadController'
-            //})
-            //
-            ////.state('landingPage', {
-            ////    url: '/landing',
-            ////    templateUrl: 'templates/landing.html'
-            ////})
-            //
-            //
-            //Cannot debug when using Controller.
-            //.state('camera', {
-            //    url: '/camera',
-            //    templateUrl: 'templates/camera.html',
-            //    //controller: 'CameraController'
-            //})
+        //.state('contents', {
+        //    url: "/contents",
+        //    views: {
+        //        'mainContent' :{
+        //            templateUrl: "templates/test/view1.html"
+        //        }
+        //    }
+        //})
+
+        //.state('app.contents', {
+        //    url: '/contents',
+        //    views: {
+        //        'menuContent': {
+        //            templateUrl: 'templates/contents.html'
+        //        }
+        //    }
+        //})
+
+        //
+        //
+        //.state("shophome", {
+        //    url: "/shop-home",
+        //    templateUrl: "templates/shop/shop-home.html",
+        //    //templateUrl: 'templates/contents.html'
+        //    controller: "ShopController"
+        //})
+        //
+        //
+        ////.state("app.map.local", {
+        ////    url: "/home",
+        ////    views: {
+        ////        "shop-home": {
+        ////            templateUrl: "templates/shop/shop-home.html",
+        ////            controller: "ShopController"
+        ////        }
+        ////    }
+        ////})
+        //
+        ////.state('loginPage', {
+        ////    url: '/login',
+        ////    templateUrl: 'templates/login.html',
+        ////    controller: 'loginController'
+        ////})
+        ////
+        ////.state('sign-up', {
+        ////    url: '/sign-up',
+        ////    templateUrl: 'templates/sign-up.html',
+        ////    controller: 'singUpController'
+        ////})
+        //
+        //.state('imageUpload', {
+        //    url: '/imageUpload',
+        //    templateUrl: 'templates/imageUpload.html',
+        //    controller: 'imageUploadController'
+        //})
+        //
+        ////.state('landingPage', {
+        ////    url: '/landing',
+        ////    templateUrl: 'templates/landing.html'
+        ////})
+        //
+        //
+        //Cannot debug when using Controller.
+        //.state('camera', {
+        //    url: '/camera',
+        //    templateUrl: 'templates/camera.html',
+        //    //controller: 'CameraController'
+        //})
 
         //
         //.state('imageDetail', {
@@ -278,7 +298,6 @@ angular.module('mapChat',
         //});
 
 // if none of the above states are matched, use this as the fallback
-        $urlRouterProvider.otherwise('/auth/welcome');
         //$urlRouterProvider.otherwise('/shop-home');
     })
 ;

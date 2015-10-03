@@ -37,4 +37,35 @@ angular.module('mapChat.profile')
         //
         //$http.get("testdata.json").success(function (data) {
         //});
+        
+        $scope.OpenSettings = function () {
+            $state.go('app.profile.settings');
+        }
     })
+
+    .controller("SettingsCtrl", function ($scope, $ionicModal) {
+
+        console.log('Setting Controller loadded');
+
+        $ionicModal.fromTemplateUrl("templates/profile/terms-of-service.html", {
+            scope: $scope,
+            animation: "slide-in-up"
+        }).then(function (n) {
+            $scope.terms_of_service_modal = n
+        });
+
+        $ionicModal.fromTemplateUrl("templates/profile/privacy-policy.html", {
+            scope: $scope,
+            animation: "slide-in-up"
+        }).then(function (n) {
+            $scope.privacy_policy_modal = n
+        });
+
+        $scope.showTerms = function () {
+            $scope.terms_of_service_modal.show()
+        };
+
+        $scope.showPrivacyPolicy = function () {
+            $scope.privacy_policy_modal.show()
+        }
+    });
