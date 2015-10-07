@@ -4,7 +4,7 @@
             <div class="item item-divider title">
                 Account
             </div>
-            <a class="item item-icon-left settings-option">
+            <a class="item item-icon-left settings-option" ng-click="showChangeUserName()">
                 <i class="icon ion-ios-person-outline"></i>
                 Change User Name
             </a>
@@ -28,7 +28,7 @@
                 <i class="icon ion-ios-help-outline"></i>
                 Help
             </a>
-            <a class="item item-icon-left settings-option" ui-sref="facebook-sign-in">
+            <a class="item item-icon-left settings-option" ui-sref="auth.welcome" ng-click="logout()">
                 <i class="icon ion-ios-close-outline"></i>
                 Sign Out
             </a>

@@ -20,19 +20,43 @@ angular.module('firebase.helper', ['firebase', 'firebase.utils', 'angularGeoFire
         }
     })
 
-    .service('fbUsernameService', function (fbutil, $firebaseArray) {
-      this.saveUserName = function(auth, username){
-          var authData = auth.$getAuth();
-          if (authData){
-              var userReference = fbutil.ref("usersInfo/" + authData.uid);
-              //var syncArray = $firebaseArray(userReference.child("userName"));
-              var syncArray = $firebaseArray(userReference);
-              syncArray.$add({userName: username}).then(function(){
-                  console.log('usrName saved');
-              })
-          }
-      }
+    .service('fbUsernameService', function (fbutil, Auth, $q) {
+
+        var authData = Auth.$getAuth();
+
+        if (authData) {
+            var uid = authData.uid
+            var currentUserName = null;
+            return {
+                saveUserName: function (username) {
+                    console.log(uid);
+                    var userNameRef = fbutil.ref("usersInfo/" + uid);
+                    userNameRef.set({userName: username});
+                },
+
+                getUserName: function () {
+                    var def = $q.defer();
+                    var userReference = fbutil.ref("usersInfo/" + uid);
+                    userReference.on("value", function (data) {
+                        console.log('get value!');
+                        def.resolve(data.val().userName);
+                    });
+
+                    return def.promise;
+                }
+            };
+        }
     })
+
+
+//this.saveUserName = function (auth, username) {
+//    var authData = auth.$getAuth();
+//    if (authData) {
+//        var userNameRef = fbutil.ref("usersInfo/" + authData.uid);
+//        userNameRef.set({userName: username});
+//    }
+//};
+//
 
 //$scope.sendMessage = function (name, text, uid_of_reciever) {
 //  var authData = $rootScope.fbAuth.$getAuth();
@@ -46,22 +70,23 @@ angular.module('firebase.helper', ['firebase', 'firebase.utils', 'angularGeoFire
 //};
 
 //.service('geoFireService', function (fbutil, $geofire) {
-    //  var geo = $geofire(fbutil.ref('users'));
-    //
-    //  this.set = function (key, location) {
-    //    return geo.$set(key, location);
-    //  };
-    //
-    //  this.get = function (key) {
-    //    return geo.$get(key);
-    //  };
-    //
-    //  this.query = function (center, radius) {
-    //    return geo.$query(center, radius)
-    //  }
-    //})
+//  var geo = $geofire(fbutil.ref('users'));
+//
+//  this.set = function (key, location) {
+//    return geo.$set(key, location);
+//  };
+//
+//  this.get = function (key) {
+//    return geo.$get(key);
+//  };
+//
+//  this.query = function (center, radius) {
+//    return geo.$query(center, radius)
+//  }
+//})
 
-    .service('fbGeoService', function (fbutil, $firebaseArray, $geofire, $rootScope) {
+    .
+    service('fbGeoService', function (fbutil, $firebaseArray, $geofire, $rootScope) {
 
         this.set = function (auth, location) {
             var authData = auth.$getAuth();

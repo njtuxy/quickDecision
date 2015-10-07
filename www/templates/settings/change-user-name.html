@@ -1,0 +1,43 @@
+<ion-modal-view class="modal-view">
+    <ion-header-bar>
+        <h1 class="title modal-title"> Change User Name </h1>
+        <a class="button button-clear"
+           ng-click="change_user_name_modal.hide()"> <span
+                class="icon ion-close"> </span></a>
+    </ion-header-bar>
+
+    <ion-content>
+        <div class="row auth-content-outer">
+            <div class="col col-center">
+
+                <div class="row related-copy">
+                    <div class="col col-center">
+                        <h5 class="auth-copy">Current User Name: {{currentUserName}}</h5>
+                    </div>
+                </div>
+
+                <div class="row form-wrapper">
+                    <div class="col">
+                        <form name="update_form" class="" novalidate>
+                            <div class="form-fields-outer list list-inset">
+
+                                <label class="item item-input">
+                                    <input type="text" placeholder="New User Name" name="username" ng-model="user.name" required>
+                                </label>
+
+
+                            </div>
+
+                            <button type="submit" class="form-submit-button button button-block" ng-click="updateUserName(user.name)" ng-disabled="update_form.$invalid">
+                                Update
+                            </button>
+
+                            <p ng-show="updateError" class="message error">{{updateError}}</p>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

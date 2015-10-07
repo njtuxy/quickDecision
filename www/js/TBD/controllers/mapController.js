@@ -11,12 +11,7 @@ angular.module('mapChat')
                     //$scope.err = errMessage(err);
                 });
         };
-
-        $scope.logout = function () {
-            Auth.$unauth();
-            console.log('logged out!')
-        }
-    })
+    });
 
 //.controller('AddLocationCtrl', function ($rootScope, $scope, Auth, fbGeoService) {
 //  //var center = [37.785584, -122.39923];

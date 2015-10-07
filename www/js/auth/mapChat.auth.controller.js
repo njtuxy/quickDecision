@@ -55,7 +55,7 @@ angular.module('mapChat.auth')
             });
 
             Auth.$authWithPassword({email: email, password: password}, {rememberMe: true})
-                .then(function (/* user */) {
+                .then(function (authData) {
                     loginPopup.close();
                     $state.go("app.map.local");
                 }, function (error) {
@@ -81,7 +81,7 @@ angular.module('mapChat.auth')
                     password: password
                 });
             }).then(function (user) {
-                fbUsernameService.saveUserName(Auth, username);
+                fbUsernameService.saveUserName(username);
                 singupPopup.close();
                 console.log(user);
                 //$scope.singUpAuthData = authData;

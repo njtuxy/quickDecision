@@ -15,7 +15,7 @@ angular.module('mapChat',
         'general.helper',
         'oitozero.ngSweetAlert'
     ])
-    .run(function ($ionicPlatform, $rootScope) {
+    .run(function ($ionicPlatform, $rootScope, Auth) {
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
