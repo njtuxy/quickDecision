@@ -3,10 +3,25 @@
  */
 angular.module('mapChat.mapMarkers')
     .controller('MarkerController',
-    function ($scope, $ionicPopup, $timeout, fbMessageService, Auth, SweetAlert) {
+    function ($scope, $ionicPopup, $timeout, fbMessageService, fbUsernameService, Auth, SweetAlert) {
         $scope.greet = function (user) {
             alert("Greet");
         };
+
+        console.log("------start------")
+        console.log($scope.userId);
+        console.log("------end---------")
+
+
+        //fbUsernameService.getUserNameByUid($scope.userId).then(
+        //    function (userName) {
+        //        console.log("------start------")
+        //        console.log($scope.userId);
+        //        console.log("------end---------")
+        //        $scope.userName=userName;
+        //    }
+        //);
+
 
         $scope.test = function () {
             SweetAlert.swal({

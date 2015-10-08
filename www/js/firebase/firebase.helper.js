@@ -16,7 +16,6 @@ angular.module('firebase.helper', ['firebase', 'firebase.utils', 'angularGeoFire
                     console.log('message sent');
                 });
             }
-
         }
     })
 
@@ -25,7 +24,7 @@ angular.module('firebase.helper', ['firebase', 'firebase.utils', 'angularGeoFire
         var authData = Auth.$getAuth();
 
         if (authData) {
-            var uid = authData.uid
+            var uid = authData.uid;
             var currentUserName = null;
             return {
                 saveUserName: function (username) {
@@ -38,11 +37,21 @@ angular.module('firebase.helper', ['firebase', 'firebase.utils', 'angularGeoFire
                     var def = $q.defer();
                     var userReference = fbutil.ref("usersInfo/" + uid);
                     userReference.on("value", function (data) {
-                        console.log('get value!');
                         def.resolve(data.val().userName);
                     });
 
                     return def.promise;
+                },
+
+                getUserNameByUid: function (userId) {
+                    var def = $q.defer();
+                    var userReference = fbutil.ref("usersInfo/" + userId);
+                    userReference.on("value", function (data) {
+                        def.resolve(data.val().userName);
+                    });
+
+                    return def.promise;
+
                 }
             };
         }
@@ -86,7 +95,7 @@ angular.module('firebase.helper', ['firebase', 'firebase.utils', 'angularGeoFire
 //})
 
     .
-    service('fbGeoService', function (fbutil, $firebaseArray, $geofire, $rootScope) {
+    service('fbGeoService', function (fbutil, $firebaseArray, $geofire, $rootScope, otherUserMarkersLocationsService) {
 
         this.set = function (auth, location) {
             var authData = auth.$getAuth();
@@ -123,7 +132,8 @@ angular.module('firebase.helper', ['firebase', 'firebase.utils', 'angularGeoFire
 
             $rootScope.$on("SEARCH:KEY_ENTERED", function (event, key, location, distance) {
                 console.log("KEY ENTERED FOUND");
-                $rootScope.otherUsersLocations.push({userId: key, location: location});
+                otherUserMarkersLocationsService.addOtherUserMarkersLocations({userId: key, location: location})
+                //$rootScope.otherUsersLocations.push({userId: key, location: location});
                 // Cancel the query if the distance is > 5 km
                 if (distance > maxDistance) {
                     locationQueryCallback.cancel();

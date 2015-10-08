@@ -11,12 +11,12 @@ angular.module('mapChat.map')
               $ionicPopup,
               $timeout,
               getCurrentLocation,
-              $rootScope,
               fbGeoService,
               Auth,
               fbutil,
               SweetAlert,
-              fbMessageService) {
+              fbMessageService,
+              otherUserMarkersLocationsService) {
 
         var center = [37.953757, -122.076692];
         var radius = 10;
@@ -178,7 +178,8 @@ angular.module('mapChat.map')
         $scope.addMarkers = function (current_location) {
             //Read other users' locations, and create markers on their locations.
             //Can be extended, more features can be added to this function.
-            var otherUsers = $rootScope.otherUsersLocations;
+            var otherUsers = otherUserMarkersLocationsService.getOtherUserMarkerLocations();
+
             var markers = {};
             for (i = 0; i < otherUsers.length; i++) {
                 var key = 'm' + i;
