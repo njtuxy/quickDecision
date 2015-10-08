@@ -16,7 +16,8 @@ angular.module('mapChat.map')
               fbutil,
               SweetAlert,
               fbMessageService,
-              otherUserMarkersLocationsService) {
+              otherUserMarkersLocationsService,
+              fbUsernameService) {
 
         var center = [37.953757, -122.076692];
         var radius = 10;
@@ -180,15 +181,20 @@ angular.module('mapChat.map')
             //Can be extended, more features can be added to this function.
             var otherUsers = otherUserMarkersLocationsService.getOtherUserMarkerLocations();
 
+
+
             var markers = {};
             for (i = 0; i < otherUsers.length; i++) {
                 var key = 'm' + i;
                 var location = otherUsers[i].location;
                 var userId = otherUsers[i].userId;
+                var userName = otherUsers[i].userName;
+
+
                 markers[key] = {
                     lat: location[0],
                     lng: location[1],
-                    message: "<div ng-include=\"'templates/mapMarkers/marker_popup.html'\" onload=\"userId = " + "'" + userId + "'" + "\"></div>",
+                    message: "<div ng-include=\"'templates/mapMarkers/marker_popup.html'\" onload=\"userId = " + "'" + userName + "'" + "\"></div>",
                     icon: {
                         type: 'awesomeMarker',
                         icon: 'ion-person',
@@ -227,5 +233,7 @@ angular.module('mapChat.map')
 
         $scope.listenToNewMessage();
         $scope.watchCurrentPosition();
-    });
+    }
+)
+;
 

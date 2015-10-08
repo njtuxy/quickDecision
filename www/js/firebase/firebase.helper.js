@@ -95,7 +95,7 @@ angular.module('firebase.helper', ['firebase', 'firebase.utils', 'angularGeoFire
 //})
 
     .
-    service('fbGeoService', function (fbutil, $firebaseArray, $geofire, $rootScope, otherUserMarkersLocationsService) {
+    service('fbGeoService', function (fbutil, $firebaseArray, $geofire, $rootScope, otherUserMarkersLocationsService, fbUsernameService) {
 
         this.set = function (auth, location) {
             var authData = auth.$getAuth();
@@ -132,7 +132,13 @@ angular.module('firebase.helper', ['firebase', 'firebase.utils', 'angularGeoFire
 
             $rootScope.$on("SEARCH:KEY_ENTERED", function (event, key, location, distance) {
                 console.log("KEY ENTERED FOUND");
-                otherUserMarkersLocationsService.addOtherUserMarkersLocations({userId: key, location: location})
+
+                fbUsernameService.getUserNameByUid(key).then(
+                    function (userName) {
+                        otherUserMarkersLocationsService.addOtherUserMarkersLocations({userId: key, location: location, userName:userName})
+                    }
+                );
+
                 //$rootScope.otherUsersLocations.push({userId: key, location: location});
                 // Cancel the query if the distance is > 5 km
                 if (distance > maxDistance) {

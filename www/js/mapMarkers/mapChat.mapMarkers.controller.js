@@ -8,21 +8,6 @@ angular.module('mapChat.mapMarkers')
             alert("Greet");
         };
 
-        console.log("------start------")
-        console.log($scope.userId);
-        console.log("------end---------")
-
-
-        //fbUsernameService.getUserNameByUid($scope.userId).then(
-        //    function (userName) {
-        //        console.log("------start------")
-        //        console.log($scope.userId);
-        //        console.log("------end---------")
-        //        $scope.userName=userName;
-        //    }
-        //);
-
-
         $scope.test = function () {
             SweetAlert.swal({
                 title: "Send Message to: " + $scope.userId,
