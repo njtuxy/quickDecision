@@ -565,6 +565,21 @@ ion-spinner.spinner-on-load {
   font-weight: 600
 }
 
+.sideMenuChatInboxNumber .inbox-unread{
+  left: 33px;
+  position: absolute;
+  top: 10px;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: #638f00;
+  font-size: 11px;
+  text-align: center;
+  line-height: 16px;
+  font-weight: 600
+
+}
+
 .menu-outer .full-width-item {
   border-left: none
 }

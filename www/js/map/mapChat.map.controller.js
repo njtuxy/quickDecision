@@ -197,9 +197,10 @@ angular.module('mapChat.map')
                     message: "<div ng-include=\"'templates/mapMarkers/marker_popup.html'\" onload=\"userId = " + "'" + userName + "'" + "\"></div>",
                     icon: {
                         type: 'awesomeMarker',
-                        icon: 'ion-person',
+                        icon: 'ion-ios-musical-notes',
                         prefix: 'ion',
-                        markerColor: 'darkgreen'
+                        markerColor: 'purple',
+                        spin: true
                     }
 
                 };
@@ -213,7 +214,8 @@ angular.module('mapChat.map')
                     type: 'awesomeMarker',
                     icon: 'ion-sad',
                     prefix: 'ion',
-                    markerColor: 'orange'
+                    markerColor: 'red',
+                    spin: true
                 }
             };
             $scope.markers = markers;
