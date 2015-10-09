@@ -10,6 +10,7 @@ angular.module('mapChat',
         'mapChat.mapMarkers',
         'mapChat.profile',
         'mapChat.settings',
+        'mapChat.chats',
         'cordova.helper',
         'firebase.helper',
         'general.helper',
@@ -132,7 +133,29 @@ angular.module('mapChat',
                 }
             })
 
-            .state('app.settings', {
+            .state('app.chats', {
+                url: "/chats",
+                abstract: true,
+                views: {
+                    "menuContent": {
+                        templateUrl: "templates/chats/chats.html",
+                        controller: 'ChatsController'
+                    }
+                }
+            })
+
+
+            .state('app.chats.list', {
+                url: "/settings-detail",
+                views: {
+                    "chatsList": {
+                        templateUrl: "templates/chats/chats-list.html"
+                    }
+                }
+            })
+
+
+        .state('app.settings', {
                 url: "/settings",
                 abstract: true,
                 views: {
