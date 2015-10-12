@@ -18,7 +18,7 @@ $dark:                            #444 !default;
 // The path for our ionicons font files, relative to the built CSS in www/css
 $ionicons-font-path: "../lib/ionic/fonts" !default;
 
-$big-bg:      'http://ioniconf.com/img/bg.jpg';
+$big-bg: 'http://ioniconf.com/img/bg.jpg';
 
 .scroll-bg {
   background: url($big-bg) no-repeat center center fixed;
@@ -33,25 +33,20 @@ $assertive: #000000 !default;
 $royal: #886aea !default;
 $dark: #2c3e50 !default;
 
-
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
 
-
-
-
-.grey-bg{
+.grey-bg {
   background: #f5fcfe;
 }
 
-.white-bg{
+.white-bg {
   background: #FFFFFF;
 }
 
 .my-calm-border {
   border-color: #11c1f3;
 }
-
 
 p.sansserif {
   font-family: Arial, Helvetica, sans-serif;
@@ -70,10 +65,10 @@ img.friend_icon {
   overflow: hidden;
   margin: 0px 0px;
   border-radius: 2px;
-  background-color: #fff; }
+  background-color: #fff;
+}
 
-
-.center{
+.center {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -104,7 +99,6 @@ img.friend_icon {
   align-items: center;
 }
 
-
 .login {
   color: #493F0B;
   font-weight: bold;
@@ -114,37 +108,38 @@ img.friend_icon {
 }
 
 input::-webkit-input-placeholder {
-  font-size: 10px ;
+  font-size: 10px;
   font-family: 'Roboto', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
 
-
 }
+
 input:-moz-placeholder {
-  color: red ;
-}
-input:-ms-input-placeholder { /* IE10+ */
-  color: red ;
+  color: red;
 }
 
-.fixed-outside{
+input:-ms-input-placeholder {
+  /* IE10+ */
+  color: red;
+}
+
+.fixed-outside {
   position: absolute;
   bottom: 0;
-  color:white;
+  color: white;
   width: 100%;
-  height:  100px;
-  text-align:center;
+  height: 100px;
+  text-align: center;
 }
 
-
-.largerIcon{
+.largerIcon {
   font-size: 150px;
 }
 
-.smallerFont{
+.smallerFont {
   font-size: 11px;
 }
 
-.item{
+.item {
   background-color: #FFFFFF;
 }
 
@@ -386,7 +381,6 @@ ion-spinner.spinner-on-load {
   border-color: #ff992f
 }
 
-
 .welcome-view .bottom-content .app-sing-in {
   color: #1b4f9e;
   background-color: #1ebabb;
@@ -441,7 +435,6 @@ ion-spinner.spinner-on-load {
   font-size: 14px;
   color: rgba(255, 255, 255, .85)
 }
-
 
 //Added for theme 1
 
@@ -565,7 +558,7 @@ ion-spinner.spinner-on-load {
   font-weight: 600
 }
 
-.sideMenuChatInboxNumber .inbox-unread{
+.sideMenuChatInboxNumber .inbox-unread {
   left: 33px;
   position: absolute;
   top: 10px;
@@ -893,7 +886,6 @@ ion-nav-bar.chats-color ion-header-bar {
   background-size: 0 !important
 }
 
-
 ion-nav-bar.settings-color * {
   color: #FFF
 }
@@ -902,8 +894,7 @@ ion-nav-bar.settings-color * .buttons button::before {
   color: #FFF
 }
 
-
-.chats-view{
+.chats-view {
   background-color: #009689;
   color: #444;
 }
@@ -1631,34 +1622,60 @@ ion-nav-bar.checkout-color * .buttons button::before {
 }
 
 .action-sheet .button:hover {
-  color: #ffb22a; }
+  color: #ffb22a;
+}
 
 .action-sheet .button.active, .action-sheet .button.activated {
   box-shadow: none;
   border-color: #1ebabb;
   color: #ffb22a;
-  background: #1ebabb; }
-
+  background: #1ebabb;
+}
 
 //leaflet map div
 
 .custom-popup .leaflet-popup-content-wrapper {
-  background:#2c3e50;
+  background: #2c3e50;
   color: #eeeeee;
-  font-size:16px;
-  line-height:84px;
+  font-size: 16px;
+  line-height: 84px;
 }
+
 .custom-popup .leaflet-popup-content-wrapper a {
   color: rgba(0, 0, 0, 0.5);
 }
+
 .custom-popup .leaflet-popup-tip-container {
-  width:90px;
-  height:57px;
+  width: 90px;
+  height: 57px;
   padding: 1px;
 }
+
 .custom-popup .leaflet-popup-tip {
-  border-left:15px solid transparent;
-  border-right:15px solid transparent;
-  border-top:5px solid #2c3e50;
-  background:#2c3e50;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 5px solid #2c3e50;
+  background: #2c3e50;
+}
+
+.chat-modal {
+  min-height: 0 !important;
+  background-color: #7fa7ff;
+  width: 90%;
+  height: 60%;
+  top: 40%;
+  left: 5%;
+  right: 5%;
+  bottom: 2%;
+}
+
+.chat-modal ion-header-bar {
+  background-color: #1ebabb
+}
+
+.chat-modal .modal-title {
+  color: #333;
+  font-size: 22px;
+  font-weight: 400;
+  font-size: 16px
 }

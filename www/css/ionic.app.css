@@ -9025,7 +9025,7 @@ ion-nav-bar.checkout-color * .buttons button::before {
 
 .custom-popup .leaflet-popup-tip-container {
   width: 90px;
-  height: 17px;
+  height: 57px;
   padding: 1px; }
 
 .custom-popup .leaflet-popup-tip {
@@ -9033,3 +9033,22 @@ ion-nav-bar.checkout-color * .buttons button::before {
   border-right: 15px solid transparent;
   border-top: 5px solid #2c3e50;
   background: #2c3e50; }
+
+.chat-modal {
+  min-height: 0 !important;
+  background-color: #7fa7ff;
+  width: 90%;
+  height: 60%;
+  top: 40%;
+  left: 5%;
+  right: 5%;
+  bottom: 2%; }
+
+.chat-modal ion-header-bar {
+  background-color: #1ebabb; }
+
+.chat-modal .modal-title {
+  color: #333;
+  font-size: 22px;
+  font-weight: 400;
+  font-size: 16px; }
