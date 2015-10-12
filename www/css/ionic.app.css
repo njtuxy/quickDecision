@@ -9016,12 +9016,12 @@ ion-nav-bar.checkout-color * .buttons button::before {
 
 .custom-popup .leaflet-popup-content-wrapper {
   background: #2c3e50;
-  color: #fff;
+  color: #eeeeee;
   font-size: 16px;
-  line-height: 24px; }
+  line-height: 84px; }
 
 .custom-popup .leaflet-popup-content-wrapper a {
-  color: rgba(255, 255, 255, 0.5); }
+  color: rgba(0, 0, 0, 0.5); }
 
 .custom-popup .leaflet-popup-tip-container {
   width: 90px;
@@ -9031,5 +9031,5 @@ ion-nav-bar.checkout-color * .buttons button::before {
 .custom-popup .leaflet-popup-tip {
   border-left: 15px solid transparent;
   border-right: 15px solid transparent;
-  border-top: 15px solid #2c3e50;
+  border-top: 5px solid #2c3e50;
   background: #2c3e50; }

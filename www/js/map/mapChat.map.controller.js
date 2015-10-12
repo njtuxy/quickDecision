@@ -37,6 +37,14 @@ angular.module('mapChat.map')
                     console.log('getting current location');
                     $scope.setMap();
                     console.log('debug 2');
+                    $scope.$on("leafletDirectiveMarker.click", function(event, args){
+                        console.log('>>>>>>>>>>>>>>>>>>>>>>>>> marker clicke event');
+                        var marker_key = args.modelName;
+                        console.log($scope.markers[marker_key].icon.markerColor);
+                        $scope.markers[marker_key].icon.markerColor='red';
+                        //console.log(event);
+                    });
+
                 });
             };
 
@@ -143,7 +151,8 @@ angular.module('mapChat.map')
         $scope.setMap = function () {
             $scope.map = {
                 defaults: {
-                    tileLayer: 'http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png',
+                    //tileLayer: 'http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png',
+                    tileLayer: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
                     maxZoom: 18,
                     //zoomControlPosition: 'bottomleft'
                 },
@@ -158,7 +167,7 @@ angular.module('mapChat.map')
                 center: {
                     lat: $scope.lat,
                     lng: $scope.lng,
-                    zoom: 15
+                    zoom: 10
                 }
             };
             console.log('map settings done, going to show the div')
@@ -184,17 +193,22 @@ angular.module('mapChat.map')
 
 
             var markers = {};
+
+
             for (i = 0; i < otherUsers.length; i++) {
-                var key = 'm' + i;
+                var key = 'mcmarker_' + i;
                 var location = otherUsers[i].location;
                 var userId = otherUsers[i].userId;
                 var userName = otherUsers[i].userName;
 
 
                 markers[key] = {
+                    userName: userName,
                     lat: location[0],
                     lng: location[1],
-                    message: "<div ng-include=\"'templates/mapMarkers/marker_popup.html'\" onload=\"userId = " + "'" + userName + "'" + "\"></div>",
+
+                    //message: "<div> <i class='icon ion-chatbubble'></i> </div>",
+                    //message: "<div class='my-calm-border' ng-include=\"'templates/mapMarkers/marker_popup.html'\" onload=\"userName = " + "'" + userName + "'" + "\"></div>",
                     icon: {
                         type: 'awesomeMarker',
                         icon: 'ion-ios-musical-notes',
