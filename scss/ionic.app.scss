@@ -880,11 +880,19 @@ ion-nav-bar.profile-color * .buttons button::before {
 }
 
 ion-nav-bar.settings-color ion-header-bar {
-  background-color: #4EBABA !important;
-  background: #4EBABA !important;
+  background-color: #000000 !important;
+  background: #000000 !important;
   border: none !important;
   background-size: 0 !important
 }
+
+ion-nav-bar.chats-color ion-header-bar {
+  background-color: #000000 !important;
+  background: #000000 !important;
+  border: none !important;
+  background-size: 0 !important
+}
+
 
 ion-nav-bar.settings-color * {
   color: #FFF
@@ -892,6 +900,12 @@ ion-nav-bar.settings-color * {
 
 ion-nav-bar.settings-color * .buttons button::before {
   color: #FFF
+}
+
+
+.chats-view{
+  background-color: #009689;
+  color: #444;
 }
 
 .settings-view {

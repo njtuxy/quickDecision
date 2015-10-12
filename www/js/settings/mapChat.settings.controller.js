@@ -3,11 +3,11 @@
  */
 angular.module('mapChat.settings')
 
-    .controller("SettingsController", function ($scope, $ionicModal, Auth, fbUsernameService, authTrackerService, uidService) {
+    .controller("SettingsController", function ($scope, $ionicModal, Auth, fbUsernameService) {
 
         $scope.logout = function () {
             Auth.$unauth();
-            authTrackerService.setAuth(false);
+            //authTrackerService.setAuth(false);
             console.log('logged out!')
         };
 
