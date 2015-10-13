@@ -1701,6 +1701,24 @@ ion-nav-bar.checkout-color * .buttons button::before {
   font-size: 16px
 }
 
+.chatHeadBar{
+  width: 320px;
+  height: 50px;
+  background-color: #0000CD;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.chatHeadBar.ng-hide-add {
+  -webkit-animation: fadeOutUp 0.4s;
+  display: block!important;
+}
+.chatHeadBar.ng-hide-remove {
+  -webkit-animation: fadeInDown 0.4s;
+}
+
+
 .chatFootBar {
   width: 320px;
   height: 50px;
@@ -1709,6 +1727,7 @@ ion-nav-bar.checkout-color * .buttons button::before {
   margin-left: auto;
   margin-right: auto;
 }
+
 
 .chatFootBar.ng-hide-add {
   -webkit-animation: fadeOutDown 0.4s;
@@ -1719,6 +1738,12 @@ ion-nav-bar.checkout-color * .buttons button::before {
 }
 
 //form wrapper:
+
+.chatFootBar.bar {
+  background-image: none;
+}
+.bar-footer.item-input-inset {
+  position: absolute; }
 
 /*Clearing Floats*/
 .chatFootBar .cf:before, .cf:after{

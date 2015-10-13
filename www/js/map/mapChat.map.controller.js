@@ -24,6 +24,7 @@ angular.module('mapChat.map')
         var maxDistance = 12;
 
         var showChatFootBar = false;
+        var showChatHeadBar = false;
 
         fbGeoService.queryLocation(center, radius, maxDistance);
 
@@ -45,6 +46,7 @@ angular.module('mapChat.map')
                         console.log($scope.markers[marker_key].icon.markerColor);
                         $scope.markers[marker_key].icon.markerColor='red';
                         $scope.showChatFootBar = !showChatFootBar;
+                        $scope.showChatHeadBar = !showChatHeadBar;
                     });
 
                     $scope.$on("leafletDirectiveMap.click", function(event, args){
