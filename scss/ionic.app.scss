@@ -1809,7 +1809,7 @@ ion-nav-bar.checkout-color * .buttons button::before {
   outline: 0;
 }
 
-.form-wrapper button:before { /* left arrow */
+.chatFootBar .form-wrapper button:before { /* left arrow */
   content: '';
   position: absolute;
   border-width: 8px 8px 8px 0;
@@ -1819,16 +1819,16 @@ ion-nav-bar.checkout-color * .buttons button::before {
   left: -6px;
 }
 
-.form-wrapper button:hover:before{
+.chatFootBar .form-wrapper button:hover:before{
   border-right-color: #e54040;
 }
 
-.form-wrapper button:focus:before,
-.form-wrapper button:active:before{
+.chatFootBar .form-wrapper button:focus:before,
+.chatFootBar .form-wrapper button:active:before{
   border-right-color: #c42f2f;
 }
 
-.form-wrapper button::-moz-focus-inner { /* remove extra button spacing for Mozilla Firefox */
+.chatFootBar .form-wrapper button::-moz-focus-inner { /* remove extra button spacing for Mozilla Firefox */
   border: 0;
   padding: 0;
 }
