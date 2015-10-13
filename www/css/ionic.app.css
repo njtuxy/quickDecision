@@ -9112,12 +9112,11 @@ ion-nav-bar.checkout-color * .buttons button::before {
 .form-wrapper input {
   width: 400px;
   height: 40px;
-  padding: 10px 5px;
+  padding: 10px 10px;
   float: left;
   font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
   border: 0;
-  background: #eee;
-  border-radius: 3px 0 0 3px; }
+  background: #eee; }
 
 .form-wrapper input:focus {
   outline: 0;
