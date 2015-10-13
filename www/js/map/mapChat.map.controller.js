@@ -42,8 +42,13 @@ angular.module('mapChat.map')
                         var marker_key = args.modelName;
                         console.log($scope.markers[marker_key].icon.markerColor);
                         $scope.markers[marker_key].icon.markerColor='red';
-                        //console.log(event);
+                        $scope.showBottomDiv = true;
                     });
+
+                    $scope.$on("leafletDirectiveMap.click", function(event, args){
+                        $scope.showBottomDiv = false;
+                        console.log('show bottom set to false');
+                    })
 
                 });
             };
