@@ -23,6 +23,8 @@ angular.module('mapChat.map')
         var radius = 10;
         var maxDistance = 12;
 
+        var showBottomDiv = false;
+
         fbGeoService.queryLocation(center, radius, maxDistance);
 
 
@@ -42,7 +44,7 @@ angular.module('mapChat.map')
                         var marker_key = args.modelName;
                         console.log($scope.markers[marker_key].icon.markerColor);
                         $scope.markers[marker_key].icon.markerColor='red';
-                        $scope.showBottomDiv = true;
+                        $scope.showBottomDiv = !showBottomDiv;
                     });
 
                     $scope.$on("leafletDirectiveMap.click", function(event, args){
@@ -172,7 +174,7 @@ angular.module('mapChat.map')
                 center: {
                     lat: $scope.lat,
                     lng: $scope.lng,
-                    zoom: 10
+                    zoom: 16
                 }
             };
             console.log('map settings done, going to show the div')

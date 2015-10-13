@@ -27,20 +27,35 @@
         <!--<leaflet defaults="map.defaults" center="map.center" markers="map.markers"></leaflet>-->
     </ion-content>
 
-    <ion-footer-bar  class="animated fadeInUp bar-balanced" ng-show="showBottomDiv">
-        <div >
-            <button class="button ion-chatbox"> click me </button>
-            <button class="button ion-chatbox"> click me </button>
-            <button class="button ion-chatbox"> click me </button>
-        </div>
-    </ion-footer-bar>
+    <!--<ion-footer-bar  class="animated fadeInUp bar-balanced" ng-show="showBottomDiv">-->
+        <!--<div >-->
+            <!--<button class="button ion-chatbox"> click me </button>-->
+            <!--<button class="button ion-chatbox"> click me </button>-->
+            <!--<button class="button ion-chatbox"> click me </button>-->
+        <!--</div>-->
+    <!--</ion-footer-bar>-->
 
-    <ion-footer-bar  class="myFootbar animated fadeInUp bar-balanced" ng-show="showBottomDiv">
-        <div >
-            <button class="button ion-chatbox"> click me </button>
-            <button class="button ion-chatbox"> click me </button>
-            <button class="button ion-chatbox"> click me </button>
-        </div>
+    <ion-footer-bar class="myFootbar" ng-show="showBottomDiv">
+        <!--<div>-->
+            <!--<ul class="input-list style-4 clearfix">-->
+                <!--<li>-->
+                    <!--<input type="text" placeholder="Send a message to ...">-->
+                <!--</li>-->
+                <!--&lt;!&ndash;<li>&ndash;&gt;-->
+                    <!--&lt;!&ndash;<input type="text" placeholder=":focus" class="focus">&ndash;&gt;-->
+                <!--&lt;!&ndash;</li>&ndash;&gt;-->
+            <!--</ul>-->
+
+            <!--&lt;!&ndash;<a class="icon ion-chatbox"> </a>&ndash;&gt;-->
+            <!--&lt;!&ndash;<a class="icon ion-camera"> </a>&ndash;&gt;-->
+
+            <!--&lt;!&ndash;<button class="button ion-heart"> click me </button>&ndash;&gt;-->
+        <!--</div>-->
+
+        <form class="form-wrapper cf">
+            <input type="text" placeholder="Search here..." required>
+            <button type="submit">Send</button>
+        </form>
     </ion-footer-bar>
 
 
