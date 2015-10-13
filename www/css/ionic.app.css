@@ -9072,35 +9072,35 @@ ion-nav-bar.checkout-color * .buttons button::before {
   font-weight: 400;
   font-size: 16px; }
 
-.myFootbar {
-  width: 500px;
+.chatFootBar {
+  width: 320px;
   height: 50px;
-  background-color: #24c671;
+  background-color: transparent;
   display: block;
   margin-left: auto;
   margin-right: auto; }
 
-.myFootbar.ng-hide-add {
+.chatFootBar.ng-hide-add {
   -webkit-animation: fadeOutDown 0.4s;
   display: block !important; }
 
-.myFootbar.ng-hide-remove {
+.chatFootBar.ng-hide-remove {
   -webkit-animation: fadeInUp 0.4s; }
 
 /*Clearing Floats*/
-.cf:before, .cf:after {
+.chatFootBar .cf:before, .cf:after {
   content: "";
   display: table; }
 
-.cf:after {
+.chatFootBar .cf:after {
   clear: both; }
 
-.cf {
+.chatFootBar .cf {
   zoom: 1; }
 
 /* Form wrapper styling */
-.form-wrapper {
-  width: 480px;
+.chatFootBar .form-wrapper {
+  width: 300px;
   padding: 0px;
   margin: auto;
   background: #444;
@@ -9109,8 +9109,8 @@ ion-nav-bar.checkout-color * .buttons button::before {
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4) inset, 0 1px 0 rgba(255, 255, 255, 0.2); }
 
 /* Form text input */
-.form-wrapper input {
-  width: 400px;
+.chatFootBar .form-wrapper input {
+  width: 250px;
   height: 40px;
   padding: 10px 10px;
   float: left;
@@ -9118,35 +9118,34 @@ ion-nav-bar.checkout-color * .buttons button::before {
   border: 0;
   background: #eee; }
 
-.form-wrapper input:focus {
+.chatFootBar .form-wrapper input:focus {
   outline: 0;
-  background: #fff;
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.8) inset; }
+  background: #fff; }
 
-.form-wrapper input::-webkit-input-placeholder {
+.chatFootBar .form-wrapper input::-webkit-input-placeholder {
   color: #999;
   font-weight: normal;
   font-style: italic; }
 
-.form-wrapper input:-moz-placeholder {
-  color: #999;
+.chatFootBar .form-wrapper input:-moz-placeholder {
+  color: #d62222;
   font-weight: normal;
   font-style: italic; }
 
-.form-wrapper input:-ms-input-placeholder {
+.chatFootBar .form-wrapper input:-ms-input-placeholder {
   color: #999;
   font-weight: normal;
   font-style: italic; }
 
 /* Form submit button */
-.form-wrapper button {
+.chatFootBar .form-wrapper button {
   overflow: visible;
   position: relative;
   border: 0;
   padding: 0;
   cursor: pointer;
   height: 40px;
-  width: 80px;
+  width: 50px;
   font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
   color: #fff;
   text-transform: uppercase;
@@ -9154,10 +9153,10 @@ ion-nav-bar.checkout-color * .buttons button::before {
   border-radius: 0 3px 3px 0;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3); }
 
-.form-wrapper button:hover {
+.chatFootBar .form-wrapper button:hover {
   background: #e54040; }
 
-.form-wrapper button:active, .form-wrapper button:focus {
+.chatFootBar .form-wrapper button:active, .chatFootBar .form-wrapper button:focus {
   background: #c42f2f;
   outline: 0; }
 
