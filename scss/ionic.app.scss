@@ -1767,10 +1767,10 @@ ion-nav-bar.checkout-color * .buttons button::before {
   width: 300px;
   padding: 0px;
   margin: auto;
-  background: #444;
-  background: rgba(0, 0, 0, .2);
-  border-radius: 2px;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, .4) inset, 0 1px 0 rgba(255, 255, 255, .2);
+  //background: #444;
+  //background: rgba(0, 0, 0, .2);
+  //border-radius: 2px;
+  //box-shadow: 0 1px 1px rgba(0, 0, 0, .4) inset, 0 1px 0 rgba(255, 255, 255, .2);
 }
 
 /* Form text input */
@@ -1783,7 +1783,7 @@ ion-nav-bar.checkout-color * .buttons button::before {
   font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
   border: 0;
   background: #eee;
-  //border-radius: 3px 0 0 3px;
+  border-radius: 0 0 0 0;
 }
 
 .chatFootBar .form-wrapper input:focus {
@@ -1824,7 +1824,7 @@ ion-nav-bar.checkout-color * .buttons button::before {
   color: #fff;
   text-transform: uppercase;
   background: #d83c3c;
-  border-radius: 0 3px 3px 0;
+  //border-radius: 0 3px 3px 0;
   text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
 }
 
