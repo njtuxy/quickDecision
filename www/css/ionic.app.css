@@ -7779,7 +7779,8 @@ input:-ms-input-placeholder {
   text-align: center; }
 
 .largerIcon {
-  font-size: 150px; }
+  font-size: 30px;
+  color: red; }
 
 .smallerFont {
   font-size: 11px; }
@@ -9074,8 +9075,8 @@ ion-nav-bar.checkout-color * .buttons button::before {
 
 .chatHeadBar {
   width: 320px;
-  height: 50px;
-  background-color: #0000CD;
+  height: 40px;
+  background-color: rgba(238, 238, 238, 0);
   display: block;
   margin-left: auto;
   margin-right: auto; }
@@ -9201,3 +9202,18 @@ ion-nav-bar.checkout-color * .buttons button::before {
   /* remove extra button spacing for Mozilla Firefox */
   border: 0;
   padding: 0; }
+
+.chatHeadBar .topIcon {
+  font-size: 30px;
+  color: #ffffff;
+  position: absolute;
+  top: 20%;
+  left: 28%; }
+
+.circle {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #d83c3c;
+  position: relative;
+  /* width and height can be anything, as long as they're equal */ }

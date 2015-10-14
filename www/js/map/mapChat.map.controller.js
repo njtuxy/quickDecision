@@ -37,20 +37,19 @@ angular.module('mapChat.map')
                     $scope.lat = location.latitude;
                     $scope.lng = location.longitude;
                     $scope.addMarkers(location);
-                    console.log('getting current location');
                     $scope.setMap();
-                    console.log('debug 2');
                     $scope.$on("leafletDirectiveMarker.click", function(event, args){
-                        console.log('>>>>>>>>>>>>>>>>>>>>>>>>> marker clicke event');
+                        //console.log('>>>>>>>>>>>>>>>>>>>>>>>>> marker clicke event');
                         var marker_key = args.modelName;
-                        console.log($scope.markers[marker_key].icon.markerColor);
                         $scope.markers[marker_key].icon.markerColor='red';
                         $scope.showChatFootBar = !showChatFootBar;
                         $scope.showChatHeadBar = !showChatHeadBar;
+                        $scope.reciever_id = $scope.markers[marker_key].userId
                     });
 
                     $scope.$on("leafletDirectiveMap.click", function(event, args){
                         $scope.showChatFootBar = false;
+                        $scope.showChatHeadBar = false;
                         console.log('show bottom set to false');
                     })
 
@@ -86,6 +85,11 @@ angular.module('mapChat.map')
             });
         };
 
+
+        $scope.sendMessageToReciever = function(message){
+            fbMessageService.sendMessage(Auth, $scope.reciever_id, message);
+            $scope.showChatFootBar = false;
+        };
 
         $scope.reply = function (sender) {
             SweetAlert.swal({
@@ -176,7 +180,7 @@ angular.module('mapChat.map')
                 center: {
                     lat: $scope.lat,
                     lng: $scope.lng,
-                    zoom: 16
+                    zoom: 10
                 }
             };
             console.log('map settings done, going to show the div')
@@ -213,6 +217,7 @@ angular.module('mapChat.map')
 
                 markers[key] = {
                     userName: userName,
+                    userId: userId,
                     lat: location[0],
                     lng: location[1],
 
@@ -232,7 +237,7 @@ angular.module('mapChat.map')
             markers['center'] = {
                 lat: current_location.latitude,
                 lng: current_location.longitude,
-                message: "I am very upset",
+                message: "Hello, world",
                 icon: {
                     type: 'awesomeMarker',
                     icon: 'ion-sad',

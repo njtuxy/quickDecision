@@ -132,7 +132,8 @@ input:-ms-input-placeholder {
 }
 
 .largerIcon {
-  font-size: 150px;
+  font-size: 30px;
+  color: red;
 }
 
 .smallerFont {
@@ -1701,10 +1702,10 @@ ion-nav-bar.checkout-color * .buttons button::before {
   font-size: 16px
 }
 
-.chatHeadBar{
+.chatHeadBar {
   width: 320px;
-  height: 50px;
-  background-color: #0000CD;
+  height: 40px;
+  background-color: rgba(238, 238, 238, 0);
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -1712,12 +1713,12 @@ ion-nav-bar.checkout-color * .buttons button::before {
 
 .chatHeadBar.ng-hide-add {
   -webkit-animation: fadeOutUp 0.4s;
-  display: block!important;
+  display: block !important;
 }
+
 .chatHeadBar.ng-hide-remove {
   -webkit-animation: fadeInDown 0.4s;
 }
-
 
 .chatFootBar {
   width: 320px;
@@ -1728,11 +1729,11 @@ ion-nav-bar.checkout-color * .buttons button::before {
   margin-right: auto;
 }
 
-
 .chatFootBar.ng-hide-add {
   -webkit-animation: fadeOutDown 0.4s;
-  display: block!important;
+  display: block !important;
 }
+
 .chatFootBar.ng-hide-remove {
   -webkit-animation: fadeInUp 0.4s;
 }
@@ -1742,31 +1743,34 @@ ion-nav-bar.checkout-color * .buttons button::before {
 .chatFootBar.bar {
   background-image: none;
 }
+
 .bar-footer.item-input-inset {
-  position: absolute; }
+  position: absolute;
+}
 
 /*Clearing Floats*/
-.chatFootBar .cf:before, .cf:after{
-  content:"";
-  display:table;
+.chatFootBar .cf:before, .cf:after {
+  content: "";
+  display: table;
 }
 
-.chatFootBar .cf:after{
-  clear:both;
+.chatFootBar .cf:after {
+  clear: both;
 }
 
-.chatFootBar .cf{
-  zoom:1;
+.chatFootBar .cf {
+  zoom: 1;
 }
+
 /* Form wrapper styling */
 .chatFootBar .form-wrapper {
   width: 300px;
   padding: 0px;
   margin: auto;
   background: #444;
-  background: rgba(0,0,0,.2);
+  background: rgba(0, 0, 0, .2);
   border-radius: 2px;
-  box-shadow: 0 1px 1px rgba(0,0,0,.4) inset, 0 1px 0 rgba(255,255,255,.2);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, .4) inset, 0 1px 0 rgba(255, 255, 255, .2);
 }
 
 /* Form text input */
@@ -1821,20 +1825,21 @@ ion-nav-bar.checkout-color * .buttons button::before {
   text-transform: uppercase;
   background: #d83c3c;
   border-radius: 0 3px 3px 0;
-  text-shadow: 0 -1px 0 rgba(0, 0 ,0, .3);
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
 }
 
-.chatFootBar .form-wrapper button:hover{
+.chatFootBar .form-wrapper button:hover {
   background: #e54040;
 }
 
 .chatFootBar .form-wrapper button:active,
-.chatFootBar .form-wrapper button:focus{
+.chatFootBar .form-wrapper button:focus {
   background: #c42f2f;
   outline: 0;
 }
 
-.chatFootBar .form-wrapper button:before { /* left arrow */
+.chatFootBar .form-wrapper button:before {
+  /* left arrow */
   content: '';
   position: absolute;
   border-width: 8px 8px 8px 0;
@@ -1844,16 +1849,35 @@ ion-nav-bar.checkout-color * .buttons button::before {
   left: -6px;
 }
 
-.chatFootBar .form-wrapper button:hover:before{
+.chatFootBar .form-wrapper button:hover:before {
   border-right-color: #e54040;
 }
 
 .chatFootBar .form-wrapper button:focus:before,
-.chatFootBar .form-wrapper button:active:before{
+.chatFootBar .form-wrapper button:active:before {
   border-right-color: #c42f2f;
 }
 
-.chatFootBar .form-wrapper button::-moz-focus-inner { /* remove extra button spacing for Mozilla Firefox */
+.chatFootBar .form-wrapper button::-moz-focus-inner {
+  /* remove extra button spacing for Mozilla Firefox */
   border: 0;
   padding: 0;
+}
+
+.chatHeadBar .topIcon {
+  font-size: 30px;
+  color: #ffffff;
+  position: absolute;
+  top: 20%;
+  left: 28%;
+
+}
+
+.circle {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #d83c3c;
+  position: relative;
+  /* width and height can be anything, as long as they're equal */
 }

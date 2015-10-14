@@ -19,48 +19,83 @@
 
 
         <!--<div ng-show="showChatFootBar" class="animated fadeInDown">-->
-            <!--<button class="button ion-chatbox"> click me </button>-->
-            <!--<button class="button ion-chatbox"> click me </button>-->
-            <!--<button class="button ion-chatbox"> click me </button>-->
+        <!--<button class="button ion-chatbox"> click me </button>-->
+        <!--<button class="button ion-chatbox"> click me </button>-->
+        <!--<button class="button ion-chatbox"> click me </button>-->
         <!--</div>-->
         <!--<leaflet defaults="map.defaults" center="map.center" markers="map.markers" ng-if="map">-->
         <!--<leaflet defaults="map.defaults" center="map.center" markers="map.markers"></leaflet>-->
     </ion-content>
 
     <!--<ion-footer-bar  class="animated fadeInUp bar-balanced" ng-show="showChatFootBar">-->
-        <!--<div >-->
-            <!--<button class="button ion-chatbox"> click me </button>-->
-            <!--<button class="button ion-chatbox"> click me </button>-->
-            <!--<button class="button ion-chatbox"> click me </button>-->
-        <!--</div>-->
+    <!--<div >-->
+    <!--<button class="button ion-chatbox"> click me </button>-->
+    <!--<button class="button ion-chatbox"> click me </button>-->
+    <!--<button class="button ion-chatbox"> click me </button>-->
+    <!--</div>-->
     <!--</ion-footer-bar>-->
 
-    <ion-header-bar class="chatHeadBar" ng-show="showChatHeadBar">
-        SHOW SOME TEXT
+    <ion-header-bar class="chatHeadBar bar-subheader" ng-show="showChatHeadBar">
+
+        <div class="row">
+            <div class="col col-20">
+                <div class="circle">
+                    <i class="icon ion-ios-camera topIcon"></i>
+                </div>
+            </div>
+            <div class="col col-20">
+                <div class="circle">
+                    <i class="icon ion-ios-chatbubble topIcon"></i>
+                </div>
+
+            </div>
+            <div class="col col-20">
+                <div class="circle">
+                    <i class="icon ion-ios-photos topIcon"></i>
+                </div>
+            </div>
+            <div class="col col-20">
+                <div class="circle">
+                    <i class="icon ion-ios-paper topIcon"></i>
+                </div>
+
+            </div>
+
+            <div class="col col-20">
+                <div class="circle">
+                    <i class="icon ion-trash-a topIcon"></i>
+                </div>
+
+            </div>
+
+
+        </div>
+
+
     </ion-header-bar>
 
     <ion-footer-bar class="chatFootBar" ng-show="showChatFootBar">
 
         <!--<div>-->
-            <!--<ul class="input-list style-4 clearfix">-->
-                <!--<li>-->
-                    <!--<input type="text" placeholder="Send a message to ...">-->
-                <!--</li>-->
-                <!--&lt;!&ndash;<li>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<input type="text" placeholder=":focus" class="focus">&ndash;&gt;-->
-                <!--&lt;!&ndash;</li>&ndash;&gt;-->
-            <!--</ul>-->
+        <!--<ul class="input-list style-4 clearfix">-->
+        <!--<li>-->
+        <!--<input type="text" placeholder="Send a message to ...">-->
+        <!--</li>-->
+        <!--&lt;!&ndash;<li>&ndash;&gt;-->
+        <!--&lt;!&ndash;<input type="text" placeholder=":focus" class="focus">&ndash;&gt;-->
+        <!--&lt;!&ndash;</li>&ndash;&gt;-->
+        <!--</ul>-->
 
-            <!--&lt;!&ndash;<a class="icon ion-chatbox"> </a>&ndash;&gt;-->
-            <!--&lt;!&ndash;<a class="icon ion-camera"> </a>&ndash;&gt;-->
+        <!--&lt;!&ndash;<a class="icon ion-chatbox"> </a>&ndash;&gt;-->
+        <!--&lt;!&ndash;<a class="icon ion-camera"> </a>&ndash;&gt;-->
 
-            <!--&lt;!&ndash;<button class="button ion-heart"> click me </button>&ndash;&gt;-->
+        <!--&lt;!&ndash;<button class="button ion-heart"> click me </button>&ndash;&gt;-->
         <!--</div>-->
 
         <!--<form class="form-wrapper cf">-->
         <div class="form-wrapper cf">
-            <input type="text" placeholder="Send a message..." required>
-            <button type="submit">Send</button>
+            <input type="text" placeholder="Send a message..." ng-model="chatMessage" required>
+            <button type="submit" ng-click="sendMessageToReciever(chatMessage)">Send</button>
         </div>
         <!--</form>-->
     </ion-footer-bar>
