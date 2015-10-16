@@ -45,11 +45,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="mapChat.map.controller.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="mapChat.map.controller.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/www/js/map/mapChat.map.controller.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="46" column="52" selection-start-line="46" selection-start-column="52" selection-end-line="46" selection-end-column="52" />
+                <state vertical-scroll-proportion="0.5880923">
+                  <caret line="182" column="18" selection-start-line="182" selection-start-column="18" selection-end-line="182" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
@@ -70,8 +70,8 @@
           <file leaf-file-name="map-local.html" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/www/templates/map/map-local.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-10.078431">
-                  <caret line="101" column="39" selection-start-line="101" selection-start-column="39" selection-end-line="101" selection-end-column="39" />
+                <state vertical-scroll-proportion="-1.2916666">
+                  <caret line="64" column="29" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
                   <folding />
                 </state>
               </provider>
@@ -99,11 +99,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="ionic.app.scss" pinned="false" current-in-tab="true">
+          <file leaf-file-name="ionic.app.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/scss/ionic.app.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.4931164">
-                  <caret line="1777" column="16" selection-start-line="1777" selection-start-column="16" selection-end-line="1777" selection-end-column="16" />
+                <state vertical-scroll-proportion="-10.078431">
+                  <caret line="1770" column="18" selection-start-line="1770" selection-start-column="18" selection-end-line="1770" selection-end-column="18" />
                   <folding />
                 </state>
               </provider>
@@ -137,10 +137,10 @@
         <option value="$PROJECT_DIR$/www/templates/sideMenu/side-menu.html" />
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/js/map/mapChat.map.directive.js" />
-        <option value="$PROJECT_DIR$/www/js/map/mapChat.map.controller.js" />
         <option value="$PROJECT_DIR$/www/templates/map/map.html" />
         <option value="$PROJECT_DIR$/www/templates/map/map-local.html" />
         <option value="$PROJECT_DIR$/scss/ionic.app.scss" />
+        <option value="$PROJECT_DIR$/www/js/map/mapChat.map.controller.js" />
       </list>
     </option>
   </component>
@@ -632,14 +632,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.8235292">
-          <caret line="58" column="57" selection-start-line="58" selection-start-column="57" selection-end-line="58" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/map/mapChat.map.directive.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -658,10 +650,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/map/mapChat.map.controller.js">
+    <entry file="file://$PROJECT_DIR$/www/lib/ionic/js/ionic.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="52" selection-start-line="46" selection-start-column="52" selection-end-line="46" selection-end-column="52" />
+          <caret line="1253" column="38" selection-start-line="1253" selection-start-column="38" selection-end-line="1253" selection-end-column="38" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.8235292">
+          <caret line="58" column="57" selection-start-line="58" selection-start-column="57" selection-end-line="58" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/templates/map/map-local.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2916666">
+          <caret line="64" column="29" selection-start-line="64" selection-start-column="29" selection-end-line="64" selection-end-column="29" />
           <folding />
         </state>
       </provider>
@@ -676,28 +686,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/lib/ionic/js/ionic.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1253" column="38" selection-start-line="1253" selection-start-column="38" selection-end-line="1253" selection-end-column="38" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/templates/map/map-local.html">
+    <entry file="file://$PROJECT_DIR$/scss/ionic.app.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.078431">
-          <caret line="101" column="39" selection-start-line="101" selection-start-column="39" selection-end-line="101" selection-end-column="39" />
+          <caret line="1770" column="18" selection-start-line="1770" selection-start-column="18" selection-end-line="1770" selection-end-column="18" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scss/ionic.app.scss">
+    <entry file="file://$PROJECT_DIR$/www/js/map/mapChat.map.controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4931164">
-          <caret line="1777" column="16" selection-start-line="1777" selection-start-column="16" selection-end-line="1777" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.5880923">
+          <caret line="182" column="18" selection-start-line="182" selection-start-column="18" selection-end-line="182" selection-end-column="18" />
           <folding />
         </state>
       </provider>

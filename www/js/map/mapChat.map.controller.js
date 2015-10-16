@@ -180,7 +180,7 @@ angular.module('mapChat.map')
         center: {
           lat: $scope.lat,
           lng: $scope.lng,
-          zoom: 10
+          zoom: 15
         }
       };
       console.log('map settings done, going to show the div');

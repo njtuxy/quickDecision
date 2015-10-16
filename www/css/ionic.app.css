@@ -10640,6 +10640,9 @@ ion-nav-bar.checkout-color * .buttons button::before {
   margin-left: auto;
   margin-right: auto; }
 
+.mapViewFootBar {
+  height: 50px; }
+
 .chatHeadBar.ng-hide-add {
   -webkit-animation: fadeOutUp 0.4s;
   display: block !important; }
@@ -10649,7 +10652,7 @@ ion-nav-bar.checkout-color * .buttons button::before {
 
 .chatFootBar {
   width: 100%;
-  height: 50px;
+  height: 60px;
   background-color: transparent;
   display: block;
   margin-left: auto;
@@ -10679,14 +10682,14 @@ ion-nav-bar.checkout-color * .buttons button::before {
   float: left;
   font-size: 30px;
   padding-left: 20px;
-  padding-top: 2px;
+  padding-top: 5px;
   color: rgba(0, 0, 0, 0.59); }
 
 .chatFootBar .chatBarIconsPlus {
   float: left;
   font-size: 25px;
   padding-left: 20px;
-  padding-top: 4px;
+  padding-top: 7px;
   color: rgba(0, 0, 0, 0.59); }
 
 /* Form wrapper styling */
@@ -10698,6 +10701,7 @@ ion-nav-bar.checkout-color * .buttons button::before {
 /* Form text input */
 .chatFootBar .form-wrapper input {
   width: 70%;
+  height: 40px;
   padding: 10px 10px;
   float: left;
   border-radius: 3px;
