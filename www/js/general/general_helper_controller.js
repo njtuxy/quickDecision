@@ -69,37 +69,37 @@ angular.module('general.helper')
 
     })
 
-    .controller('CameraController', function ($ionicPlatform, $scope, $cordovaCamera) {
-        $ionicPlatform.ready(function () {
-            var options = {
-                quality: 100,
-                destinationType: Camera.DestinationType.DATA_URL,
-                sourceType: Camera.PictureSourceType.CAMERA,
-                allowEdit: true,
-                encodingType: Camera.EncodingType.JPEG,
-                targetWidth: 100,
-                targetHeight: 100,
-                popoverOptions: CameraPopoverOptions,
-                saveToPhotoAlbum: false
-            };
-
-            $scope.takePicture = function () {
-                $cordovaCamera.getPicture(options).then(function (imageData) {
-                    $scope.imgSrc = "data:image/jpeg;base64," + imageData;
-                }, function (err) {
-                });
-            };
-
-            $scope.takePicture2 = function () {
-                $cordovaCamera.getPicture(options).then(function (imageData) {
-                    $scope.imgSrc2 = "data:image/jpeg;base64," + imageData;
-                }, function (err) {
-                    console.log(err);
-                });
-            }
-
-        });
-    })
+    //.controller('CameraController', function ($ionicPlatform, $scope, $cordovaCamera) {
+    //    $ionicPlatform.ready(function () {
+    //        var options = {
+    //            quality: 100,
+    //            destinationType: Camera.DestinationType.DATA_URL,
+    //            sourceType: Camera.PictureSourceType.CAMERA,
+    //            allowEdit: true,
+    //            encodingType: Camera.EncodingType.JPEG,
+    //            targetWidth: 100,
+    //            targetHeight: 100,
+    //            popoverOptions: CameraPopoverOptions,
+    //            saveToPhotoAlbum: false
+    //        };
+    //
+    //        $scope.takePicture = function () {
+    //            $cordovaCamera.getPicture(options).then(function (imageData) {
+    //                $scope.imgSrc = "data:image/jpeg;base64," + imageData;
+    //            }, function (err) {
+    //            });
+    //        };
+    //
+    //        $scope.takePicture2 = function () {
+    //            $cordovaCamera.getPicture(options).then(function (imageData) {
+    //                $scope.imgSrc2 = "data:image/jpeg;base64," + imageData;
+    //            }, function (err) {
+    //                console.log(err);
+    //            });
+    //        }
+    //
+    //    });
+    //})
 
     //.controller('loginController', function ($scope, $firebaseAuth, $location, $rootScope) {
     //    $scope.loginQD = function (username, password) {
