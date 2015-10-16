@@ -1,6 +1,6 @@
-<ion-view cache-view="false" view-title="Local" class="global-local-view">
+<ion-view view-title="Local" class="global-local-view">
 
-    <ion-content data-tap-disabled="true">
+    <ion-content data-tap-disabled="true" scroll="false">
 
         <!--<div style="height: 240px; width: 400px">-->
 
@@ -94,7 +94,7 @@
 
         <!--<form class="form-wrapper cf">-->
         <form class="form-wrapper cf">
-            <input class="messageInput" type='text' placeholder='Send a message...' on-return='sendMessageToReciever()' ng-model='messageToSend' on-focus='inputUp()' on-blur='inputDown()' required>
+            <input title='send' class="messageInput" type='text' placeholder='Send a message...' on-return='sendMessageToReciever()' ng-model='messageToSend' on-focus='inputUp()' on-blur='inputDown()' required>
             <!--<button type="submit" ng-click="sendMessageToReciever(chatMessage)">Send</button>-->
         </form>
         <!--</form>-->

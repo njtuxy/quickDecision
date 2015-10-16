@@ -51,6 +51,7 @@ angular.module('mapChat.map')
           $scope.$on("leafletDirectiveMap.click", function (event, args) {
             $scope.showChatFootBar = false;
             $scope.showChatHeadBar = false;
+            cordova.plugins.Keyboard.close();
             console.log('show bottom set to false');
           })
 
@@ -274,16 +275,19 @@ angular.module('mapChat.map')
     };
 
     $scope.inputUp = function(){
-      if(isIOS) $scope.inputData.keyboardHeight = 216;
-      $timeout(function(){
-        $ionicScrollDelegate.scrollBottom(true);
-      }, 300);
+      console.log("##################################### input up event #########################################3");
+      //if(isIOS) $scope.inputData.keyboardHeight = 216;
+      //$timeout(function(){
+      //  $ionicScrollDelegate.scrollBottom(true);
+      //}, 300);
 
     };
 
     $scope.inputDown = function(){
-      if(isIOS) $scope.inputData.keyboardHeight = 0;
-      $ionicScrollDelegate.resize();
+      console.log("##################################### input down event #########################################3");
+      //if(isIOS) $scope.inputData.keyboardHeight = 0;
+      //$ionicScrollDelegate.resize();
+
     };
 
     $scope.inputData = {};
