@@ -1,104 +1,114 @@
 <ion-view view-title="Local" class="global-local-view">
 
-    <ion-content data-tap-disabled="true" scroll="false">
+  <ion-content data-tap-disabled="true" scroll="false">
 
-        <!--<div style="height: 240px; width: 400px">-->
+    <!--<div style="height: 240px; width: 400px">-->
 
-        <!--map defaults: {{map.defaults}}-->
-        <!--map center: {{map.center}}-->
-        <!--&lt;!&ndash;<div class="chat-item animated fadeInDown" ng-if="incomingMessageFound">&ndash;&gt;-->
-        <!--&lt;!&ndash;<Strong>Yan:</Strong> {{incomingMessage}}&ndash;&gt;-->
-        <!--&lt;!&ndash;</div>&ndash;&gt;-->
-        <!--</div>-->
+    <!--map defaults: {{map.defaults}}-->
+    <!--map center: {{map.center}}-->
+    <!--&lt;!&ndash;<div class="chat-item animated fadeInDown" ng-if="incomingMessageFound">&ndash;&gt;-->
+    <!--&lt;!&ndash;<Strong>Yan:</Strong> {{incomingMessage}}&ndash;&gt;-->
+    <!--&lt;!&ndash;</div>&ndash;&gt;-->
+    <!--</div>-->
 
-        <div>
-            <leaflet width="100%" height="900px" defaults="map.defaults" center="map.center" markers="map.markers"
-                     ng-if="map">
-                <!--<leaflet width="100%" height="480px"></leaflet>-->
-        </div>
+    <div>
+      <leaflet width="100%" height="900px" defaults="map.defaults" center="map.center" markers="map.markers"
+               ng-if="map">
+        <!--<leaflet width="100%" height="480px"></leaflet>-->
+    </div>
 
 
-        <!--<div ng-show="showChatFootBar" class="animated fadeInDown">-->
-        <!--<button class="button ion-chatbox"> click me </button>-->
-        <!--<button class="button ion-chatbox"> click me </button>-->
-        <!--<button class="button ion-chatbox"> click me </button>-->
-        <!--</div>-->
-        <!--<leaflet defaults="map.defaults" center="map.center" markers="map.markers" ng-if="map">-->
-        <!--<leaflet defaults="map.defaults" center="map.center" markers="map.markers"></leaflet>-->
-    </ion-content>
-
-    <!--<ion-footer-bar  class="animated fadeInUp bar-balanced" ng-show="showChatFootBar">-->
-    <!--<div >-->
+    <!--<div ng-show="showChatFootBar" class="animated fadeInDown">-->
     <!--<button class="button ion-chatbox"> click me </button>-->
     <!--<button class="button ion-chatbox"> click me </button>-->
     <!--<button class="button ion-chatbox"> click me </button>-->
     <!--</div>-->
-    <!--</ion-footer-bar>-->
+    <!--<leaflet defaults="map.defaults" center="map.center" markers="map.markers" ng-if="map">-->
+    <!--<leaflet defaults="map.defaults" center="map.center" markers="map.markers"></leaflet>-->
+  </ion-content>
 
-    <!--<ion-header-bar class="chatHeadBar bar-subheader" ng-show="showChatHeadBar">-->
+  <!--<ion-footer-bar  class="animated fadeInUp bar-balanced" ng-show="showChatFootBar">-->
+  <!--<div >-->
+  <!--<button class="button ion-chatbox"> click me </button>-->
+  <!--<button class="button ion-chatbox"> click me </button>-->
+  <!--<button class="button ion-chatbox"> click me </button>-->
+  <!--</div>-->
+  <!--</ion-footer-bar>-->
 
-        <!--<div class="row">-->
-            <!--<div class="col col-20">-->
-                <!--<div class="circle">-->
-                    <!--<i class="icon ion-ios-camera topIcon"></i>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="col col-20">-->
-                <!--<div class="circle">-->
-                    <!--<i class="icon ion-ios-chatbubble topIcon"></i>-->
-                <!--</div>-->
+  <!--<ion-header-bar class="chatHeadBar bar-subheader" ng-show="showChatHeadBar">-->
 
-            <!--</div>-->
-            <!--<div class="col col-20">-->
-                <!--<div class="circle">-->
-                    <!--<i class="icon ion-ios-photos topIcon"></i>-->
-                <!--</div>-->
-            <!--</div>-->
-            <!--<div class="col col-20">-->
-                <!--<div class="circle">-->
-                    <!--<i class="icon ion-ios-paper topIcon"></i>-->
-                <!--</div>-->
+  <!--<div class="row">-->
+  <!--<div class="col col-20">-->
+  <!--<div class="circle">-->
+  <!--<i class="icon ion-ios-camera topIcon"></i>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col col-20">-->
+  <!--<div class="circle">-->
+  <!--<i class="icon ion-ios-chatbubble topIcon"></i>-->
+  <!--</div>-->
 
-            <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col col-20">-->
+  <!--<div class="circle">-->
+  <!--<i class="icon ion-ios-photos topIcon"></i>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--<div class="col col-20">-->
+  <!--<div class="circle">-->
+  <!--<i class="icon ion-ios-paper topIcon"></i>-->
+  <!--</div>-->
 
-            <!--<div class="col col-20">-->
-                <!--<div class="circle">-->
-                    <!--<i class="icon ion-trash-a topIcon"></i>-->
-                <!--</div>-->
+  <!--</div>-->
 
-            <!--</div>-->
+  <!--<div class="col col-20">-->
+  <!--<div class="circle">-->
+  <!--<i class="icon ion-trash-a topIcon"></i>-->
+  <!--</div>-->
+
+  <!--</div>-->
 
 
-        <!--</div>-->
+  <!--</div>-->
 
 
-    <!--</ion-header-bar>-->
+  <!--</ion-header-bar>-->
 
-    <ion-footer-bar class="chatFootBar" ng-show="showChatFootBar">
+  <ion-footer-bar ng-show="showChatFootBar" class="stable-bg">
 
-        <!--<div>-->
-        <!--<ul class="input-list style-4 clearfix">-->
-        <!--<li>-->
-        <!--<input type="text" placeholder="Send a message to ...">-->
-        <!--</li>-->
-        <!--&lt;!&ndash;<li>&ndash;&gt;-->
-        <!--&lt;!&ndash;<input type="text" placeholder=":focus" class="focus">&ndash;&gt;-->
-        <!--&lt;!&ndash;</li>&ndash;&gt;-->
-        <!--</ul>-->
+    <!--<div>-->
+    <!--<ul class="input-list style-4 clearfix">-->
+    <!--<li>-->
+    <!--<input type="text" placeholder="Send a message to ...">-->
+    <!--</li>-->
+    <!--&lt;!&ndash;<li>&ndash;&gt;-->
+    <!--&lt;!&ndash;<input type="text" placeholder=":focus" class="focus">&ndash;&gt;-->
+    <!--&lt;!&ndash;</li>&ndash;&gt;-->
+    <!--</ul>-->
 
-        <!--&lt;!&ndash;<a class="icon ion-chatbox"> </a>&ndash;&gt;-->
-        <!--&lt;!&ndash;<a class="icon ion-camera"> </a>&ndash;&gt;-->
+    <!--&lt;!&ndash;<a class="icon ion-chatbox"> </a>&ndash;&gt;-->
+    <!--&lt;!&ndash;<a class="icon ion-camera"> </a>&ndash;&gt;-->
 
-        <!--&lt;!&ndash;<button class="button ion-heart"> click me </button>&ndash;&gt;-->
-        <!--</div>-->
+    <!--&lt;!&ndash;<button class="button ion-heart"> click me </button>&ndash;&gt;-->
+    <!--</div>-->
 
-        <!--<form class="form-wrapper cf">-->
-        <form class="form-wrapper cf">
-            <input title='send' class="messageInput" type='text' placeholder='Send a message...' on-return='sendMessageToReciever()' ng-model='messageToSend' on-focus='inputUp()' on-blur='inputDown()' required>
-            <!--<button type="submit" ng-click="sendMessageToReciever(chatMessage)">Send</button>-->
-        </form>
-        <!--</form>-->
-    </ion-footer-bar>
+    <div class="chatFootBar">
+      <!--<form class="form-wrapper cf">-->
+      <form class="form-wrapper cf">
+        <input title='send' class="messageInput" type='text' placeholder='Send a message...'
+               on-return='sendMessageToReciever()' ng-model='messageToSend' on-focus='inputUp()' on-blur='inputDown()'
+               required>
+        <i class="icon chatBarIcons ion-ios-camera-outline"></i>
+        <i class="icon chatBarIconsPlus ion-ios-plus-outline"></i>
+        <!--<button type="submit" ng-click="sendMessageToReciever(chatMessage)">Send</button>-->
+      </form>
+
+
+
+    </div>
+    <!--</form>-->
+  </ion-footer-bar>
+
 
 
 </ion-view>

@@ -26,7 +26,7 @@ $big-bg: 'http://ioniconf.com/img/bg.jpg';
 }
 
 $light: rgba(255, 255, 255, 0) !default;
-$stable: rgba(238, 255, 232, 0.33) !default;
+$stable: rgb(238, 238, 238) !default;
 $balanced: rgba(51, 205, 95, 0.11) !default;
 $energized: #ff992f !default;
 $assertive: #000000 !default;
@@ -1721,7 +1721,7 @@ ion-nav-bar.checkout-color * .buttons button::before {
 }
 
 .chatFootBar {
-  width: 320px;
+  width: 100%;
   height: 50px;
   background-color: transparent;
   display: block;
@@ -1740,20 +1740,20 @@ ion-nav-bar.checkout-color * .buttons button::before {
 
 //form wrapper:
 
-.chatFootBar.bar {
-  background-image: none;
-}
-
+//.chatFootBar.bar {
+//  background-image: none;
+//}
+//
 .bar-footer.item-input-inset {
   position: absolute;
 }
-
-/*Clearing Floats*/
+//
+///*Clearing Floats*/
 .chatFootBar .cf:before, .cf:after {
   content: "";
   display: table;
 }
-
+//
 .chatFootBar .cf:after {
   clear: both;
 }
@@ -1762,28 +1762,50 @@ ion-nav-bar.checkout-color * .buttons button::before {
   zoom: 1;
 }
 
+.chatFootBar .chatBarIcons{
+  float: left;
+  font-size: 30px;
+  padding-left: 20px;
+  padding-top: 2px;
+  color: rgba(0, 0, 0, 0.59);
+}
+
+
+.chatFootBar .chatBarIconsPlus{
+  float: left;
+  font-size: 25px;
+  padding-left: 20px;
+  padding-top: 4px;
+  color: rgba(0, 0, 0, 0.59);
+}
+
+
 /* Form wrapper styling */
 .chatFootBar .form-wrapper {
-  width: 300px;
+  width: 100%;
   padding: 0px;
   margin: auto;
   //background: #444;
   //background: rgba(0, 0, 0, .2);
-  //border-radius: 2px;
   //box-shadow: 0 1px 1px rgba(0, 0, 0, .4) inset, 0 1px 0 rgba(255, 255, 255, .2);
 }
 
 /* Form text input */
 
 .chatFootBar .form-wrapper input {
-  width: 250px;
-  height: 40px;
+
+  width: 70%;
+  //height: 40px;
   padding: 10px 10px;
   float: left;
-  font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
-  border: 0;
-  background: #eee;
-  border-radius: 0 0 0 0;
+  //margin: auto;
+  border-radius: 3px;
+  //font: bold 15px 'lucida sans', 'trebuchet MS', 'Tahoma';
+  border: 1px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.23);
+  background: #ffffff;
+  //border-radius: 0 0 0 0;
 }
 
 .chatFootBar .form-wrapper input:focus {
@@ -1810,59 +1832,62 @@ ion-nav-bar.checkout-color * .buttons button::before {
   font-style: italic;
 }
 
-/* Form submit button */
-.chatFootBar .form-wrapper button {
-  overflow: visible;
-  position: relative;
-  //float: right;
-  border: 0;
-  padding: 0;
-  cursor: pointer;
-  height: 40px;
-  width: 50px;
-  font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
-  color: #fff;
-  text-transform: uppercase;
-  background: #d83c3c;
-  //border-radius: 0 3px 3px 0;
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
-}
 
-.chatFootBar .form-wrapper button:hover {
-  background: #e54040;
-}
+//
+///* Form submit button */
+//.chatFootBar .form-wrapper button {
+//  overflow: visible;
+//  position: relative;
+//  //float: right;
+//  border: 0;
+//  padding: 0;
+//  cursor: pointer;
+//  height: 40px;
+//  width: 50px;
+//  font: bold 15px/40px 'lucida sans', 'trebuchet MS', 'Tahoma';
+//  color: #fff;
+//  text-transform: uppercase;
+//  background: #d83c3c;
+//  //border-radius: 0 3px 3px 0;
+//  text-shadow: 0 -1px 0 rgba(0, 0, 0, .3);
+//}
+//
+//.chatFootBar .form-wrapper button:hover {
+//  background: #e54040;
+//}
+//
+//.chatFootBar .form-wrapper button:active,
+//.chatFootBar .form-wrapper button:focus {
+//  background: #c42f2f;
+//  outline: 0;
+//}
+//
+//.chatFootBar .form-wrapper button:before {
+//  /* left arrow */
+//  content: '';
+//  position: absolute;
+//  border-width: 8px 8px 8px 0;
+//  border-style: solid solid solid none;
+//  border-color: transparent #d83c3c transparent;
+//  top: 12px;
+//  left: -6px;
+//}
+//
+//.chatFootBar .form-wrapper button:hover:before {
+//  border-right-color: #e54040;
+//}
+//
+//.chatFootBar .form-wrapper button:focus:before,
+//.chatFootBar .form-wrapper button:active:before {
+//  border-right-color: #c42f2f;
+//}
+//
+//.chatFootBar .form-wrapper button::-moz-focus-inner {
+//  /* remove extra button spacing for Mozilla Firefox */
+//  border: 0;
+//  padding: 0;
+//}
 
-.chatFootBar .form-wrapper button:active,
-.chatFootBar .form-wrapper button:focus {
-  background: #c42f2f;
-  outline: 0;
-}
-
-.chatFootBar .form-wrapper button:before {
-  /* left arrow */
-  content: '';
-  position: absolute;
-  border-width: 8px 8px 8px 0;
-  border-style: solid solid solid none;
-  border-color: transparent #d83c3c transparent;
-  top: 12px;
-  left: -6px;
-}
-
-.chatFootBar .form-wrapper button:hover:before {
-  border-right-color: #e54040;
-}
-
-.chatFootBar .form-wrapper button:focus:before,
-.chatFootBar .form-wrapper button:active:before {
-  border-right-color: #c42f2f;
-}
-
-.chatFootBar .form-wrapper button::-moz-focus-inner {
-  /* remove extra button spacing for Mozilla Firefox */
-  border: 0;
-  padding: 0;
-}
 
 .chatHeadBar .topIcon {
   font-size: 30px;

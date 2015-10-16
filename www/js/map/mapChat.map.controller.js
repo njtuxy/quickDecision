@@ -45,6 +45,7 @@ angular.module('mapChat.map')
             $scope.markers[marker_key].icon.markerColor = 'red';
             $scope.showChatFootBar = !showChatFootBar;
             $scope.showChatHeadBar = !showChatHeadBar;
+            $scope.hideTabs = !showChatFootBar;
             $scope.reciever_id = $scope.markers[marker_key].userId
           });
 
@@ -291,6 +292,7 @@ angular.module('mapChat.map')
     };
 
     $scope.inputData = {};
+
 
 
   }
