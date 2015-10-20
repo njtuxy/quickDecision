@@ -28,10 +28,12 @@ $big-bg: 'http://ioniconf.com/img/bg.jpg';
 $light: rgba(255, 255, 255, 0) !default;
 $stable: rgb(238, 238, 238) !default;
 $balanced: rgba(51, 205, 95, 0.11) !default;
-$energized: #ff992f !default;
+$energized: rgba(2, 11, 115, 0.91) !default;
 $assertive: #000000 !default;
 $royal: #886aea !default;
 $dark: #2c3e50 !default;
+
+$tabs-height: 45px !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
@@ -1080,63 +1082,63 @@ ion-nav-bar.shop-color * .buttons button::before {
   padding-bottom: 0
 }
 
-.global-local-view {
-  background-color: #EEE
-}
-
-.global-local-view .scroll-content {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  margin-top: -1px;
-  padding-top: 1px;
-  margin-bottom: -1px;
-  width: auto;
-  height: auto;
-}
-
-.global-local-view .bar.bar-balanced {
-  border-color: rgba(40, 165, 76, 0.11);
-  background-color: #33cd5f;
-  background-image: linear-gradient(0deg, rgba(40, 165, 76, 0.11), rgba(40, 165, 76, 0.11) 50%, transparent 50%);
-  color: #fff;
-  width: 300px;
-}
-
-.global-local-view .shop-home-options-list {
-  margin-bottom: 0
-}
-
-.global-local-view .shop-home-options-list .shop-home-option-item {
-  padding: 0;
-  margin: 10px;
-  border-radius: 2px
-}
-
-.global-local-view .shop-home-options-list .shop-home-option-item .col, .global-local-view .shop-home-options-list .shop-home-option-item .row {
-  padding: 0;
-  margin: 0
-}
-
-.global-local-view .shop-home-options-list .shop-home-option-item .shop-home-option-image-outer img {
-  width: 100%;
-  border-radius: 2px 2px 0 0
-}
-
-.global-local-view .shop-home-options-list .shop-home-option-item .option-copy {
-  padding: 10px;
-  font-size: 12px;
-  font-weight: 500;
-  color: #515151;
-  border-top: 1px solid rgba(196, 196, 196, .8)
-}
-
-.global-local-view .shop-home-options-list .shop-home-option-item .option-icon {
-  text-align: right;
-  color: rgba(119, 119, 119, .6)
-}
+//.global-local-view {
+//  background-color: #EEE
+//}
+//
+//.global-local-view .scroll-content {
+//  position: absolute;
+//  top: 0;
+//  right: 0;
+//  bottom: 0;
+//  left: 0;
+//  margin-top: -1px;
+//  padding-top: 1px;
+//  margin-bottom: -1px;
+//  width: auto;
+//  height: auto;
+//}
+//
+//.global-local-view .bar.bar-balanced {
+//  border-color: rgba(40, 165, 76, 0.11);
+//  background-color: #33cd5f;
+//  background-image: linear-gradient(0deg, rgba(40, 165, 76, 0.11), rgba(40, 165, 76, 0.11) 50%, transparent 50%);
+//  color: #fff;
+//  width: 300px;
+//}
+//
+//.global-local-view .shop-home-options-list {
+//  margin-bottom: 0
+//}
+//
+//.global-local-view .shop-home-options-list .shop-home-option-item {
+//  padding: 0;
+//  margin: 10px;
+//  border-radius: 2px
+//}
+//
+//.global-local-view .shop-home-options-list .shop-home-option-item .col, .global-local-view .shop-home-options-list .shop-home-option-item .row {
+//  padding: 0;
+//  margin: 0
+//}
+//
+//.global-local-view .shop-home-options-list .shop-home-option-item .shop-home-option-image-outer img {
+//  width: 100%;
+//  border-radius: 2px 2px 0 0
+//}
+//
+//.global-local-view .shop-home-options-list .shop-home-option-item .option-copy {
+//  padding: 10px;
+//  font-size: 12px;
+//  font-weight: 500;
+//  color: #515151;
+//  border-top: 1px solid rgba(196, 196, 196, .8)
+//}
+//
+//.global-local-view .shop-home-options-list .shop-home-option-item .option-icon {
+//  text-align: right;
+//  color: rgba(119, 119, 119, .6)
+//}
 
 .global-world-view {
   background-color: #EEE
@@ -1909,5 +1911,19 @@ ion-nav-bar.checkout-color * .buttons button::before {
   height: 50px;
   background-color: #d83c3c;
   position: relative;
-  /* width and height can be anything, as long as they're equal */
+  /* width and height can global-tabsbe anything, as long as they're equal */
+}
+
+.global-tabs {
+  height: 10%;
+}
+
+.tab-title {
+  //font-family: Consolas, Menlo, Monaco, monospace;
+  font-family: 'Roboto', "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+.tab-item .icon {
+  height: 25px;
+  font-size: 25px;
 }

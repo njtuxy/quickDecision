@@ -167,16 +167,18 @@ angular.module('mapChat.map')
           //tileLayer: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
           tileLayer: 'http://api.tiles.mapbox.com/v4/njtuxy.cievwu1t40xsxt6m3u0r2gmdq/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoibmp0dXh5IiwiYSI6ImNpZXZ3dTI1MDB3bGxyeG0yOTFoZ2JqeTUifQ.mf238ctd4keoYEEUEfS2JA',
           maxZoom: 18,
+          zoomControl: false,
+          attributionControl: false
           //zoomControlPosition: 'bottomleft'
         },
 
         markers: $scope.markers,
-        events: {
-          map: {
-            enable: ['context'],
-            logic: 'emit'
-          }
-        },
+        //events: {
+        //  map: {
+        //    enable: ['context'],
+        //    logic: 'emit'
+        //  }
+        //},
         center: {
           lat: $scope.lat,
           lng: $scope.lng,
@@ -201,11 +203,14 @@ angular.module('mapChat.map')
     $scope.addMarkers = function (current_location) {
       //Read other users' locations, and create markers on their locations.
       //Can be extended, more features can be added to this function.
-      var otherUsers = otherUserMarkersLocationsService.getOtherUserMarkerLocations();
+
+
+
 
 
       var markers = {};
 
+      var otherUsers = otherUserMarkersLocationsService.getOtherUserMarkerLocations();
 
       for (i = 0; i < otherUsers.length; i++) {
         var key = 'mcmarker_' + i;
@@ -232,6 +237,8 @@ angular.module('mapChat.map')
 
         };
       }
+
+
       //add center marker's icon
       markers['center'] = {
         lat: current_location.latitude,
@@ -260,8 +267,8 @@ angular.module('mapChat.map')
       })
     };
 
-    $scope.listenToNewMessage();
-    $scope.watchCurrentPosition();
+    //$scope.listenToNewMessage();
+    //$scope.watchCurrentPosition();
 
 
     //messagen input methods:
