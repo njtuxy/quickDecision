@@ -57,7 +57,7 @@ angular.module('mapChat.auth')
             Auth.$authWithPassword({email: email, password: password}, {rememberMe: true})
                 .then(function (authData) {
                     loginPopup.close();
-                    $state.go("app.map.local");
+                    $state.go("map.local");
                 }, function (error) {
                     switch (error.code) {
                         case "INVALID_EMAIL":
@@ -85,7 +85,7 @@ angular.module('mapChat.auth')
                 singupPopup.close();
                 console.log(user);
                 //$scope.singUpAuthData = authData;
-                $state.go("app.map.local");
+                $state.go("map.local");
             }).catch(function (error) {
                 $scope.signUpError = error;
             });

@@ -64,12 +64,12 @@ angular.module('mapChat',
       })
 
 
-      .state("app", {
-        url: "/app",
-        abstract: true,
-        templateUrl: "templates/sideMenu/side-menu.html",
-        controller: "SideMenuController"
-      })
+      //.state("app", {
+      //  url: "/app",
+      //  abstract: true,
+      //  templateUrl: "templates/sideMenu/side-menu.html",
+      //  controller: "SideMenuController"
+      //})
 
       //.state("app.feed", {
       //    url: "/feed",
@@ -81,18 +81,15 @@ angular.module('mapChat',
       //    }
       //})
 
-      .state("app.map", {
+      .state("map", {
         url: "/map",
         abstract: true,
-        views: {
-          "menuContent": {
-            templateUrl: "templates/map/map.html",
-            controller: "MapController"
-          }
-        }
+        templateUrl: "templates/map/map.html",
+        controller: "MapController"
       })
 
-      .state('app.map.local', {
+
+      .state('map.local', {
         url: '/',
         views: {
           'map-local': {
@@ -101,7 +98,7 @@ angular.module('mapChat',
         }
       })
 
-      .state('app.map.world', {
+      .state('map.world', {
         url: '/map-world',
         views: {
           'map-world': {
@@ -111,7 +108,7 @@ angular.module('mapChat',
         }
       })
 
-      .state('app.map.favorites', {
+      .state('map.favorites', {
         url: '/map-favorites',
         views: {
           'map-favorite': {
