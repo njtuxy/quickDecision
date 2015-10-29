@@ -10,6 +10,9 @@
     "angular-leaflet-directive": "~0.8.8",
     "animate.css": "~3.4.0"
   },
+  "resolutions": {
+    "angular": "~1.4.6"
+  },
   "dependencies": {
     "angularfire": "~1.1.3"
   }

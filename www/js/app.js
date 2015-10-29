@@ -47,7 +47,7 @@ angular.module('mapChat',
     // Learn more here: https://github.com/angular-ui/ui-router
     // Set up the various states which the app can be in.
     // Each state's controller can be found in controllers.js
-    $urlRouterProvider.otherwise('/auth/welcome');
+    $urlRouterProvider.otherwise('/map/local');
 
     $stateProvider
       .state("auth", {
@@ -90,7 +90,7 @@ angular.module('mapChat',
 
 
       .state('map.local', {
-        url: '/',
+        url: '/local',
         views: {
           'map-local': {
             templateUrl: 'templates/map/map-local.html'
