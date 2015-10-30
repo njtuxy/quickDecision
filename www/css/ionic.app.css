@@ -10706,16 +10706,19 @@ ion-nav-bar.checkout-color * .buttons button::before {
   font-size: 25px; }
 
 .imageDiv {
-  background: #fff;
   display: block;
   width: 100%;
   height: 700px; }
 
 .imageDiv1 {
-  background: #fff;
   display: block;
-  width: 150px;
-  height: 150px; }
+  width: 160px;
+  height: 160px;
+  border-style: dotted;
+  border-width: 1px;
+  position: relative;
+  bottom: 170px;
+  left: 10px; }
 
 .bottomDiv {
   position: relative;

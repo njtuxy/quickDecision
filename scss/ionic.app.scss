@@ -1753,12 +1753,14 @@ ion-nav-bar.checkout-color * .buttons button::before {
 .bar-footer.item-input-inset {
   position: absolute;
 }
+
 //
 ///*Clearing Floats*/
 .chatFootBar .cf:before, .cf:after {
   content: "";
   display: table;
 }
+
 //
 .chatFootBar .cf:after {
   clear: both;
@@ -1768,7 +1770,7 @@ ion-nav-bar.checkout-color * .buttons button::before {
   zoom: 1;
 }
 
-.chatFootBar .chatBarIcons{
+.chatFootBar .chatBarIcons {
   float: left;
   font-size: 30px;
   padding-left: 20px;
@@ -1776,15 +1778,13 @@ ion-nav-bar.checkout-color * .buttons button::before {
   color: rgba(0, 0, 0, 0.59);
 }
 
-
-.chatFootBar .chatBarIconsPlus{
+.chatFootBar .chatBarIconsPlus {
   float: left;
   font-size: 25px;
   padding-left: 20px;
   padding-top: 7px;
   color: rgba(0, 0, 0, 0.59);
 }
-
 
 /* Form wrapper styling */
 .chatFootBar .form-wrapper {
@@ -1838,7 +1838,6 @@ ion-nav-bar.checkout-color * .buttons button::before {
   font-weight: normal;
   font-style: italic;
 }
-
 
 //
 ///* Form submit button */
@@ -1895,7 +1894,6 @@ ion-nav-bar.checkout-color * .buttons button::before {
 //  padding: 0;
 //}
 
-
 .chatHeadBar .topIcon {
   font-size: 30px;
   color: #ffffff;
@@ -1927,12 +1925,11 @@ ion-nav-bar.checkout-color * .buttons button::before {
   height: 25px;
   font-size: 25px;
 }
+
 //TESTS
 
-.imageDiv
-{
+.imageDiv {
   //margin-left: 100px;
-  background: #fff;
   display: block;
   width: 100%;
   height: 700px;
@@ -1943,22 +1940,26 @@ ion-nav-bar.checkout-color * .buttons button::before {
   //box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 
-.imageDiv1
-{
+.imageDiv1 {
   //margin-left: 100px;
-  background: #fff;
   display: block;
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
   //padding: 10px;
   //border-radius: 2px 2px 2px 2px;
+  //border-radius: 35px;
+  border-style: dotted;
+  border-width: 1px;
+  position: relative;
+  bottom: 170px;
+  left: 10px;
   //-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   //-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
   //box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 
-.bottomDiv{
-  position:relative;
-  bottom:150px;
-  left:10px;
+.bottomDiv {
+  position: relative;
+  bottom: 150px;
+  left: 10px;
 }

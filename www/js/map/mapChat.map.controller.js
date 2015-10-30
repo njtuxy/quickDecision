@@ -189,7 +189,7 @@ angular.module('mapChat.map')
       $scope.small_map = {
         defaults: {
           //tileLayer: 'http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png',
-          tileLayer: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          tileLayer: 'http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png',
           //tileLayer: 'http://api.tiles.mapbox.com/v4/njtuxy.cievwu1t40xsxt6m3u0r2gmdq/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoibmp0dXh5IiwiYSI6ImNpZXZ3dTI1MDB3bGxyeG0yOTFoZ2JqeTUifQ.mf238ctd4keoYEEUEfS2JA',
           maxZoom: 18,
           zoomControl: false,
