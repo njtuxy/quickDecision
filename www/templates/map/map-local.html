@@ -16,20 +16,21 @@
     <!--&lt;!&ndash;</div>&ndash;&gt;-->
     <!--</div>-->
 
-    <div>
-      <leaflet width="100%" height="300px" defaults="map.defaults" center="map.center" markers="map.markers"
-               ng-if="map">
-    </div>
 
     <P> </P>
 
-    <div>
-      <leaflet width="100%" height="300px" defaults="map.defaults" center="map.center" markers="map.markers"
+    <div class="imageDiv">
+      <leaflet width="100%" height="700px" defaults="map.defaults" center="map.center" markers="map.markers"
                ng-if="map">
 
     </div>
 
-      <!--<leaflet width="100%" height="480px"></leaflet>-->
+    <div class="imageDiv1 bottomDiv">
+      <leaflet width="150px" height="150px" defaults="small_map.defaults" center="small_map.center" markers="small_map.markers"
+               ng-if="map">
+    </div>
+
+    <!--<leaflet width="100%" height="480px"></leaflet>-->
 
 
       <!--<div ng-show="showChatFootBar" class="animated fadeInDown">-->

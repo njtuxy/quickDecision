@@ -10704,3 +10704,20 @@ ion-nav-bar.checkout-color * .buttons button::before {
 .tab-item .icon {
   height: 25px;
   font-size: 25px; }
+
+.imageDiv {
+  background: #fff;
+  display: block;
+  width: 100%;
+  height: 700px; }
+
+.imageDiv1 {
+  background: #fff;
+  display: block;
+  width: 150px;
+  height: 150px; }
+
+.bottomDiv {
+  position: relative;
+  bottom: 150px;
+  left: 10px; }

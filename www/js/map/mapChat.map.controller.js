@@ -185,9 +185,36 @@ angular.module('mapChat.map')
           zoom: 15
         }
       };
-      console.log('map settings done, going to show the div');
-      $scope.showMapDiv = true;
+
+      $scope.small_map = {
+        defaults: {
+          //tileLayer: 'http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png',
+          tileLayer: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+          //tileLayer: 'http://api.tiles.mapbox.com/v4/njtuxy.cievwu1t40xsxt6m3u0r2gmdq/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoibmp0dXh5IiwiYSI6ImNpZXZ3dTI1MDB3bGxyeG0yOTFoZ2JqeTUifQ.mf238ctd4keoYEEUEfS2JA',
+          maxZoom: 18,
+          zoomControl: false,
+          attributionControl: false
+          //zoomControlPosition: 'bottomleft'
+        },
+
+        markers: $scope.markers,
+        //events: {
+        //  map: {
+        //    enable: ['context'],
+        //    logic: 'emit'
+        //  }
+        //},
+        center: {
+          lat: $scope.lat,
+          lng: $scope.lng,
+          zoom: 10
+        }
+      };
+
+    console.log('map settings done, going to show the div');
+      //$scope.showMapDiv = true;
     };
+
 
     $scope.centerMarkIcon = {
       iconUrl: 'img/ping.png',
