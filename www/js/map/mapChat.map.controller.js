@@ -169,7 +169,8 @@ angular.module('mapChat.map')
           maxZoom: 18,
           zoomControl: false,
           attributionControl: false,
-          dragging: false
+          dragging: false,
+          doubleClickZoom: false
           //zoomControlPosition: 'bottomleft'
         },
 
