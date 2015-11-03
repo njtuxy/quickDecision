@@ -9373,8 +9373,7 @@ input:-ms-input-placeholder {
   text-align: center; }
 
 .largerIcon {
-  font-size: 30px;
-  color: red; }
+  font-size: 30px; }
 
 .smallerFont {
   font-size: 11px; }
@@ -10716,6 +10715,14 @@ ion-nav-bar.checkout-color * .buttons button::before {
   height: 160px;
   border-style: dotted;
   border-width: 1px;
+  position: relative;
+  bottom: 180px;
+  left: 10px; }
+
+.imageDiv2 {
+  display: block;
+  width: 160px;
+  height: 160px;
   position: relative;
   bottom: 180px;
   left: 10px; }

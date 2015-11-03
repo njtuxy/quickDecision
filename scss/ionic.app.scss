@@ -135,7 +135,7 @@ input:-ms-input-placeholder {
 
 .largerIcon {
   font-size: 30px;
-  color: red;
+  //color: red;
 }
 
 .smallerFont {
@@ -1950,6 +1950,24 @@ ion-nav-bar.checkout-color * .buttons button::before {
   //border-radius: 35px;
   border-style: dotted;
   border-width: 1px;
+  position: relative;
+  bottom: 180px;
+  left: 10px;
+  //-webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  //-moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+  //box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.imageDiv2 {
+  //margin-left: 100px;
+  display: block;
+  width: 160px;
+  height: 160px;
+  //padding: 10px;
+  //border-radius: 2px 2px 2px 2px;
+  //border-radius: 35px;
+  //border-style: dotted;
+  //border-width: 1px;
   position: relative;
   bottom: 180px;
   left: 10px;
