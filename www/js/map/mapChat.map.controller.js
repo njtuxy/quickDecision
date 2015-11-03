@@ -168,7 +168,8 @@ angular.module('mapChat.map')
           tileLayer: 'http://api.tiles.mapbox.com/v4/njtuxy.cievwu1t40xsxt6m3u0r2gmdq/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoibmp0dXh5IiwiYSI6ImNpZXZ3dTI1MDB3bGxyeG0yOTFoZ2JqeTUifQ.mf238ctd4keoYEEUEfS2JA',
           maxZoom: 18,
           zoomControl: false,
-          attributionControl: false
+          attributionControl: false,
+          dragging: false
           //zoomControlPosition: 'bottomleft'
         },
 

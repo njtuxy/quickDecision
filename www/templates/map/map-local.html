@@ -16,18 +16,29 @@
     <!--&lt;!&ndash;</div>&ndash;&gt;-->
     <!--</div>-->
 
-
-    <P> </P>
-
     <div class="imageDiv">
-      <leaflet width="100%" height="700px" defaults="map.defaults" center="map.center" markers="map.markers"
+      <leaflet width="100%" height="100%" defaults="map.defaults" center="map.center" markers="map.markers"
                ng-if="map">
 
     </div>
 
-    <div class="imageDiv1">
-      <leaflet width="100%" height="100%" defaults="small_map.defaults" center="small_map.center" markers="small_map.markers"
-               ng-if="map">
+    <div class="row">
+      <div class="col-25 imageDiv1">
+        <leaflet width="100%" height="100%" defaults="small_map.defaults" center="small_map.center" markers="small_map.markers"
+                 ng-if="map">
+      </div>
+      <div class="col-10 imageDiv1 positive-bg">
+
+      </div>
+    </div>
+
+    <!--<div class="imageDiv1">-->
+      <!--<leaflet width="100%" height="100%" defaults="small_map.defaults" center="small_map.center" markers="small_map.markers"-->
+               <!--ng-if="map">-->
+    <!--</div>-->
+
+
+
     </div>
 
     <!--<leaflet width="100%" height="480px"></leaflet>-->

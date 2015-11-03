@@ -10708,7 +10708,7 @@ ion-nav-bar.checkout-color * .buttons button::before {
 .imageDiv {
   display: block;
   width: 100%;
-  height: 700px; }
+  height: 100%; }
 
 .imageDiv1 {
   display: block;
@@ -10717,7 +10717,7 @@ ion-nav-bar.checkout-color * .buttons button::before {
   border-style: dotted;
   border-width: 1px;
   position: relative;
-  bottom: 170px;
+  bottom: 180px;
   left: 10px; }
 
 .bottomDiv {
