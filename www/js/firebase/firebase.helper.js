@@ -133,11 +133,12 @@ angular.module('firebase.helper', ['firebase', 'firebase.utils', 'angularGeoFire
             $rootScope.$on("SEARCH:KEY_ENTERED", function (event, key, location, distance) {
                 console.log("KEY ENTERED FOUND");
 
-                fbUsernameService.getUserNameByUid(key).then(
-                    function (userName) {
-                        otherUserMarkersLocationsService.addOtherUserMarkersLocations({userId: key, location: location, userName:userName})
-                    }
-                );
+                //fbUsernameService.getUserNameByUid(key).then(
+                //    function (userName) {
+                //        otherUserMarkersLocationsService.addOtherUserMarkersLocations({userId: key, location: location, userName:userName})
+                //    }
+                //);
+
 
                 //$rootScope.otherUsersLocations.push({userId: key, location: location});
                 // Cancel the query if the distance is > 5 km

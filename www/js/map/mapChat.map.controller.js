@@ -38,8 +38,13 @@ angular.module('mapChat.map')
           $scope.lat = location.latitude;
           $scope.lng = location.longitude;
           $scope.addMarkers(location);
+
           $scope.setMap();
+          
           $scope.$on("leafletDirectiveMarker.click", function (event, args) {
+            console.log(args.model);
+            if(args.model.mapId != 'map1') return;
+            console.log('output the value:');
             //console.log('>>>>>>>>>>>>>>>>>>>>>>>>> marker clicke event');
             var marker_key = args.modelName;
             $scope.markers[marker_key].icon.markerColor = 'red';
@@ -49,10 +54,19 @@ angular.module('mapChat.map')
             $scope.reciever_id = $scope.markers[marker_key].userId
           });
 
+
           $scope.$on("leafletDirectiveMap.click", function (event, args) {
+            if(args.model.mapId != 'map2') return;
+            console.log('output the value:');
+            var click_location = args.leafletEvent.latlng;
+            console.log(click_location);
+
+            $scope.map.center.lat = click_location.lat;
+            $scope.map.center.lng = click_location.lng;
+
             $scope.showChatFootBar = false;
             $scope.showChatHeadBar = false;
-            cordova.plugins.Keyboard.close();
+            //cordova.plugins.Keyboard.close();
             console.log('show bottom set to false');
           })
 
@@ -329,6 +343,13 @@ angular.module('mapChat.map')
 
     $scope.inputData = {};
 
+    $scope.smallMapZoomIn = function(){
+      $scope.small_map.center.zoom = $scope.small_map.center.zoom+1;
+    };
+
+    $scope.smallMapZoomOut = function(){
+      $scope.small_map.center.zoom = $scope.small_map.center.zoom-1;
+    }
 
 
   }

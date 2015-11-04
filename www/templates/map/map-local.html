@@ -17,19 +17,20 @@
     <!--</div>-->
 
     <div class="imageDiv">
-      <leaflet width="100%" height="100%" defaults="map.defaults" center="map.center" markers="map.markers"
+      <leaflet id="map1" width="100%" height="100%" defaults="map.defaults" center="map.center" markers="map.markers"
                ng-if="map">
 
     </div>
 
     <div class="row">
       <div class="col-25 imageDiv1">
-        <leaflet width="100%" height="100%" defaults="small_map.defaults" center="small_map.center" markers="small_map.markers"
+        <leaflet id="map2" width="100%" height="100%" defaults="small_map.defaults" center="small_map.center" markers="small_map.markers"
                  ng-if="map">
       </div>
       <div class="col-10 imageDiv2">
-        <div class="button ion-ios-plus largerIcon"></div>
-        <div class="button ion-ios-minus largerIcon"></div>
+        <div class="button ion-ios-plus largerIcon" ng-click="smallMapZoomIn()"></div>
+        <div class="button ion-ios-minus largerIcon" ng-click="smallMapZoomOut()"></div>
+        <div> {{small_map.center.zoom}}</div>
       </div>
     </div>
 
