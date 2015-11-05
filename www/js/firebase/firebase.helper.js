@@ -2,60 +2,61 @@
  * Created by yxia on 9/8/15.
  */
 angular.module('firebase.helper', ['firebase', 'firebase.utils', 'angularGeoFire'])
-    .factory('Auth', function ($firebaseAuth, fbutil) {
-        return $firebaseAuth(fbutil.ref());
-    })
+  .factory('Auth', function ($firebaseAuth, fbutil) {
+    return $firebaseAuth(fbutil.ref());
+  })
 
-    .service('fbMessageService', function (fbutil, $firebaseArray) {
-        this.sendMessage = function (auth, receiver_uid, message) {
-            var authData = auth.$getAuth();
-            if (authData) {
-                var userReference = fbutil.ref("users/" + receiver_uid);
-                var syncArray = $firebaseArray(userReference.child("messages"));
-                syncArray.$add({sender: authData.uid, message: message}).then(function () {
-                    console.log('message sent');
-                });
-            }
+  .service('fbMessageService', function (fbutil, $firebaseArray) {
+    this.sendMessage = function (auth, receiver_uid, message) {
+      var authData = auth.$getAuth();
+      if (authData) {
+        var userReference = fbutil.ref("users/" + receiver_uid);
+        var syncArray = $firebaseArray(userReference.child("messages"));
+        syncArray.$add({sender: authData.uid, message: message}).then(function () {
+          console.log('message sent');
+        });
+      }
+    }
+  })
+
+  .service('fbUsernameService', function (fbutil, Auth, $q) {
+
+    //var authData = Auth.$getAuth();
+
+    //if (authData) {
+    //  var uid = authData.uid;
+      var currentUserName = null;
+
+      return {
+        saveUserName: function (username) {
+          console.log(uid);
+          var userNameRef = fbutil.ref("usersInfo/" + uid);
+          userNameRef.set({userName: username});
+        },
+
+        getUserName: function () {
+          var def = $q.defer();
+          var userReference = fbutil.ref("usersInfo/" + uid);
+          userReference.on("value", function (data) {
+            def.resolve(data.val().userName);
+          });
+
+          return def.promise;
+        },
+
+        getUserNameByUid: function (userId) {
+          var def = $q.defer();
+          var userReference = fbutil.ref("usersInfo/" + userId);
+          userReference.on("value", function (data) {
+            def.resolve(data.val().userName);
+          });
+
+          return def.promise;
+
         }
-    })
-
-    .service('fbUsernameService', function (fbutil, Auth, $q) {
-
-        var authData = Auth.$getAuth();
-
-        if (authData) {
-            var uid = authData.uid;
-            var currentUserName = null;
-            return {
-                saveUserName: function (username) {
-                    console.log(uid);
-                    var userNameRef = fbutil.ref("usersInfo/" + uid);
-                    userNameRef.set({userName: username});
-                },
-
-                getUserName: function () {
-                    var def = $q.defer();
-                    var userReference = fbutil.ref("usersInfo/" + uid);
-                    userReference.on("value", function (data) {
-                        def.resolve(data.val().userName);
-                    });
-
-                    return def.promise;
-                },
-
-                getUserNameByUid: function (userId) {
-                    var def = $q.defer();
-                    var userReference = fbutil.ref("usersInfo/" + userId);
-                    userReference.on("value", function (data) {
-                        def.resolve(data.val().userName);
-                    });
-
-                    return def.promise;
-
-                }
-            };
-        }
-    })
+      };
+    //}
+  })
 
 
 //this.saveUserName = function (auth, username) {
@@ -94,90 +95,92 @@ angular.module('firebase.helper', ['firebase', 'firebase.utils', 'angularGeoFire
 //  }
 //})
 
-    .
-    service('fbGeoService', function (fbutil, $firebaseArray, $geofire, $rootScope, otherUserMarkersLocationsService, fbUsernameService) {
+  .
+  service('fbGeoService', function (fbutil, $firebaseArray, $geofire, $rootScope, otherUserMarkersLocationsService, fbUsernameService) {
 
-        this.set = function (auth, location) {
-            var authData = auth.$getAuth();
-            var geo = $geofire(fbutil.ref("locations/"));
-            geo.$set(authData.uid.toString(), location);
-        };
+    this.set = function (auth, location) {
+      var authData = auth.$getAuth();
+      var geo = $geofire(fbutil.ref("locations/"));
+      geo.$set(authData.uid.toString(), location);
+    };
 
-        this.get = function (auth) {
-            var authData = auth.$getAuth();
-            var geo = $geofire(fbutil.ref("locations/"));
-            geo.$get(authData.uid.toString()).then(function (location) {
-                if (location === null) {
-                    console.log("Provided key is not in GeoFire");
-                }
-                else {
-                    console.log("Provided key has a location of " + location);
-                }
-            }, function (error) {
-                console.log("Error: " + error);
-            });
-        };
+    this.get = function (auth) {
+      var authData = auth.$getAuth();
+      var geo = $geofire(fbutil.ref("locations/"));
+      geo.$get(authData.uid.toString()).then(function (location) {
+        if (location === null) {
+          console.log("Provided key is not in GeoFire");
+        }
+        else {
+          console.log("Provided key has a location of " + location);
+        }
+      }, function (error) {
+        console.log("Error: " + error);
+      });
+    };
 
-        this.queryLocation = function (center, radius, maxDistance) {
+    this.queryLocation = function (center, radius, maxDistance) {
 
-            var locations = $geofire(fbutil.ref("/locations"));
-            var locationsQuery = locations.$query({
-                center: center,
-                radius: radius
-            });
-
-
-            var locationQueryCallback = locationsQuery.on("key_entered", "SEARCH:KEY_ENTERED");
-            var locationQueryCallback1 = locationsQuery.on("key_moved", "SEARCH:KEY_MOVED");
-
-            $rootScope.$on("SEARCH:KEY_ENTERED", function (event, key, location, distance) {
-                console.log("KEY ENTERED FOUND");
-
-                //fbUsernameService.getUserNameByUid(key).then(
-                //    function (userName) {
-                //        otherUserMarkersLocationsService.addOtherUserMarkersLocations({userId: key, location: location, userName:userName})
-                //    }
-                //);
+      var locations = $geofire(fbutil.ref("/locations"));
+      var locationsQuery = locations.$query({
+        center: center,
+        radius: radius
+      });
 
 
-                //$rootScope.otherUsersLocations.push({userId: key, location: location});
-                // Cancel the query if the distance is > 5 km
-                if (distance > maxDistance) {
-                    locationQueryCallback.cancel();
-                }
-            });
+      var locationQueryCallback = locationsQuery.on("key_entered", "SEARCH:KEY_ENTERED");
+      var locationQueryCallback1 = locationsQuery.on("key_moved", "SEARCH:KEY_MOVED");
 
-            $rootScope.$on("SEARCH:KEY_MOVED", function (event, key, location, distance) {
-                console.log("KEY MOVED FOUND");
-                // Cancel the query if the distance is > 5 km
-                if (distance > maxDistance) {
-                    locationQueryCallback1.cancel();
-                }
-            });
-        };
+      $rootScope.$on("SEARCH:KEY_ENTERED", function (event, key, location, distance) {
+        console.log("KEY ENTERED FOUND");
+        console.log('Key Value: '  + key);
 
 
-        //this.queryR = function (auth) {
-        //  var authData = auth.$getAuth();
-        //  var geo = $geofire(fbutil.ref("users/" + authData.uid));
-        //  var query = geo.$query({
-        //    center: [37.785583, 122.399219],
-        //    radius: 20
-        //  });
-        //
-        //  console.log(query);
-        //
-        //  query.on("key_entered", function (key, location, distance) {
-        //    console.log(key + " entered query at " + location + " (" + distance + " km from center)");
-        //  });
-        //
-        //  query.on("key_moved", function (key, location) {
-        //    console.log(key + " entered query at " + location);
-        //  });
-        //
-        //  return query;
-        //}
-    })
+        fbUsernameService.getUserNameByUid(key).then(
+            function (userName) {
+                otherUserMarkersLocationsService.addOtherUserMarkersLocations({userId: key, location: location, userName:userName})
+            }
+        );
+
+
+        //$rootScope.otherUsersLocations.push({userId: key, location: location});
+        // Cancel the query if the distance is > 5 km
+        if (distance > maxDistance) {
+          locationQueryCallback.cancel();
+        }
+      });
+
+      $rootScope.$on("SEARCH:KEY_MOVED", function (event, key, location, distance) {
+        console.log("KEY MOVED FOUND");
+        // Cancel the query if the distance is > 5 km
+        if (distance > maxDistance) {
+          locationQueryCallback1.cancel();
+        }
+      });
+    };
+
+
+    //this.queryR = function (auth) {
+    //  var authData = auth.$getAuth();
+    //  var geo = $geofire(fbutil.ref("users/" + authData.uid));
+    //  var query = geo.$query({
+    //    center: [37.785583, 122.399219],
+    //    radius: 20
+    //  });
+    //
+    //  console.log(query);
+    //
+    //  query.on("key_entered", function (key, location, distance) {
+    //    console.log(key + " entered query at " + location + " (" + distance + " km from center)");
+    //  });
+    //
+    //  query.on("key_moved", function (key, location) {
+    //    console.log(key + " entered query at " + location);
+    //  });
+    //
+    //  return query;
+    //}
+  })
 //.controller('AddLocationCtrl', function ($scope, Auth, fbutil, $firebaseArray, $geofire) {
 //  $scope.addLocation = function (lat, lng) {
 //    var lat_i = parseInt(lat);

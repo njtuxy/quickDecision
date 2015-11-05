@@ -31,6 +31,7 @@ angular.module('mapChat.map')
 
 
     //MAP VIEW ENTERY POINT
+
     $scope.$on("$stateChangeSuccess", function () {
       $scope.initMap = function () {
         getCurrentLocation.then(function (current_position) {
@@ -40,18 +41,27 @@ angular.module('mapChat.map')
           $scope.addMarkers(location);
 
           $scope.setMap();
-          
+
           $scope.$on("leafletDirectiveMarker.click", function (event, args) {
-            console.log(args.model);
-            if(args.model.mapId != 'map1') return;
-            console.log('output the value:');
+            console.log(args);
+
+            //if(args.model.mapId != 'map1') return;
+            //console.log('output the value:');
+
+            var marker_location = args.leafletEvent.latlng;
             //console.log('>>>>>>>>>>>>>>>>>>>>>>>>> marker clicke event');
+
             var marker_key = args.modelName;
             $scope.markers[marker_key].icon.markerColor = 'red';
-            $scope.showChatFootBar = !showChatFootBar;
-            $scope.showChatHeadBar = !showChatHeadBar;
-            $scope.hideTabs = !showChatFootBar;
-            $scope.reciever_id = $scope.markers[marker_key].userId
+
+            $scope.map.center.lat = marker_location.lat;
+            $scope.map.center.lng = marker_location.lng;
+
+
+            //$scope.showChatFootBar = !showChatFootBar;
+            //$scope.showChatHeadBar = !showChatHeadBar;
+            //$scope.hideTabs = !showChatFootBar;
+            //$scope.reciever_id = $scope.markers[marker_key].userId
           });
 
 
@@ -59,13 +69,13 @@ angular.module('mapChat.map')
             if(args.model.mapId != 'map2') return;
             console.log('output the value:');
             var click_location = args.leafletEvent.latlng;
-            console.log(click_location);
+            console.log(args);
 
             $scope.map.center.lat = click_location.lat;
             $scope.map.center.lng = click_location.lng;
 
-            $scope.showChatFootBar = false;
-            $scope.showChatHeadBar = false;
+            //$scope.showChatFootBar = false;
+            //$scope.showChatHeadBar = false;
             //cordova.plugins.Keyboard.close();
             console.log('show bottom set to false');
           })
